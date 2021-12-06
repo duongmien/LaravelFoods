@@ -2458,17 +2458,17 @@ p {
 }
 
 .hero-bg-1 {
-    background-image: url(hero-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-bg-1.jpg*/
+    background-image: url(../img/hero-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-bg-1.jpg*/
     ;
-    background-image: url(hero-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-bg-1.jpg*/
+    background-image: url(../img/hero-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-bg-1.jpg*/
 }
 
 .hero-top-img-1 {
-    background-image: url(hero-img-4.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-img-4.jpg*/
+    background-image: url(../img/hero-img-4.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-img-4.jpg*/
 }
 
 .hero-top-img-2 {
-    background-image: url(hero-img-3.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-img-3.jpg*/
+    background-image: url(../img/hero-img-3.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/hero/hero-img-3.jpg*/
 }
 
 .hero-wrap {
@@ -2818,13 +2818,13 @@ p {
 }
 
 .about-bg-4 {
-    background-image: url(about-4.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/about/about-4.jpg*/
+    background-image: url(../img/about-4.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/about/about-4.jpg*/
     ;
     height: 300px
 }
 
 .about-bg-5 {
-    background-image: url(about-5.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/about/about-5.jpg*/
+    background-image: url(../img/about-5.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/about/about-5.jpg*/
     ;
     height: 300px
 }
@@ -3247,7 +3247,7 @@ p {
 }
 
 .bg-1 {
-    background-image: url(bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/bg-1.jpg*/
+    background-image: url(../img/bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/bg-1.jpg*/
 }
 
 .delivery-wrap .contact-item-wrap {
@@ -3553,7 +3553,7 @@ p {
     bottom: 0;
     left: 0%;
     width: 100%;
-    background-image: url(map.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/contact/map.png*/
+    background-image: url(../img/map.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/contact/map.png*/
     ;
     height: 350px;
     z-index: -1
@@ -3666,7 +3666,7 @@ p {
 }
 
 .reservation-wrap .reservation-shape {
-    background-image: url(feature-bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/feature/feature-bg-2.jpg*/
+    background-image: url(../img/feature-bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/feature/feature-bg-2.jpg*/
     ;
     position: absolute;
     top: 0;
@@ -3726,7 +3726,7 @@ p {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url(down-arrow.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/down-arrow.png*/
+    background-image: url(../img/down-arrow.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/down-arrow.png*/
     ;
     background-repeat: no-repeat;
     background-size: 10px;
@@ -3734,7 +3734,7 @@ p {
 }
 
 .reservation-wrap .reservation-box-wrap .opening-hrs {
-    background-image: url(bg-3.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/bg-3.jpg*/
+    background-image: url(../img/bg-3.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/bg-3.jpg*/
     ;
     position: relative;
     width: 33.33%
@@ -3767,7 +3767,7 @@ p {
 .reservation-wrap .reservation-box-wrap .promotional-offer {
     height: 435px;
     width: 33.33%;
-    background-image: url(promotion-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/promotion-2.jpg*/
+    background-image: url(../img/promotion-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/promotion-2.jpg*/
 }
 
 .reservation-wrap .reservation-box-wrap .reservation-form,
@@ -3941,7 +3941,7 @@ p {
 }
 
 .bg-2 {
-    background-image: url(bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/bg-2.jpg*/
+    background-image: url(../img/bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/bg-2.jpg*/
 }
 
 .offer-wrap {
@@ -3960,7 +3960,7 @@ p {
 }
 
 .video-bg-1 {
-    background-image: url(video-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/video-bg-1.jpg*/
+    background-image: url(../img/video-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/video-bg-1.jpg*/
     ;
     height: 835px;
     position: relative
@@ -3985,7 +3985,7 @@ p {
 }
 
 .video-bg-2 {
-    background-image: url(video-bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/video-bg-2.jpg*/
+    background-image: url(../img/video-bg-2.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/video-bg-2.jpg*/
     ;
     height: 800px;
     position: relative;
@@ -4389,7 +4389,7 @@ p {
 }
 
 .app-bg-1 {
-    background-image: url(app-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/app/app-bg-1.jpg*/
+    background-image: url(../img/app-bg-1.jpg)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/app/app-bg-1.jpg*/
 }
 
 .app-wrap {
@@ -6062,7 +6062,7 @@ article h6 {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url(down-arrow.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/down-arrow.png*/
+    background-image: url(../img/down-arrow.png)/*tpa=https://templates.hibootstrap.com/caban/default/assets/img/offer/down-arrow.png*/
     ;
     background-repeat: no-repeat;
     background-size: 10px;
