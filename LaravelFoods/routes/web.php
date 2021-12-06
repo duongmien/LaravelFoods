@@ -18,3 +18,5 @@ Route::get('/','HomeController@index');
 Route::get('/shop','ShopController@index');
 
 Route::get('/home','HomeController@index');
+
+Route::get('/contact','ContactController@index');
