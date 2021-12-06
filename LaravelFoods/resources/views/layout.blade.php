@@ -53,7 +53,7 @@
                 <div class="header-bottom">
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-6 col-md-6 col-5">
-                            <a href="index.html" class="logo"><img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
+                            <a href="" class="logo"><img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-7">
                             <div class="main-menu-wrap">
@@ -62,9 +62,9 @@
                                 </div>
                                 <div id="menu">
                                     <ul class="main-menu list-style">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="./shop.html">Shop</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="home">Home</a></li>
+                                        <li><a href="shop">Shop</a></li>
+                                        <li><a href="contact">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
