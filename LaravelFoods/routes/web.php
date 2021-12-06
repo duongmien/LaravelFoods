@@ -20,3 +20,7 @@ Route::get('/shop','ShopController@index');
 Route::get('/home','HomeController@index');
 
 Route::get('/contact','ContactController@index');
+
+Route::get('/login','LoginController@index');
+
+Route::get('/admin','AdminController@index');
