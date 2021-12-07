@@ -53,7 +53,7 @@
                 <div class="header-bottom">
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-6 col-md-6 col-5">
-                            <a href="" class="logo"><img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
+                            <a href="home" class="logo"><img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-7">
                             <div class="main-menu-wrap">
@@ -88,7 +88,7 @@
                                 <a href="#" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
                                     <span>1</span>
-                                    <a href="#" class="btn style1">Sign in</a>
+                                    <a href="login" class="btn style1">Sign in</a>
 
                                 </a>
                             </div>

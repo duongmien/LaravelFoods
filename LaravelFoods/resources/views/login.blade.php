@@ -14,7 +14,7 @@
                     <div class="breadcrumb-title">
                         <h2>Login</h2>
                         <ul class="breadcrumb-menu list-style">
-                            <li><a href="index.html"
+                            <li><a href="home"
                                     tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home
                                 </a></li>
                             <li>Login</li>
@@ -39,19 +39,22 @@
                             <h2 class="text-center mb-0">Login</h2>
                         </div>
                         <div class="login-body">
-                            <form class="form-wrap" action="#">
+                        
+                            <form class="form-wrap" action="{{URL::to('/check_login')}}"  method="post">
+                            @csrf   
+                            <input type="hidden" name="token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="email">Username/Email/Phone</label>
-                                            <input id="email" name="email" type="email"
-                                                placeholder="Email Address*" required="">
+                                            <label for="email">Username</label>
+                                            <input id="email" name="username" type="text"
+                                                placeholder="Username" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="pwd">Password</label>
-                                            <input id="pwd" name="pwd" type="password" placeholder="Password">
+                                            <input id="pwd" name="password" type="password" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -61,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12 text-md-end mb-20">
-                                        <a href="forgot-pwd.html"
+                                        <a href="forgot-pwd"
                                             tppabs="https://templates.hibootstrap.com/caban/default/forgot-pwd.html"
                                             class="link style2">Forgot Password?</a>
                                     </div>
@@ -95,7 +98,7 @@
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <p class="mb-0">Don’t Have an Account? <a class="link style2"
-                                                href="register.html"
+                                                href="register"
                                                 tppabs="https://templates.hibootstrap.com/caban/default/register.html">Create
                                                 One</a></p>
                                     </div>

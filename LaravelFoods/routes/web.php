@@ -24,3 +24,8 @@ Route::get('/contact','ContactController@index');
 Route::get('/login','LoginController@index');
 
 Route::get('/admin','AdminController@index');
+
+Route::get('/show_dashboard','AdminController@show_dashboard');
+
+Route::post('/check_login','LoginController@check_login');
+
