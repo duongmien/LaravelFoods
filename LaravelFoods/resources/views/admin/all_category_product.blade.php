@@ -1,5 +1,14 @@
 @extends('admin_layout')
 @section('admin_content')
+<?php
+use Illuminate\Support\Facades\Session;
+$message = Session::get('message');
+if($message){
+
+echo '<script>alert("'.$message.'");</script> ';
+    Session::put('message',null);
+}
+?>
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -49,9 +58,13 @@
                         <td><span class="text-ellipsis">
                             <?php
                             if($cate_pro->category_status==0){
-                                echo 'Ẩn';
+                            ?>
+                                <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+                            <?php    
                             }else{
-                                echo 'Hiển thị';
+                            ?>
+                                <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+                            <?php
                             }
                             ?>
                         </span></td>

@@ -3976,3 +3976,13 @@ div#graph11 {
         padding: 0;
     }
 }
+
+span.fa-thumb-styling.fa.fa-thumbs-down {
+    font-size: 24px;
+    color: red;
+}
+
+span.fa-thumb-styling.fa.fa-thumbs-up {
+    font-size: 24px;
+    color: lightseagreen;
+}
