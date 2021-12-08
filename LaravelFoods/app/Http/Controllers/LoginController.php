@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -18,10 +20,25 @@ class LoginController extends Controller
         $password = $request->password;
 
         $result = DB::table('tbl_user')->where('username',$username)->where('password',$password)->first();
-        if($result->role_id==1){
-            return view('admin.dashboard');
+        if($result){
+            if($result->role_id==1){
+                Session::put('name',$result->name);
+                Session::put('user_id',$result->user_id);
+                return Redirect::to('/dashboard');
+            }else if($result->role_id==2){
+                    Session::put('name',$result->name);
+                    Session::put('user_id',$result->user_id);
+                    return Redirect::to('/home');
+            }
         }else{
-            return view('page.home');
+            Session::put('message','Tài khoản hoặc mật khẩu không chính xác!!!');
+            return Redirect::to('/login');
         }
+    }
+    public function logout()
+    {
+        Session::put('name',null);
+        Session::put('user_id',null);
+        return Redirect::to('/login');
     }
 }

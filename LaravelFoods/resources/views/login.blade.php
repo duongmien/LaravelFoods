@@ -24,7 +24,14 @@
             </div>
         </div>
     </div>
-
+        <?php
+        use Illuminate\Support\Facades\Session;
+        $message = Session::get('message');
+        if($message){
+            echo '<script>alert("'.$message.'");</script> ';
+            Session::put('message',null);
+        }
+        ?>
 
     <section class="login-wrap pt-100 pb-100">
         <img src="{{('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"
@@ -40,7 +47,7 @@
                         </div>
                         <div class="login-body">
                         
-                            <form class="form-wrap" action="{{URL::to('/check_login')}}"  method="post">
+                            <form class="form-wrap" action="{{URL::to('/check-login')}}"  method="post">
                             @csrf   
                             <input type="hidden" name="token" value="{{ csrf_token() }}">
                                 <div class="row">

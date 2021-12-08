@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="{{URL::to('/show_dashboard')}}" class="logo">
+                <a href="{{URL::to('/dashboard')}}" class="logo">
 					ADMIN
 				</a>
                 <div class="sidebar-toggle-box">
@@ -61,13 +61,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{('img/2.png')}}">
-                            <span class="username">John Doe</span>
+                            <span class="username">
+                            <?php
+                            use Illuminate\Support\Facades\Session;
+                            $name = Session::get('name');
+                            if($name){
+                                echo $name;
+                            }
+                            ?>
+                            </span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -96,8 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Danh mục sản phẩm</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="typography.html">Thêm danh mục</a></li>
-                                <li><a href="glyphicon.html">Liệt kê danh mục</a></li>
+                                <li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
                             </ul>
                         </li>
                         

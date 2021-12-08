@@ -13,5 +13,8 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
-    
+    public function logout()
+    {
+        return view('admin.dashboard');
+    }
 }
