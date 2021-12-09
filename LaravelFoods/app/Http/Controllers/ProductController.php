@@ -16,7 +16,7 @@ class ProductController extends Controller
     }
 
     public function all_product(){
-        $all_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_name')->where('tbl_category_product.category_id','=','tbl_product.category_id');
+        $all_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderBy('tbl_product.product_id','desc')->get();
         $manager_product = view('admin.all_product')->with('all_product',$all_product);
         return view('admin_layout')->with('admin.all_product', $manager_product);
     }
@@ -45,7 +45,7 @@ class ProductController extends Controller
         $data['product_image'] = '';
         DB::table('tbl_product')->insert($data);
         Session::put('message','Thêm sản phẩm thành công!!!');
-        return Redirect::to('add-product');
+        return Redirect::to('all-product');
     }
 
     public function active_product($product_id){
@@ -61,15 +61,20 @@ class ProductController extends Controller
     }
 
     public function edit_product($product_id){
+        $category_product = DB::table('tbl_category_product')->orderBy('category_id','desc')->get();
         $edit_product = DB::table('tbl_product')->where('product_id',$product_id)->get();
-        $manager_product = view('admin.edit_product')->with('edit_product',$edit_product);
+        $manager_product = view('admin.edit_product')->with('edit_product',$edit_product)->with('category_product', $category_product);
         return view('admin_layout')->with('admin.edit_product', $manager_product);
     }
 
     public function update_product(Request $request ,$product_id){
         $data = array();
+        $data['category_id'] = $request->product_category;
         $data['product_name'] = $request->product_name;
         $data['product_desc'] = $request->product_desc;
+        $data['product_content'] = $request->product_content;
+        $data['product_meal'] = $request->product_meal;
+        $data['product_price'] = $request->product_price;
 
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
         Session::put('message','Cập nhật sản phẩm thành công!!!');
