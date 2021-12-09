@@ -3986,3 +3986,7 @@ span.fa-thumb-styling.fa.fa-thumbs-up {
     font-size: 24px;
     color: lightseagreen;
 }
+
+a.active.styling-edit {
+    font-size: 20px;
+}
