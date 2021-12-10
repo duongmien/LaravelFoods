@@ -33,8 +33,8 @@ if ($message) {
                         <div class="form-group">
                             <label for="exampleInputFile">Sex</label>
                             <select name="user_sex" class="form-control input-sm m-bot15">
-                                <option value="Nam">Male</option>
-                                <option value="Nữ">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
