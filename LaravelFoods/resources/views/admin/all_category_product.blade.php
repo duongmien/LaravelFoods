@@ -44,16 +44,20 @@ echo '<script>alert("'.$message.'");</script> ';
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
+                        <th>No</th>
                         <th>Tên danh mục</th>
                         <th>Hiển thị</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i=1; ?> 
                     @foreach($all_category_product as $key => $cate_pro)
                     <tr>
+
                         <td><label class="i-checks m-b-none"><input type="checkbox"
                                     name="post[]"><i></i></label></td>
+                        <td><?php echo $i++; ?></td>
                         <td>{{$cate_pro->category_name}}</td>
                         <td><span class="text-ellipsis">
                             <?php

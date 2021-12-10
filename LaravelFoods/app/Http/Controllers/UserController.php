@@ -47,11 +47,11 @@ class UserController extends Controller
     //     return Redirect::to('all-user');
     // }
 
-    // public function edit_user($user_id){
-    //     $edit_user = DB::table('tbl_user')->where('user_id',$user_id)->get();
-    //     $manager_user = view('admin.edit_user')->with('edit_user',$edit_user);
-    //     return view('admin_layout')->with('admin.edit_user', $manager_user);
-    // }
+    public function edit_user($user_id){
+        $edit_user = DB::table('tbl_user')->where('user_id',$user_id)->get();
+        $manager_user = view('admin.edit_user')->with('edit_user',$edit_user);
+        return view('admin_layout')->with('admin.edit_user', $manager_user);
+    }
 
     // public function update_user(Request $request ,$user_id){
     //     $data = array();

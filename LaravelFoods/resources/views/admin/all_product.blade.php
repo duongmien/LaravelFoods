@@ -44,6 +44,7 @@ echo '<script>alert("'.$message.'");</script> ';
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
+                        <th>No</th>
                         <th>Tên sản phẩm</th>
                         <th>Giá</th>
                         <th>Hình sản phẩm</th>
@@ -53,10 +54,12 @@ echo '<script>alert("'.$message.'");</script> ';
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i=1 ?>
                     @foreach($all_product as $key => $pro)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox"
                                     name="post[]"><i></i></label></td>
+                        <td><?php echo $i++; ?></td>
                         <td>{{$pro->product_name}}</td>
                         <td>{{$pro->product_price}}</td>
                         <td><img src="uploads/product/{{$pro->product_image}}" height="80" width="80"/></td>

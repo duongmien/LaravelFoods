@@ -33,8 +33,8 @@ if ($message) {
                         <div class="form-group">
                             <label for="exampleInputFile">Sex</label>
                             <select name="user_sex" class="form-control input-sm m-bot15">
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
+                                <option value="Nam">Male</option>
+                                <option value="Nữ">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -57,7 +57,7 @@ if ($message) {
                             <label for="exampleInputPassword1">Role</label>
                             <select name="role_id" class="form-control input-sm m-bot15">
                                 <option value="1">Admin</option>
-                                <option value="2">Khách Hàng</option>
+                                <option value="2">Customer</option>
                             </select>
                         </div>
                         <button type="submit" name="add_user" class="btn btn-info">Add user</button>
