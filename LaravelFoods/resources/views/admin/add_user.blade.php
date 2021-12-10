@@ -28,7 +28,7 @@ if ($message) {
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
-                            <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Enter your user name">
+                            <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Enter your user name"  >
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Sex</label>
