@@ -59,7 +59,7 @@ echo '<script>alert("'.$message.'");</script> ';
                                     name="post[]"><i></i></label></td>
                         <td>{{$pro->product_name}}</td>
                         <td>{{$pro->product_price}}</td>
-                        <td><img src="public/uploads/product/{{$pro->product_image}}" height="80" width="80"/></td>
+                        <td><img src="uploads/product/{{$pro->product_image}}" height="80" width="80"/></td>
                         <td>{{$pro->category_name}}</td>
 
                         <td><span class="text-ellipsis">

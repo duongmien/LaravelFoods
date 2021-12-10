@@ -19,7 +19,7 @@ echo '<script>alert("'.$message.'");</script> ';
                     @foreach($edit_product as $key => $edit_value)
                     <div class="position-center">
                         @foreach($edit_product as $key => $pro)
-                        <form role="form" action="{{URL::to('/update-product/'.$edit_value->product_id)}}" method="POST">
+                        <form role="form" action="{{URL::to('/update-product/'.$edit_value->product_id)}}" method="POST" enctype="multipart/form-data">
                         @csrf   
                         <input type="hidden" name="token" value="{{ csrf_token() }}">
                         <div class="form-group">
@@ -57,9 +57,9 @@ echo '<script>alert("'.$message.'");</script> ';
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ảnh sản phẩm</label>
                             <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
-                            <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="100" width="100">
+                            <img src="{{URL::to('uploads/product/'.$pro->product_image)}}" height="100" width="100">
                         </div>
-                        <button type="submit" name="add_product" class="btn btn-info">Cập nhật sản phẩm</button>
+                        <button type="submit" name="update_product" class="btn btn-info">Cập nhật sản phẩm</button>
                     
                     </form>
                     @endforeach
