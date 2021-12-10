@@ -715,6 +715,66 @@
             "install-path": "../facade/ignition-contracts"
         },
         {
+            "name": "fakerphp/faker",
+            "version": "v1.9.2",
+            "version_normalized": "1.9.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "84220cf137a9344acffb10374e781fed785ff307"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/84220cf137a9344acffb10374e781fed785ff307",
+                "reference": "84220cf137a9344acffb10374e781fed785ff307",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "conflict": {
+                "ergebnis/faker": "!=1.9.2",
+                "fzaninotto/faker": "!=1.9.2"
+            },
+            "replace": {
+                "ergebnis/faker": "1.9.2",
+                "fzaninotto/faker": "1.9.2"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "time": "2020-12-11T14:32:13+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.9.2"
+            },
+            "install-path": "../fakerphp/faker"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.4.1",
             "version_normalized": "4.4.1.0",
@@ -929,64 +989,6 @@
                 }
             ],
             "install-path": "../fruitcake/laravel-cors"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.2",
-            "version_normalized": "1.9.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
-                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "time": "2020-12-11T09:56:16+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "support": {
-                "issues": "https://github.com/fzaninotto/Faker/issues",
-                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.2"
-            },
-            "abandoned": true,
-            "install-path": "../fzaninotto/faker"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1315,6 +1317,55 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "install-path": "../hamcrest/hamcrest-php"
+        },
+        {
+            "name": "jzonta/faker-restaurant",
+            "version": "2.0.1",
+            "version_normalized": "2.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jzonta/FakerRestaurant.git",
+                "reference": "4e10ff08dc8ca08603a3daf7abe48d412b013cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jzonta/FakerRestaurant/zipball/4e10ff08dc8ca08603a3daf7abe48d412b013cf4",
+                "reference": "4e10ff08dc8ca08603a3daf7abe48d412b013cf4",
+                "shasum": ""
+            },
+            "require": {
+                "fakerphp/faker": "^1.9.1",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "phpstan/phpstan": "^0.12.66",
+                "phpunit/phpunit": "^9"
+            },
+            "time": "2021-11-15T11:21:22+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "FakerRestaurant\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Zonta"
+                }
+            ],
+            "description": "Food and Beverage names generate using fakerphp/faker",
+            "homepage": "https://github.com/jzonta/FakerRestaurant",
+            "support": {
+                "issues": "https://github.com/jzonta/FakerRestaurant/issues",
+                "source": "https://github.com/jzonta/FakerRestaurant/tree/v2.0.1"
+            },
+            "install-path": "../jzonta/faker-restaurant"
         },
         {
             "name": "laravel/framework",
@@ -7232,7 +7283,6 @@
         "facade/ignition",
         "facade/ignition-contracts",
         "filp/whoops",
-        "fzaninotto/faker",
         "hamcrest/hamcrest-php",
         "mockery/mockery",
         "myclabs/deep-copy",

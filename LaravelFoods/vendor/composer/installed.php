@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v7.0.0',
-        'version' => '7.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '86aa7b7cac050980b12cc77b4c9605923602dbfa',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -85,6 +85,12 @@
             'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
             'dev_requirement' => false,
         ),
+        'ergebnis/faker' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '1.9.2',
+            ),
+        ),
         'facade/flare-client-php' => array(
             'pretty_version' => '1.9.1',
             'version' => '1.9.1.0',
@@ -111,6 +117,15 @@
             'aliases' => array(),
             'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
             'dev_requirement' => true,
+        ),
+        'fakerphp/faker' => array(
+            'pretty_version' => 'v1.9.2',
+            'version' => '1.9.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fakerphp/faker',
+            'aliases' => array(),
+            'reference' => '84220cf137a9344acffb10374e781fed785ff307',
+            'dev_requirement' => false,
         ),
         'fideloper/proxy' => array(
             'pretty_version' => '4.4.1',
@@ -140,13 +155,10 @@
             'dev_requirement' => false,
         ),
         'fzaninotto/faker' => array(
-            'pretty_version' => 'v1.9.2',
-            'version' => '1.9.2.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../fzaninotto/faker',
-            'aliases' => array(),
-            'reference' => '848d8125239d7dbf8ab25cb7f054f1a630e68c2e',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '1.9.2',
+            ),
         ),
         'guzzlehttp/guzzle' => array(
             'pretty_version' => '6.5.5',
@@ -358,6 +370,15 @@
                 0 => 'v7.30.5',
             ),
         ),
+        'jzonta/faker-restaurant' => array(
+            'pretty_version' => '2.0.1',
+            'version' => '2.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jzonta/faker-restaurant',
+            'aliases' => array(),
+            'reference' => '4e10ff08dc8ca08603a3daf7abe48d412b013cf4',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -374,12 +395,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v7.0.0',
-            'version' => '7.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '86aa7b7cac050980b12cc77b4c9605923602dbfa',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -658,8 +679,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
