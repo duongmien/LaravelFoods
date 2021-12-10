@@ -49,3 +49,15 @@ Route::get('/unactive-product/{product_id}','ProductController@unactive_product'
 
 Route::post('/save-product','ProductController@save_product');
 Route::post('/update-product/{product_id}','ProductController@update_product');
+
+// User
+Route::get('/add-user','UserController@add_user');
+Route::get('/all-user','UserController@all_user');
+Route::get('/edit-user/{user_id}','UserController@edit_user');
+Route::get('/delete-user/{user_id}','UserController@delete_user');
+
+Route::get('/active-user/{user_id}','UserController@active_user');
+Route::get('/unactive-user/{user_id}','UserController@unactive_user');
+
+Route::post('/save-user','UserController@save_user');
+Route::post('/update-user/{user_id}','UserController@update_user');

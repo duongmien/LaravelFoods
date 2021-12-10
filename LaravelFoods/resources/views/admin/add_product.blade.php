@@ -65,7 +65,6 @@ echo '<script>alert("'.$message.'");</script> ';
 
                 </div>
             </section>
-
     </div>
 </div>
 @endsection
