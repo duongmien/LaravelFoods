@@ -38,7 +38,7 @@ class CreateTblProduct extends Migration
                 'product_meal' =>$faker->numberBetween(1,2).' person',
                 'product_price' =>round($faker->numberBetween(50000,500000),-3),
                 'product_image' =>($i+1).'.jpg',
-                'product_status' =>$faker->numberBetween(0,1)
+                'product_status' =>'1'
             ]);
         }
     }

@@ -50,7 +50,7 @@ Route::get('/unactive-product/{product_id}','ProductController@unactive_product'
 Route::post('/save-product','ProductController@save_product');
 Route::post('/update-product/{product_id}','ProductController@update_product');
 
-// User
+//User
 Route::get('/add-user','UserController@add_user');
 Route::get('/all-user','UserController@all_user');
 Route::get('/edit-user/{user_id}','UserController@edit_user');
@@ -61,3 +61,8 @@ Route::get('/unactive-user/{user_id}','UserController@unactive_user');
 
 Route::post('/save-user','UserController@save_user');
 Route::post('/update-user/{user_id}','UserController@update_user');
+
+//Product in shop
+Route::get('/category-shop/{category_id}','ProductController@show_product_category');
+Route::get('/shop-cate','ShopController@index_2');
+

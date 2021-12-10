@@ -81,4 +81,6 @@ class CategoryProduct extends Controller
         Session::put('message','Xóa danh mục sản phẩm thành công!!!');
         return Redirect::to('/all-category-product');
     }
+    //end admin function page
+    
 }
