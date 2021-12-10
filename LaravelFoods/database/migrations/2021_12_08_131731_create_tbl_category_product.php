@@ -27,7 +27,7 @@ class CreateTblCategoryProduct extends Migration
             DB::table('tbl_category_product')->insert([
                 'category_name' =>$faker->lastName,
                 'category_desc' =>$faker->sentence(20,$variableNbWords = true),
-                'category_status' =>$faker->numberBetween(0,1)
+                'category_status' =>'1'
             ]);
         }
     }

@@ -116,4 +116,13 @@ class ProductController extends Controller
         Session::put('message','Xóa sản phẩm thành công!!!');
         return Redirect::to('all-product');
     }
+    //end admin function page
+    public function show_product_category($category_id){
+        $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
+        
+        $all_category_product = DB::table('tbl_product')->where('category_id',$category_id)->get();
+
+        return view('page.shop')->with('category',$category_product)->with('product',$all_category_product);
+
+    }
 }

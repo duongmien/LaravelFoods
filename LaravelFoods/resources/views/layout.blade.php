@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
     <title>Laravel Food</title>
-    <link rel="icon" type="png" href="{{('frontend/assets/img/favicon.png')}}">
+    <link rel="icon" type="png" href="{{asset('frontend/assets/img/favicon.png')}}">
 
 </head>
 
 <body>
     <div class="preloader js-preloader">
-        <img src="{{('frontend/assets/img/preloader.gif')}}" alt="Image">
+        <img src="{{asset('frontend/assets/img/preloader.gif')}}" alt="Image">
     </div>
 
     <div class="page-wrapper">
@@ -53,7 +53,7 @@
                 <div class="header-bottom">
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-6 col-md-6 col-5">
-                            <a href="home" class="logo"><img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
+                            <a href="{{URL::to('home')}}" class="logo"><img src="{{asset('frontend/assets/img/logo-white.png')}}" alt="Image"></a>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-7">
                             <div class="main-menu-wrap">
@@ -62,9 +62,9 @@
                                 </div>
                                 <div id="menu">
                                     <ul class="main-menu list-style">
-                                        <li><a href="home">Home</a></li>
-                                        <li><a href="shop">Shop</a></li>
-                                        <li><a href="contact">Contact</a></li>
+                                        <li><a href="{{URL::to('home')}}">Home</a></li>
+                                        <li><a href="{{URL::to('shop')}}">Shop</a></li>
+                                        <li><a href="{{URL::to('contact')}}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 <a href="#" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
                                     <span>1</span>
-                                    <a href="login" class="btn style1">Sign in</a>
+                                    <a href="{{URL::to('login')}}" class="btn style1">Sign in</a>
 
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
                             <div class="footer-widget-wrap">
                                 <div class="footer-widget">
                                     <a href="index.html" class="footer-logo">
-                                        <img src="{{('frontend/assets/img/logo-white.png')}}" alt="Image">
+                                        <img src="{{asset('frontend/assets/img/logo-white.png')}}" alt="Image">
                                     </a>
                                     <p class="comp-desc">Our feet are on the ground, but our the desi ambitions are to above the clouds a Here is how we move to satisfy our customers</p>
                                     <div class="contact-item-wrap">
@@ -195,39 +195,39 @@
                                     <div class="instagram-img-wrap">
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-1.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-1.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-2.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-2.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-3.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-3.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-4.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-4.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-5.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-5.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-6.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-6.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-7.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-7.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-8.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-8.jpg')}}" alt="Image">
                                         </a>
                                         <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
                                             tppabs="https://instagram.com/" target="_blank" class="insta-box">
-                                            <img src="{{('frontend/assets/img/instagram-9.jpg')}}" alt="Image">
+                                            <img src="{{asset('frontend/assets/img/instagram-9.jpg')}}" alt="Image">
                                         </a>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@
     <a href="javascript:void(0)" class="back-to-top"><i class="las la-arrow-up"></i></a>
 
 
-    <script data-cfasync="false" src="{{('frontend/assets/js/email-decode.min.js')}}"></script>
+    <script data-cfasync="false" src="{{asset('frontend/assets/js/email-decode.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/form-validator.min.js')}}"></script>
