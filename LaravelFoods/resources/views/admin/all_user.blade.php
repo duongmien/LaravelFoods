@@ -73,11 +73,11 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>
                             <?php
                                 if($pro->role_id==1){
-                                    echo "Customer";
+                                    echo "Admin";
                                    
                                 }
                                 else{
-                                    echo ("Admin");
+                                    echo ("Customer");
                                 }
                             ?>
                         </td>
@@ -86,7 +86,7 @@ echo '<script>alert("'.$message.'");</script> ';
                             <a href="{{URL::to('/edit-user/'.$pro->user_id)}}" class="active styling-edit" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>
                             </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{URL::to('/delete-user/'.$pro->user_id)}}" class="active styling-edit" ui-toggle-class="">    
+                            <a onclick="return confirm('Are you sure you want to delete??')" href="{{URL::to('/delete-user/'.$pro->user_id)}}" class="active styling-edit" ui-toggle-class="">    
                                 <i class="fa fa-times text-danger text"></i>
                             </a>
                         </td>
