@@ -23,6 +23,7 @@ class CreateTblProduct extends Migration
             $table->text('product_meal');
             $table->string('product_price');
             $table->string('product_image');
+            $table->string('product_rate');
             $table->integer('product_status');
             $table->timestamps();
         });
@@ -36,6 +37,7 @@ class CreateTblProduct extends Migration
                 'product_desc' =>$faker->sentence(20,$variableNbWords = true),
                 'product_content' =>$faker->sentence(50,$variableNbWords = true),
                 'product_meal' =>$faker->numberBetween(1,2).' person',
+                'product_rate' =>$faker->randomElement($aray=array('4','4.5','5')),
                 'product_price' =>round($faker->numberBetween(50000,500000),-3),
                 'product_image' =>($i+1).'.jpg',
                 'product_status' =>'1'

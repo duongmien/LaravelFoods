@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+session_start();
 
 class ProductController extends Controller
 {
@@ -44,6 +45,7 @@ class ProductController extends Controller
         $data['product_meal'] = $request->product_meal;
         $data['product_price'] = $request->product_price;
         $data['product_status'] = $request->product_status;
+        $data['product_rate'] = '5';
         $get_image = $request->file('product_image');
 
         if($get_image){
@@ -126,8 +128,14 @@ class ProductController extends Controller
 
     }
     public function product_detail($product_id){
-        $all_product = DB::table('tbl_product')->where('product_status','1')->orderBy('product_id','desc')->limit(10)->get();
         $detail_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->where('tbl_product.product_id',$product_id)->get();
-        return view('page.shop_detail')->with('all_product',$all_product)->with('product_detail',$detail_product);
+        foreach($detail_product as $key => $value){
+            $category_id = $value->category_id;
+
+        }
+        
+        $recoment_product = DB::table('tbl_product')->where('product_status','1')->where('category_id',$category_id)->orderBy('product_id','desc')->get();
+
+        return view('page.shop_detail')->with('all_product',$recoment_product)->with('product_detail',$detail_product);
     }
 }

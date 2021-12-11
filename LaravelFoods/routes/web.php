@@ -69,4 +69,7 @@ Route::get('/shop-cate','ShopController@index_2');
 //Shop detail
 Route::get('/product-detail/{product_id}','ProductController@product_detail');
 
+//Cart
+Route::post('/save-cart','CartController@save_cart');
+
 

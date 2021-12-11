@@ -61,7 +61,6 @@
                                     <li> <i class="flaticon-star-1"></i> </li>
                                     <li> <i class="flaticon-star-1"></i> </li>
                                 </ul>
-                                <span>(45)</span>
                             </div>
                             <h3><span><?php echo $pro->product_price/1000?>.000 vnd</span> <span class="discount"><?php echo $pro->product_price/1000+30?>.000 vnd</span></h3>
                         </div>
@@ -74,6 +73,9 @@
                                 
                             </ul>
                         </div>
+                        <form action="{{URL::to('/save-cart')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="token" value="{{ csrf_token() }}">
                         <div class="product-more-option">
                             <div class="product-more-option-item">
                                 <h6>Category :</h6>
@@ -84,7 +86,8 @@
                                 <div class="product-quantity style1">
                                     <div class="qtySelector">
                                         <span class="decreaseQty"><i class="flaticon-left-arrow-1"></i></span>
-                                        <input type="text" class="qtyValue" value="1" />
+                                        <input name="qty" type="text" class="qtyValue" value="1" />
+                                        <input name="product_id_hidden" type="hidden" class="qtyValue" value="{{$pro->category_id}}" />
                                         <span class="increaseQty"><i class="flaticon-next"></i></span>
                                     </div>
                                 </div>
@@ -100,6 +103,7 @@
                                     Cart</span></button>
                             <button type="button" class="btn style2"><span>Buy Now </span></button>
                         </div>
+                        </form>
                         <div class="product-more-option">
                             <div class="product-more-option-item">
                                 <h6>Share On :</h6>
