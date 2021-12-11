@@ -9,17 +9,34 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
+
+    public function AuthLogin()
+    {
+        $admin_id = Session::get('user_id');
+        if($admin_id && $admin_id==1){
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('login')->send();
+        }
+    }
+
     public function add_user(){
+        $this->AuthLogin();
+
         return view('admin.add_user');
     }
 
     public function all_user(){
+        $this->AuthLogin();
+
         $all_user = DB::table('tbl_user')->get();
         $manager_user = view('admin.all_user')->with('all_user',$all_user);
         return view('admin_layout')->with('admin.all_user', $manager_user);
     }
 
     public function save_user(Request $request){
+        $this->AuthLogin();
+
         $data = array();
         $data['name']= $request->name;
         $data['username'] = $request->username;
@@ -36,12 +53,16 @@ class UserController extends Controller
     }
 
     public function edit_user($user_id){
+        $this->AuthLogin();
+
         $edit_user = DB::table('tbl_user')->where('user_id',$user_id)->get();
         $manager_user = view('admin.edit_user')->with('edit_user',$edit_user);
         return view('admin_layout')->with('admin.edit_user', $manager_user);
     }
 
     public function update_user(Request $request ,$user_id){
+        $this->AuthLogin();
+
         $data = array();
         $data['name']= $request->name;
         $data['username'] = $request->username;
@@ -58,6 +79,8 @@ class UserController extends Controller
     }
 
     public function delete_user($user_id){
+        $this->AuthLogin();
+
         DB::table('tbl_user')->where('user_id',$user_id)->delete();
         Session::put('message','Delete User Successfully!');
         return Redirect::to('/all-user');
