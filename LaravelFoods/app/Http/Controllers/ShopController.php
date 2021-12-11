@@ -14,9 +14,9 @@ class ShopController extends Controller
 
         $all_product = DB::table('tbl_product')->where('product_status','1')->orderBy('product_id','desc')->get();
 
-        return view('page.shop')->with('category',$category_product)->with('product',$all_product);
+        return view('page.shop_content')->with('category',$category_product)->with('product',$all_product);
     }
     public function index_2(){
-        return view('page.shop');
+        return view('page.shop_content');
     }
 }

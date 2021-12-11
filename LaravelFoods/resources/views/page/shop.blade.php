@@ -197,29 +197,7 @@
                 </div>
               </div>
             </div>
-            <div class="row justify-content-center">
-            @foreach($product as $key => $pro)
-              <div class="col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                  <div class="feature-img">
-                    <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"  alt="Image">
-                  </div>
-                  <div class="feature-info">
-                    <h3 class="feature-title"><a href="shop-details.html">{{$pro->product_name}}</a>
-                    </h3>
-                    <div class="feature-meta">
-                      <p class="feature-price"><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
-                      
-                    </div>
-                    <a class="btn style2" href="cart.html"
-                      tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                        class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                    
-                  </div>
-                </div>
-              </div>
-            @endforeach
-            </div>
+            @yield('shop_content')
             <div class="page-navigation">
               <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 text-sm-start text-center smb-20">

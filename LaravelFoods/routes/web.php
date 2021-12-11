@@ -66,3 +66,7 @@ Route::post('/update-user/{user_id}','UserController@update_user');
 Route::get('/category-shop/{category_id}','ProductController@show_product_category');
 Route::get('/shop-cate','ShopController@index_2');
 
+//Shop detail
+Route::get('/product-detail/{product_id}','ProductController@product_detail');
+
+

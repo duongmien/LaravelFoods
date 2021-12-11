@@ -122,7 +122,12 @@ class ProductController extends Controller
         
         $all_category_product = DB::table('tbl_product')->where('category_id',$category_id)->get();
 
-        return view('page.shop')->with('category',$category_product)->with('product',$all_category_product);
+        return view('page.shop_content')->with('category',$category_product)->with('product',$all_category_product);
 
+    }
+    public function product_detail($product_id){
+        $all_product = DB::table('tbl_product')->where('product_status','1')->orderBy('product_id','desc')->limit(10)->get();
+        $detail_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->where('tbl_product.product_id',$product_id)->get();
+        return view('page.shop_detail')->with('all_product',$all_product)->with('product_detail',$detail_product);
     }
 }
