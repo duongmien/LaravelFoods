@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="mobile-bar-wrap">
-                                <a href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart  xl-none">
+                                <a href="" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart  xl-none">
                                     <i class="las la-shopping-cart"></i>
                                     <span>1</span>
                                 </a>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-xl-3 lg-none">
                             <div class="header-bottom-right">
-                                <a href="#" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
+                                <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
                                     <span>1</span>
                                     <a href="{{URL::to('login')}}" class="btn style1">Sign in</a>

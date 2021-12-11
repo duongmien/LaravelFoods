@@ -87,7 +87,7 @@
                                     <div class="qtySelector">
                                         <span class="decreaseQty"><i class="flaticon-left-arrow-1"></i></span>
                                         <input name="qty" type="text" class="qtyValue" value="1" />
-                                        <input name="product_id_hidden" type="hidden" class="qtyValue" value="{{$pro->category_id}}" />
+                                        <input name="product_id_hidden" type="hidden" class="qtyValue" value="{{$pro->product_id}}" />
                                         <span class="increaseQty"><i class="flaticon-next"></i></span>
                                     </div>
                                 </div>

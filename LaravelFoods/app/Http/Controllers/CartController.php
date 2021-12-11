@@ -35,4 +35,10 @@ class CartController extends Controller
         return view('page.cart');
 
     }
+    public function delete_in_cart($rowId){
+        
+        Cart::remove($rowId,1);
+        return Redirect::to('/show-cart');
+
+    }
 }
