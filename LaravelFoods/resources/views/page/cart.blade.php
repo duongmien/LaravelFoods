@@ -22,12 +22,15 @@
         </div>
     </div>
 
-
     <section class="wishlist-wrap ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-20">
                     <div class="wishlist-table ">
+                        <?php
+                        use Gloudemans\Shoppingcart\Facades\Cart;
+                        $content = Cart::content();
+                        ?>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -38,14 +41,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($content as $v_content)
                                 <tr>
                                     <td>
                                         <div class="wh_item">
-                                            <img src="post-thumb-1.jpg" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/blog/post-thumb-1.jpg" alt="Image">
+                                            <img src="{{URL::to('uploads/product/'.$v_content->options->image)}}"  alt="Image">
                                             <div class="wh-item-info">
-                                                <a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Chicken Sandwitch</a>
-                                                <p>There are many variation of chicken.You can choose your favourite one</p>
-                                                <span>$32.00</span>
+                                                <a href="shop-details.html">{{$v_content->name}}</a>
+                                                <p>{{$v_content->options->desc}}</p>
+                                                <span><?php echo $v_content->price/1000?>.000 vnd</span>
                                             </div>
                                         </div>
                                     </td>
@@ -67,6 +71,7 @@
                                         <button type="button"><i class="las la-times"></i></button>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

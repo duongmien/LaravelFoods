@@ -71,5 +71,6 @@ Route::get('/product-detail/{product_id}','ProductController@product_detail');
 
 //Cart
 Route::post('/save-cart','CartController@save_cart');
+Route::get('/show-cart','CartController@show_cart');
 
 
