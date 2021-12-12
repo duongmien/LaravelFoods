@@ -631,6 +631,34 @@ p {
     border-radius: 5px
 }
 
+input.inph {
+    display: inline-block;
+    font-family: poppins, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: .5s;
+    transition: .5s;
+    margin: 5px;
+    background-color: #f41f31;
+    color: #fff;
+}
+
+input.inph:hover {
+    /* top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 0; */
+    background: #ffa323;
+    border-radius: 5px
+}
+
 .btn.style1 i {
     font-size: 18px;
     margin-left: 7px;
@@ -8296,4 +8324,8 @@ form.checkout textarea {
     .login-form .login-header h2 {
         font-size: 24px
     }
+}
+
+a.dlt_btn {
+    padding: 10px;
 }

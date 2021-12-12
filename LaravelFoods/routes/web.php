@@ -71,6 +71,7 @@ Route::get('/product-detail/{product_id}','ProductController@product_detail');
 
 //Cart
 Route::post('/save-cart','CartController@save_cart');
+Route::post('/update-cart-quantity','CartController@update_cart_quantity');
 Route::get('/show-cart','CartController@show_cart');
 Route::get('/delete-in-cart/{rowId}','CartController@delete_in_cart');
 

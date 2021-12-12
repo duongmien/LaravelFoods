@@ -55,15 +55,21 @@
                                         </div>
                                     </td>
                                     <td>
+                                    <form role="form" action="{{URL::to('/update-cart-quantity')}}" method="POST" >
+                                        @csrf  
+                                        <input type="hidden" name="token" value="{{ csrf_token() }}">
                                         <div class="wh_qty">
                                             <div class="product-quantity style2">
                                                 <div class="qtySelector">
                                                     <span class="las la-minus decreaseQty"></span>
-                                                    <input type="text" class="qtyValue" value="{{$v_content->qty}}" />
+                                                    <input type="text" class="qtyValue" name="cart_quantity" value="{{$v_content->qty}}" />
                                                     <span class="las la-plus increaseQty"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <input value="{{$v_content->rowId}}" type="hidden" name="rowId_cart"  class=" form-control">
+                                        <input value="Update" type="submit" name="update_qty"  class=" inph">
+                                    </form>
                                     </td>
                                     <td>
                                         <p class="wh-tem-price">
@@ -74,10 +80,12 @@
                                         </p>
                                     </td>
                                     <td>
-                                        <button type="button" ><a href="{{URL::to('/delete-in-cart/'.$v_content->rowId)}}"><i class="las la-times"></i></a></button>
+                                        <button type="button" ><a class="dlt_btn" href="{{URL::to('/delete-in-cart/'.$v_content->rowId)}}"><i class="las la-times"></i></a></button>
                                     </td>
                                 </tr>
+
                                 @endforeach
+                            
                             </tbody>
                         </table>
                     </div>
@@ -85,9 +93,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="checkout-details">
                         <div class="row mt-20">
-                            <div class="col-md-5">
-                                <input value="Update Product" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="btn style1"></input>
-                            </div>
+                            
                             <div class="col-md-7 text-md-end">
                                 <a href="shop" tppabs="https://templates.hibootstrap.com/caban/default/shop-left-sidebar.html" class="btn style1">Continue Shopping<i class="flaticon-right-arrow-2"></i></a>
                             </div>
@@ -116,7 +122,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <a href="checkout.html" tppabs="https://templates.hibootstrap.com/caban/default/checkout.html" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
+                            <a href="checkout" tppabs="https://templates.hibootstrap.com/caban/default/checkout.html" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
                         </div>
                     </div>
                 </div>
