@@ -75,5 +75,14 @@ Route::post('/update-cart-quantity','CartController@update_cart_quantity');
 Route::get('/show-cart','CartController@show_cart');
 Route::get('/delete-in-cart/{rowId}','CartController@delete_in_cart');
 
+//Register
+Route::get('/register','RegisterController@index');
+Route::post('/add-user','RegisterController@add_user');
+
+
+//Checkout
+// Route::get('/login','CheckoutController@checkout');
+
+
 
  

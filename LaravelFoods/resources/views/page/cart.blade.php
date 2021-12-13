@@ -5,15 +5,15 @@
 
     <div class="breadcrumb-wrap bg-f br-1">
         <div class="overlay bg-black op-9"></div>
-        <img src="{{URL::to('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png" alt="Image" class="br-shape-1">
-        <img src="{{URL::to('frontend/assets/img/shape-2.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-2.png" alt="Image" class="br-shape-2">
+        <img src="{{URL::to('frontend/assets/img/shape-1.png')}}"  alt="Image" class="br-shape-1">
+        <img src="{{URL::to('frontend/assets/img/shape-2.png')}}"  alt="Image" class="br-shape-2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-title">
                         <h2>Cart</h2>
                         <ul class="breadcrumb-menu list-style">
-                            <li><a href="index.html" tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home </a></li>
+                            <li><a href="index.html" >Home </a></li>
                             <li>Cart</li>
                         </ul>
                     </div>
@@ -95,7 +95,7 @@
                         <div class="row mt-20">
                             
                             <div class="col-md-7 text-md-end">
-                                <a href="shop" tppabs="https://templates.hibootstrap.com/caban/default/shop-left-sidebar.html" class="btn style1">Continue Shopping<i class="flaticon-right-arrow-2"></i></a>
+                                <a href="shop" class="btn style1">Continue Shopping<i class="flaticon-right-arrow-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <a href="checkout" tppabs="https://templates.hibootstrap.com/caban/default/checkout.html" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
+                            <a href="{{URL::to('login')}}" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
                         </div>
                     </div>
                 </div>

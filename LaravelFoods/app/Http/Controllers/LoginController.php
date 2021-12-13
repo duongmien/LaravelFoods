@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+session_start();
 
 class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('page.login');
     }
 
     public function check_login(Request $request)
