@@ -1,5 +1,13 @@
 @extends('layout')
 @section('content')
+<?php
+    use Illuminate\Support\Facades\Session;
+    $message = Session::get('message');
+    if($message){
+        echo '<script>alert("'.$message.'");</script> ';
+        Session::put('message',null);
+    }
+    ?>
 <div class="content-wrapper">
 
     <div class="breadcrumb-wrap bg-f br-1">
@@ -24,14 +32,7 @@
             </div>
         </div>
     </div>
-        <?php
-        use Illuminate\Support\Facades\Session;
-        $message = Session::get('message');
-        if($message){
-            echo '<script>alert("'.$message.'");</script> ';
-            Session::put('message',null);
-        }
-        ?>
+    
 
     <section class="login-wrap pt-100 pb-100">
         <img src="{{('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"

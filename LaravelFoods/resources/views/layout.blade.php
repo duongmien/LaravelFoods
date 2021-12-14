@@ -88,7 +88,15 @@
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
                                     <span>1</span>
-                                    <a href="{{URL::to('login')}}" class="btn style1">Sign in</a>
+                                    <?php
+                                        use Illuminate\Support\Facades\Session;
+                                        $user_id = Session::get('user_id');
+                                        if($user_id != null){?>
+                                            <a href="{{URL::to('logout')}}" class="btn style1">Log out</a>
+                                        <?php }else{?>
+                                            <a href="{{URL::to('login')}}" class="btn style1">Sign in</a><?php
+                                        }
+                                    ?>
 
                                 </a>
                             </div>

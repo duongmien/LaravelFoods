@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
-
+<?php
+    use Illuminate\Support\Facades\Session;
+    $message = Session::get('message');
+    if($message){
+        echo '<script>alert("'.$message.'");</script> ';
+        Session::put('message',null);
+    }
+    ?>
 <section class="hero-wrap style1 bg-cod-grey">
     <img src="{{('frontend/assets/img/hero-shape-1.png')}}" alt="Image" class="hero-shape-1">
     <img src="{{('frontend/assets/img/hero-shape-2.png')}}" alt="Image" class="hero-shape-2">

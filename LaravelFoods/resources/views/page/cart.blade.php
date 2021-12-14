@@ -1,6 +1,16 @@
 @extends('layout')
 @section('content')
-
+<?php
+    use Illuminate\Support\Facades\Session;
+    use Gloudemans\Shoppingcart\Facades\Cart;
+    $message = Session::get('message');
+    if($message){
+        echo '<script>alert("'.$message.'");</script> ';
+        Session::put('message',null);
+    }
+    $content = Cart::content();
+    // echo '<pre>'; print_r($content);echo'</pre>';
+    ?>
 <div class="content-wrapper">
 
     <div class="breadcrumb-wrap bg-f br-1">
@@ -27,11 +37,6 @@
             <div class="row">
                 <div class="col-md-12 mb-20">
                     <div class="wishlist-table ">
-                        <?php
-                        use Gloudemans\Shoppingcart\Facades\Cart;
-                        $content = Cart::content();
-                        // echo '<pre>'; print_r($content);echo'</pre>';
-                        ?>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -122,7 +127,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <a href="{{URL::to('login')}}" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
+                            <a href="{{URL::to('login-checkout')}}" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
                         </div>
                     </div>
                 </div>

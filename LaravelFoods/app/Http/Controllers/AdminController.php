@@ -12,7 +12,8 @@ class AdminController extends Controller
     public function AuthLogin()
     {
         $admin_id = Session::get('user_id');
-        if($admin_id && $admin_id==1){
+        $role_id = Session::get('role_id');
+        if($admin_id && $role_id==1){
             return Redirect::to('dashboard');
         }else{
             return Redirect::to('login')->send();

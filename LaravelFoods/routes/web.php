@@ -81,7 +81,9 @@ Route::post('/add-user','RegisterController@add_user');
 
 
 //Checkout
-// Route::get('/login','CheckoutController@checkout');
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/checkout','CheckoutController@index');
+Route::post('/save-checkout','CheckoutController@save_checkout');
 
 
 
