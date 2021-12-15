@@ -16,10 +16,18 @@
             <p class="feature-price"><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
             
         </div>
-        <a class="btn style2" href="cart.html"
-            tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
+        <form action="{{URL::to('/save-cart')}}" method="POST">
+            @csrf
+            <input type="hidden" name="token" value="{{ csrf_token() }}">
+            <input name="qty" type="hidden" class="qtyValue" value="1" />
+            <input name="product_id_hidden" type="hidden" class="qtyValue" value="{{$pro->product_id}}" />
+            <button type="submit" class="btn style2">
+                <span><i class="flaticon-bag"></i>Add To Cart</span>
+            </button>
+            </form>   
+        <!-- <a class="btn style2" href="show-cart"><i
             class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-        
+         -->
         </div>
         </a>
     </div>

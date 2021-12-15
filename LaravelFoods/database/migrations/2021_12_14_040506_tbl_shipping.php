@@ -16,9 +16,9 @@ class TblShipping extends Migration
         Schema::create('tbl_shipping', function (Blueprint $table) {
             $table->increments('shipping_id');
             $table->string('shipping_name');
-            $table->integer('user_id');
             $table->string('shipping_address');
             $table->string('shipping_phone');
+            $table->string('shipping_payment');
             $table->string('shipping_email');
             $table->string('shipping_note')->nullable();
             $table->timestamps();

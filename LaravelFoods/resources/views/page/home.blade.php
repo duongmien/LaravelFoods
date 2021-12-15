@@ -19,7 +19,7 @@
                     <h1>We Provide Express Home Delivery</h1>
                     <p>In shakes item of 2021 we are offering 20% flat discount. Don't miss out!!</p>
                     <div class="hero-btn">
-                        <a href="#" class="btn style1"><i class="las la-shopping-bag"></i>Order Now</a>
+                        <a href="shop" class="btn style1"><i class="las la-shopping-bag"></i>Order Now</a>
                     </div>
                 </div>
             </div>
