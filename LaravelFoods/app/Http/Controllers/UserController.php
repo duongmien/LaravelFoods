@@ -55,7 +55,7 @@ class UserController extends Controller
 
     public function edit_user($user_id){
         $this->AuthLogin();
-
+        
         $edit_user = DB::table('tbl_user')->where('user_id',$user_id)->get();
         $manager_user = view('admin.edit_user')->with('edit_user',$edit_user);
         return view('admin_layout')->with('admin.edit_user', $manager_user);
