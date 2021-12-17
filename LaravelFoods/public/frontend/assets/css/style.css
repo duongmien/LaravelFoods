@@ -659,6 +659,11 @@ input.inph:hover {
     border-radius: 5px
 }
 
+.inhe {
+    height: 50px;
+    width: 100px;
+}
+
 .btn.style1 i {
     font-size: 18px;
     margin-left: 7px;

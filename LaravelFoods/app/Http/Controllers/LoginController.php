@@ -25,10 +25,12 @@ class LoginController extends Controller
             if($result->role_id==1){
                 Session::put('name',$result->name);
                 Session::put('user_id',$result->user_id);
+                Session::put('role_id',$result->role_id);
                 return Redirect::to('/dashboard');
             }else if($result->role_id==2){
                     Session::put('name',$result->name);
                     Session::put('user_id',$result->user_id);
+                    Session::put('message','Đăng nhập thành công!!!');
                     return Redirect::to('/home');
             }
         }else{

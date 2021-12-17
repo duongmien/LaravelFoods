@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
-
+<?php
+    use Illuminate\Support\Facades\Session;
+    $message = Session::get('message');
+    if($message){
+        echo '<script>alert("'.$message.'");</script> ';
+        Session::put('message',null);
+    }
+    ?>
 <section class="hero-wrap style1 bg-cod-grey">
     <img src="{{('frontend/assets/img/hero-shape-1.png')}}" alt="Image" class="hero-shape-1">
     <img src="{{('frontend/assets/img/hero-shape-2.png')}}" alt="Image" class="hero-shape-2">
@@ -12,7 +19,7 @@
                     <h1>We Provide Express Home Delivery</h1>
                     <p>In shakes item of 2021 we are offering 20% flat discount. Don't miss out!!</p>
                     <div class="hero-btn">
-                        <a href="#" class="btn style1"><i class="las la-shopping-bag"></i>Order Now</a>
+                        <a href="shop" class="btn style1"><i class="las la-shopping-bag"></i>Order Now</a>
                     </div>
                 </div>
             </div>
