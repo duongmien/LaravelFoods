@@ -37,8 +37,8 @@ class CheckoutController extends Controller
         //Insert Order 
         $order_data = array();
         $order_data['user_id'] = $request->user_id;
-        $order_data['shipping_id'] = $request->shipping_id;
-        $order_data['payment_id'] = $request->payment_id;
+        $order_data['shipping_id'] = $shipping_id;
+        $order_data['payment_id'] = $payment_id;
         $order_data['order_total'] = Cart::total();
         $order_data['order_status'] = 'Pending order';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
@@ -52,7 +52,7 @@ class CheckoutController extends Controller
             $order_d_data['product_name'] = $v_content->name;
             $order_d_data['product_price'] = $v_content->price;
             $order_d_data['product_sales_quantity'] = $v_content->qty;
-            DB::table('tbl_payment')->insert($order_d_data);   
+            DB::table('tbl_order_details')->insert($order_d_data);   
         }
         
         Session::put('message','Đặt hàng thành công!!\nĐơn hàng của bạn đang chờ người quản lý duyệt, vui lòng đợi trong giây lát.');
