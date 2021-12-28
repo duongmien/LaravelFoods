@@ -34,7 +34,7 @@ class LoginController extends Controller
                     return Redirect::to('/home');
             }
         }else{
-            Session::put('message','Tài khoản hoặc mật khẩu không chính xác!!!');
+            Session::put('message','Incorrect account or password!!!');
             return Redirect::to('/login');
         }
     }
