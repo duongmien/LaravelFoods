@@ -33,8 +33,9 @@ class CartController extends Controller
     public function add_cart_ajax(Request $request){
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
-        $cart = Session::get('cart');
-        if($cart==true){
+
+        $cart = Session::get('cart2');
+        if($cart!=null){
             $is_available = 0;
             foreach($cart as $key => $val){
                 if($val['product_id']==$data['product_id']){
@@ -45,7 +46,12 @@ class CartController extends Controller
                 $cart[] = array(
                     'sesstion_id' => $session_id,
                     'product_id' => $data['cart_product_id'],
+                    'product_name' => $data['cart_product_name'],
+                    'product_image' => $data['cart_product_image'],
+                    'product_qty' => $data['cart_product_qty'],
+                    'product_price' => $data['cart_product_price'],
                 );
+                Session::put('cart2',$cart);
             }
         }else{
             $cart[] = array(
@@ -56,13 +62,19 @@ class CartController extends Controller
                 'product_qty' => $data['cart_product_qty'],
                 'product_price' => $data['cart_product_price'],
             );
-        }
-        Session::put('cart',$cart);
-        Session::save();
-    }
-    public function show_cart(){
 
-        return view('page.cart');
+        }
+        Session::put('cart2',$cart);
+        Session::save();
+
+        print_r($cart);
+
+    }
+    public function show_cart(Request $request){
+
+
+
+        return view('page.cart_ajax');
 
     }
     public function delete_in_cart($rowId){

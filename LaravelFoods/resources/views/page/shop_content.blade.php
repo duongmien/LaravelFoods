@@ -23,7 +23,7 @@
     </a>
         <form>
             @csrf
-            <input type="hidden" name="token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" class="cart_product_id_{{$pro->product_id}}" value="{{$pro->product_id}}">
             <input type="hidden" class="cart_product_name_{{$pro->product_id}}" value="{{$pro->product_name}}">
             <input type="hidden" class="cart_product_image_{{$pro->product_id}}" value="{{$pro->product_image}}">
