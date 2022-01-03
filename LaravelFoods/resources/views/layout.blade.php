@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/odometre.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/sweetalert.css')}}">
     <title>Laravel Food</title>
     <link rel="icon" type="png" href="{{asset('frontend/assets/img/favicon.png')}}">
 
@@ -282,7 +283,29 @@
     <script src="{{asset('frontend/assets/js/jquery.appear.js')}}"></script>
     <script src="{{asset('frontend/assets/js/odometre.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.add-to-card').click(function(){
+                var id=$(this).data('id_product');
+                var cart_product_id = $('.cart_product_id_' + id).val();
+                var cart_product_name = $('.cart_product_name_' + id).val();
+                var cart_product_image = $('.cart_product_image_' + id).val();
+                var cart_product_price = $('.cart_product_price_' + id).val();
+                var cart_product_qty = $('.cart_product_qty_' + id).val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:'{{url("/add-cart-ajax")}}',
+                    method: 'POST',
+                    data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
+                    success:function(data){
+                        alert(data);
+                    }
 
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
