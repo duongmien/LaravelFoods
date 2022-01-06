@@ -55,7 +55,7 @@
                                     $subtotal = $cart['product_price'] * $cart['product_qty'];
                                     $total += $subtotal;
                                 @endphp
-                                <tr>
+                                <tr class="cartpage">
                                     <td>
                                         <div class="wh_item">
                                             <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
@@ -70,8 +70,9 @@
                                         <div class="wh_qty">
                                             <div class="product-quantity style2">
                                                 <div class="qtySelector">
+                                                    <input type="hidden" class="product_id" value="{{$cart['product_id']}}">
                                                     <span class="las la-minus decreaseQty changeQty"></span>
-                                                    <input type="text" class="qtyValue" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                                    <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" />
                                                     <span class="las la-plus increaseQty changeQty"></span>
                                                 </div>
                                             </div>

@@ -61,13 +61,9 @@ class CartController extends Controller
                 'product_qty' => $data['cart_product_qty'],
                 'product_price' => $data['cart_product_price'],
             );
-
         }
         Session::put('cart',$cart);
         Session::save();
-
-        print_r($cart);
-
     }
     public function show_cart(Request $request){
 
@@ -82,12 +78,18 @@ class CartController extends Controller
         return Redirect::to('/show-cart');
 
     }
-    public function update_cart_quantity(Request $request){
-        
-        $rowId = $request->rowId_cart;
-        $qty = $request->cart_quantity;
-        Cart::update($rowId,$qty);
-        return Redirect::to('/show-cart');
-
+    public function update_cart(Request $request){
+        $data = $request->all();
+        $cart = Session::get('cart');
+        if($cart==true){
+            foreach($data['quantity'] as $key => $qty){
+                foreach($cart as $session => $val){
+                    if($val['session_id']==$key){
+                        $cart[$session]['product_qty'] = $qty;
+                    }
+                }
+            }
+            Session::put('cart',$cart);
+        }
     }
 }

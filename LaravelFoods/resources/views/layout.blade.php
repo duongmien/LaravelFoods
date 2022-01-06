@@ -300,16 +300,6 @@
                     method: 'POST',
                     data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
                     success:function(data){
-                        // swal({
-                        //     showCancelButton: true,
-                        //     cancelButtonText:"Xem tiếp",
-                        //     confirmButtonClass: "btn-success",
-                        //     confirmButtonText: "Đi đến giỏ hàng",
-                        //     closeOnConfirm: false
-                        // },
-                        // function(){
-                        //     window.location.href = "{{url('/show-cart')}}"
-                        // });
                         swal({
                             title: "Sản phẩm đã được thêm vào giỏ hàng",
                             text: "Bạn có thể tiếp tục mua hàng hoặc đi đến giỏ hàng",
@@ -325,7 +315,7 @@
                     },
                     error: (error) => {
                      console.log(JSON.stringify(error));
-   }
+                    }
                 })
 
             })
@@ -333,9 +323,22 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.add-to-card').click(function(){
-                
-
+            $('.changeQty').click(function(e){
+                e.preventDefault();
+                var quantity = $(this).closest(".cartpage").find(".qtyinput").val();
+                var product_id = $(this).closest(".cartpage").find(".product_id").val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:'{{url("/update-cart")}}',
+                    method: 'POST',
+                    data:{product_id:product_id,quantity:quantity, _token:_token},
+                    success:function(respo){
+                        window.location.reload();   
+                    },
+                    error: (error) => {
+                     console.log(JSON.stringify(error));
+                    }
+                })
             })
         })
     </script>
