@@ -42,8 +42,6 @@
                                 <tr>
                                     <th scope="col">Product</th>
                                     <th scope="col">Quantity</th>
-                                    <th scope="col">Total Price</th>
-                                    <th scope="col">Remove</th>
                                 </tr>
                             </thead>
                             <tbody>

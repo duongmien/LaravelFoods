@@ -282,6 +282,7 @@
     <script src="{{asset('frontend/assets/js/fancybox.js')}}"></script>
     <script src="{{asset('frontend/assets/js/jquery.appear.js')}}"></script>
     <script src="{{asset('frontend/assets/js/odometre.min.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/sweetalert.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
@@ -299,10 +300,34 @@
                     method: 'POST',
                     data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
                     success:function(data){
-                        alert(data);
-                    }
-
+                        // swal({
+                        //     showCancelButton: true,
+                        //     cancelButtonText:"Xem tiếp",
+                        //     confirmButtonClass: "btn-success",
+                        //     confirmButtonText: "Đi đến giỏ hàng",
+                        //     closeOnConfirm: false
+                        // },
+                        // function(){
+                        //     window.location.href = "{{url('/show-cart')}}"
+                        // });
+                        swal({
+                            title: "Sản phẩm đã được thêm vào giỏ hàng",
+                            text: "Bạn có thể tiếp tục mua hàng hoặc đi đến giỏ hàng",
+                            icon: "success",
+                            buttons:["Xem tiếp", "Đi đến giỏ hàng"] ,
+                            dangerMode: false,
+                        })
+                        .then((willDelete) => {
+                        if (willDelete) {
+                            window.location.href = "{{url('/show-cart')}}";
+                        } 
+                        });     
+                    },
+                    error: (error) => {
+                     console.log(JSON.stringify(error));
+   }
                 })
+
             })
         })
     </script>
