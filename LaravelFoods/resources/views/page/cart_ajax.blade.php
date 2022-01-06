@@ -50,6 +50,7 @@
                                 @php
                                     $total = 0;
                                 @endphp
+                                @if (is_array(Session::get('cart')) || is_object(Session::get('cart')))
                                 @foreach(Session::get('cart') as $key => $cart)
                                 @php
                                     $subtotal = $cart['product_price'] * $cart['product_qty'];
@@ -91,6 +92,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>

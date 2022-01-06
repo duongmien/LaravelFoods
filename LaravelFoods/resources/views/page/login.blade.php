@@ -62,7 +62,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="pwd">Password</label>
-                                            <input id="pwd" name="password" type="password" placeholder="Password">
+                                            <input id="pwd" name="password" type="password" placeholder="Password" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">

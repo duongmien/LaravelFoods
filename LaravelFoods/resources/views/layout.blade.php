@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +73,7 @@
                             <div class="mobile-bar-wrap">
                                 <a href="" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart  xl-none">
                                     <i class="las la-shopping-cart"></i>
-                                    <span>1</span>
+                                    <span >1</span>
                                 </a>
                                 <div class="mobile-top-bar xl-none">
                                     <span></span>
@@ -84,11 +85,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 lg-none">
-                            <div class="header-bottom-right">
+                        <div class="col-xl-3 lg-none" id="totalQty">
+                            <div class="header-bottom-right totalQtyLoad">
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
-                                    <span>1</span>
+                                    @php
+                                        $countCart = 0;
+                                    @endphp
+                                    @if (is_array(Session::get('cart')) || is_object(Session::get('cart')))
+                                    @foreach(Session::get('cart') as $key => $cart)
+                                    @php
+                                        $countCart += $cart['product_qty'];
+                                    @endphp
+                                    @endforeach
+                                    @endif
+                                    <span class="countCart">{{$countCart}}</span>
                                     <?php
                                         use Illuminate\Support\Facades\Session;
                                         $user_id = Session::get('user_id');
@@ -284,7 +295,6 @@
     <script src="{{asset('frontend/assets/js/odometre.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/sweetalert.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
-    <script src="{{asset('frontend/assets/js/custom.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -302,17 +312,18 @@
                     data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
                     success:function(data){
                         swal({
-                            title: "Sản phẩm đã được thêm vào giỏ hàng",
-                            text: "Bạn có thể tiếp tục mua hàng hoặc đi đến giỏ hàng",
+                            title: "The product has been added to cart",
+                            text: "You can continue shopping or go to the shopping cart",
                             icon: "success",
-                            buttons:["Xem tiếp", "Đi đến giỏ hàng"] ,
+                            buttons:["Continue", "Go to Cart"] ,
                             dangerMode: false,
                         })
                         .then((willDelete) => {
                         if (willDelete) {
                             window.location.href = "{{url('/show-cart')}}";
                         } 
-                        });     
+                        }); 
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
                     },
                     error: (error) => {
                      console.log(JSON.stringify(error));
@@ -338,6 +349,7 @@
                     success:function(response){
                         thisClick.closest(".cartpage").remove();
                         $('#totalCall').load(location.href + ' .totalLoad');
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
                         // console.log("done");
                     },
                     error: (error) => {
@@ -353,7 +365,8 @@
                         // window.location.reload();   
                         thisClick.closest(".cartpage").find('.subtotal').text(response.subtotal);
                         $('#totalCall').load(location.href + ' .totalLoad');
-                        console.log("done");
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
+                        // console.log("done");
                     },
                     error: (error) => {
                      console.log(JSON.stringify(error));
@@ -377,6 +390,7 @@
                     success:function(response){
                         thisDelete.closest(".cartpage").remove();
                         $('#totalCall').load(location.href + ' .totalLoad');
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
                         // console.log("done");
                     },
                     error: (error) => {

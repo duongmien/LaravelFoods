@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{asset('css/morris.css')}}" type="text/css" />
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('css/monthly.css')}}">
+    <link rel="icon" type="png" href="{{asset('frontend/assets/img/favicon.png')}}">
+
     <!-- //calendar -->
     <!-- //font-awesome icons -->
     <script src="{{asset('js/jquery2.0.3.min.js')}}"></script>
