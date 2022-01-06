@@ -70,7 +70,6 @@ Route::get('/shop-cate','ShopController@index_2');
 Route::get('/product-detail/{product_id}','ProductController@product_detail');
 
 //Cart
-Route::post('/save-cart','CartController@save_cart');
 Route::post('/add-cart-ajax','CartController@add_cart_ajax');
 Route::post('/update-cart','CartController@update_cart');
 Route::get('/show-cart','CartController@show_cart');

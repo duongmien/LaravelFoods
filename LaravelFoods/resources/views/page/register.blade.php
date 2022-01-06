@@ -51,13 +51,13 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="pwd">Password</label>
-                                            <input id="pwd" name="pwd" type="password" placeholder="Password">
+                                            <input id="pwd" name="pwd" type="password" placeholder="Password"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="pwd">Confirm Password</label>
-                                            <input id="pwd_2" name="pwd_2" type="password" placeholder="Confirm Password">
+                                            <input id="pwd_2" name="pwd_2" type="password" placeholder="Confirm Password"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

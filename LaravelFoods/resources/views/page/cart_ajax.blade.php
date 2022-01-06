@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <a href="{{URL::to('login-checkout')}}" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
+                            <a href="{{URL::to('checkout')}}" class="btn style1 w-100 d-block">Proceed To Checkout<i class="lar la-check-circle"></i></a>
                         </div>
                     </div>
                 </div>

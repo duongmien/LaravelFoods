@@ -23,8 +23,64 @@
     </div>
 </div>
 
-
 <section class="checkout-wrap ptb-100">
+<div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-20">
+                <div class="wishlist-table ">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $total = 0;
+                            @endphp
+                            @foreach(Session::get('cart') as $key => $cart)
+                            @php
+                                $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                $total += $subtotal;
+                            @endphp
+                            <tr class="cartpage">
+                                <td>
+                                    <div class="wh_item">
+                                        <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
+                                        <div class="wh-item-info">
+                                            <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
+                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
+                                            <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wh_qty">
+                                        <div class="product-quantity style2">
+                                            <div class="qtySelector">
+                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="wh-tem-price subtotal">
+                                        <?php 
+                                            $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                            echo number_format($subtotal).' '.'vnd';
+                                        ?>
+                                    </p>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -43,7 +99,7 @@
                     <h2 class="mb-0">Select Payment Method</h2>
                     <div class="select-method">
                         <div>
-                            <input type="radio" id="test1" value="1" name="payment_option">
+                            <input type="radio" id="test1" value="1" checked name="payment_option">
                             <label for="test1">Cash On Delivery</label>
                         </div>
                         <div>
@@ -60,27 +116,27 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" name="shipping_name" placeholder="Your Name">
+                                    <input type="text" name="shipping_name" placeholder="Your Name"  required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="number" name="shipping_phone" placeholder="Your Phone">
+                                    <input type="number" name="shipping_phone" placeholder="Your Phone" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="email" name="shipping_email" placeholder="Your Email Address">
+                                    <input type="email" name="shipping_email" value="" placeholder="Your Email Address" >
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" name="shipping_address" placeholder="Your Address">
+                                    <input type="text" name="shipping_address" placeholder="Your Address" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input placeholder="Write notes about your order "  name="shipping_note" id="order_msg" cols="30" rows="10"></input>
+                                    <input placeholder="Write notes about your order" value=""  name="shipping_note" id="order_msg" cols="30" rows="10"></input>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +147,8 @@
                                         class="flaticon-right-arrow-2"></i></a>
                             </div>
                             <div class="col-md-6 d-flex align-items-center justify-content-lg-end">
-                                <h4 class="total-amt sm-none">Total: <span>$243</span></h4>
+                                <h4 class="total-amt sm-none">Total: <span>{{number_format($total).' '.'vnd'}}</span></h4>
+                                <input type="hidden" name="total" value="{{$total}}"></input>
                                 <input type="submit" name="send_order" class="inph inhe" value="Place Order"></input>
                             </div>
                         </div>

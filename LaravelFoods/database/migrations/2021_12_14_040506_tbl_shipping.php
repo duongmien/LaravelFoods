@@ -18,7 +18,7 @@ class TblShipping extends Migration
             $table->string('shipping_name');
             $table->string('shipping_address');
             $table->string('shipping_phone');
-            $table->string('shipping_email');
+            $table->string('shipping_email')->nullable();
             $table->string('shipping_note')->nullable();
             $table->timestamps();
         });

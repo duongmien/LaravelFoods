@@ -17,6 +17,7 @@ class CheckoutController extends Controller
     }
     public function save_checkout(Request $request)
     {
+        $total=$request->total;
         //Insert Shipping details
         $data = array();
         $data['shipping_name'] = $request->shipping_name;
@@ -39,13 +40,13 @@ class CheckoutController extends Controller
         $order_data['user_id'] = $request->user_id;
         $order_data['shipping_id'] = $shipping_id;
         $order_data['payment_id'] = $payment_id;
-        $order_data['order_total'] = Cart::total();
+        $order_data['order_total'] = $total;
         $order_data['order_status'] = 'Pending order';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
 
         //Insert Order details
-        $content = Cart::content();
-        foreach($content as $v_content){
+        $cart = Session::get('cart');
+        foreach($cart as $v_content){
             $order_d_data = array();
             $order_d_data['order_id'] = $order_id;
             $order_d_data['product_id'] = $v_content->id;
@@ -57,15 +58,6 @@ class CheckoutController extends Controller
         
         Session::put('message','Đặt hàng thành công!!\nĐơn hàng của bạn đang chờ người quản lý duyệt, vui lòng đợi trong giây lát.');
         return Redirect('/show-cart');
-    }
-    public function login_checkout()
-    {
-        $user_id = Session::get('user_id');
-        if($user_id){
-            return Redirect::to('checkout');
-        }else{
-            return Redirect::to('login');
-        }
     }
     
     
