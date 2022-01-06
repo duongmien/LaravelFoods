@@ -50,7 +50,7 @@ class CartController extends Controller
                     'product_qty' => $data['cart_product_qty'],
                     'product_price' => $data['cart_product_price'],
                 );
-                Session::put('cart2',$cart);
+                Session::put('cart',$cart);
             }
         }else{
             $cart[] = array(
@@ -63,7 +63,7 @@ class CartController extends Controller
             );
 
         }
-        Session::put('cart2',$cart);
+        Session::put('cart',$cart);
         Session::save();
 
         print_r($cart);

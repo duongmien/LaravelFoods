@@ -331,6 +331,14 @@
             })
         })
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.add-to-card').click(function(){
+                
+
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -42,34 +42,45 @@
                                 <tr>
                                     <th scope="col">Product</th>
                                     <th scope="col">Quantity</th>
+                                    <th scope="col">Total Price</th>
+                                    <th scope="col">Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php
-                                    print_r(Session::get('cart2'));
+                                    $total = 0;
+                                @endphp
+                                @foreach(Session::get('cart') as $key => $cart)
+                                @php
+                                    $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                    $total += $subtotal;
                                 @endphp
                                 <tr>
                                     <td>
                                         <div class="wh_item">
-                                            <img src="{{URL::to('uploads/product/')}}"  height="100px" width="100px"  alt="Image">
+                                            <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
                                             <div class="wh-item-info">
-                                                <a href="{{URL::to('/product-detail/')}}"></a>
-                                                <span>.000 vnd</span>
+                                                <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
+                                                <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
+                                                <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="wh_qty">
+                                            <div class="product-quantity style2">
+                                                <div class="qtySelector">
+                                                    <span class="las la-minus decreaseQty changeQty"></span>
+                                                    <input type="text" class="qtyValue" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                                    <span class="las la-plus increaseQty changeQty"></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <p class="wh-tem-price">
                                             <?php 
-                                                $subtotal = 1;
-                                                echo number_format($subtotal).' '.'vnd';
-                                            ?>
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="wh-tem-price">
-                                            <?php 
-                                                $subtotal = 1;
+                                                $subtotal = $cart['product_price'] * $cart['product_qty'];
                                                 echo number_format($subtotal).' '.'vnd';
                                             ?>
                                         </p>
@@ -78,6 +89,7 @@
                                         <button type="button" ><a class="dlt_btn" href="{{URL::to('/delete-in-cart/')}}"><i class="las la-times"></i></a></button>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -98,19 +110,10 @@
                             <h4 class="mb-20">Total Bill</h4>
                         </div>
                         <div class="bill-details">
-                            <div class="subtotal-wrap">
-                                <div class="subtotal-item">
-                                    <div class="subtotal-item-left">
-                                        <h6>Subtotal</h6>
-                                    </div>
-                                    <div class="subtotal-item-right">
-                                        <span>{{(Cart::total()).' '.'vnd'}}</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="total-wrap">
                                 <h5>Total Amount</h5>
-                                <span>{{(Cart::total()).' '.'vnd'}}</span>
+                                <span>{{number_format($total).' '.'vnd'}}</span>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
