@@ -284,6 +284,7 @@
     <script src="{{asset('frontend/assets/js/odometre.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/sweetalert.js')}}"></script>
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+    <script src="{{asset('frontend/assets/js/custom.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -328,6 +329,22 @@
                 var thisClick = $(this);
                 var quantity = $(this).closest(".cartpage").find(".qtyinput").val();
                 var product_id = $(this).closest(".cartpage").find(".product_id").val();
+                if(quantity==0){
+                    $.ajax({
+                    url:'{{url("/delete-cart")}}',
+                    type:'DELETE',
+                    method: 'get',
+                    data:{product_id:product_id, _token: '{{csrf_token()}}' },
+                    success:function(response){
+                        thisClick.closest(".cartpage").remove();
+                        $('#totalCall').load(location.href + ' .totalLoad');
+                        // console.log("done");
+                    },
+                    error: (error) => {
+                     console.log(JSON.stringify(error));
+                    }
+                })
+                }else{
                 $.ajax({
                     url:'{{url("/update-cart")}}',
                     method: 'post',
@@ -342,6 +359,7 @@
                      console.log(JSON.stringify(error));
                     }
                 })
+                }
             })
         })
     </script>
@@ -357,7 +375,7 @@
                     method: 'get',
                     data:{product_id:product_id, _token: '{{csrf_token()}}' },
                     success:function(response){
-                        thisDelete.clearQueue(".cartpage").remove();
+                        thisDelete.closest(".cartpage").remove();
                         $('#totalCall').load(location.href + ' .totalLoad');
                         // console.log("done");
                     },

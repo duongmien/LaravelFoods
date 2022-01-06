@@ -33,7 +33,7 @@ class CartController extends Controller
     public function add_cart_ajax(Request $request){
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
-        $cart = Session::get('cart2');
+        $cart = Session::get('cart');
         if($cart!=null){
             $is_available = 0;
             foreach($cart as $key => $val){
