@@ -46,16 +46,19 @@ class CheckoutController extends Controller
 
         //Insert Order details
         $cart = Session::get('cart');
-        foreach($cart as $v_content){
+        foreach($cart as $session => $v_content){
             $order_d_data = array();
             $order_d_data['order_id'] = $order_id;
-            $order_d_data['product_id'] = $v_content->id;
-            $order_d_data['product_name'] = $v_content->name;
-            $order_d_data['product_price'] = $v_content->price;
-            $order_d_data['product_sales_quantity'] = $v_content->qty;
+            $order_d_data['product_id'] = $v_content['product_id'];
+            $order_d_data['product_name'] = $v_content['product_name'];
+            $order_d_data['product_price'] = $v_content['product_price'];
+            $order_d_data['product_sales_quantity'] = $v_content['product_qty'];
             DB::table('tbl_order_details')->insert($order_d_data);   
         }
-        
+        foreach($cart as $session => $val){
+            unset($cart[$session]);
+        }
+        Session::put('cart',$cart);
         Session::put('message','Đặt hàng thành công!!\nĐơn hàng của bạn đang chờ người quản lý duyệt, vui lòng đợi trong giây lát.');
         return Redirect('/show-cart');
     }

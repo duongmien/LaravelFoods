@@ -73,9 +73,10 @@
                                 
                             </ul>
                         </div>
-                        <form action="{{URL::to('/save-cart')}}" method="POST">
+                        <form>
                         @csrf
-                        <input type="hidden" name="token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <div class="product-more-option">
                             <div class="product-more-option-item">
                                 <h6>Category :</h6>
@@ -86,8 +87,8 @@
                                 <div class="product-quantity style1">
                                     <div class="qtySelector">
                                         <span class="decreaseQty"><i class="flaticon-left-arrow-1"></i></span>
-                                        <input name="qty" type="text" class="qtyValue" value="1" />
-                                        <input name="product_id_hidden" type="hidden" class="qtyValue" value="{{$pro->product_id}}" />
+                                        <input name="qty" type="text" class="qtyValue cart_product_qty_{{$pro->product_id}}" value="1" />
+                                        <input name="product_id_hidden" type="hidden" class="qtyValue " value="{{$pro->product_id}}" />
                                         <span class="increaseQty"><i class="flaticon-next"></i></span>
                                     </div>
                                 </div>
@@ -99,9 +100,13 @@
                             </div>
                         </div>
                         <div class="single-product-option">
-                            <button type="submit" class="btn style1"><span><i class="flaticon-bag"></i>Add To
+                            <input type="hidden" class="cart_product_id_{{$pro->product_id}}" value="{{$pro->product_id}}">
+                            <input type="hidden" class="cart_product_name_{{$pro->product_id}}" value="{{$pro->product_name}}">
+                            <input type="hidden" class="cart_product_image_{{$pro->product_id}}" value="{{$pro->product_image}}">
+                            <input type="hidden" class="cart_product_price_{{$pro->product_id}}" value="{{$pro->product_price}}">
+                            <button type="button" class="btn style1 add-to-card" data-id_product="{{$pro->product_id}}"><span><i class="flaticon-bag"></i>Add To
                                     Cart</span></button>
-                            <button type="button" class="btn style2"><span>Buy Now </span></button>
+                            <button type="button" class="btn style2 "><span>Buy Now </span></button>
                         </div>
                         </form>
                         <div class="product-more-option">

@@ -60,7 +60,6 @@ class CartController extends Controller
             }
             Session::put('cart',$cart);
         }
-
     }
     public function update_cart(Request $request){
         $product_id = $request->input('product_id');
