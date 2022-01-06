@@ -325,15 +325,41 @@
         $(document).ready(function(){
             $('.changeQty').click(function(e){
                 e.preventDefault();
+                var thisClick = $(this);
                 var quantity = $(this).closest(".cartpage").find(".qtyinput").val();
                 var product_id = $(this).closest(".cartpage").find(".product_id").val();
-                var _token = $('input[name="_token"]').val();
                 $.ajax({
                     url:'{{url("/update-cart")}}',
-                    method: 'POST',
-                    data:{product_id:product_id,quantity:quantity, _token:_token},
-                    success:function(respo){
-                        window.location.reload();   
+                    method: 'post',
+                    data:{product_id:product_id,quantity:quantity, _token: '{{csrf_token()}}' },
+                    success:function(response){
+                        // window.location.reload();   
+                        thisClick.closest(".cartpage").find('.subtotal').text(response.subtotal);
+                        $('#totalCall').load(location.href + ' .totalLoad');
+                        console.log("done");
+                    },
+                    error: (error) => {
+                     console.log(JSON.stringify(error));
+                    }
+                })
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.deleteItem').click(function(e){
+                e.preventDefault();
+                var thisDelete = $(this);
+                var product_id = $(this).closest(".cartpage").find(".product_id").val();
+                $.ajax({
+                    url:'{{url("/delete-cart")}}',
+                    type:'DELETE',
+                    method: 'get',
+                    data:{product_id:product_id, _token: '{{csrf_token()}}' },
+                    success:function(response){
+                        thisDelete.clearQueue(".cartpage").remove();
+                        $('#totalCall').load(location.href + ' .totalLoad');
+                        // console.log("done");
                     },
                     error: (error) => {
                      console.log(JSON.stringify(error));

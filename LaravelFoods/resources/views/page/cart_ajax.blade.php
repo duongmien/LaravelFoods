@@ -79,7 +79,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="wh-tem-price">
+                                        <p class="wh-tem-price subtotal">
                                             <?php 
                                                 $subtotal = $cart['product_price'] * $cart['product_qty'];
                                                 echo number_format($subtotal).' '.'vnd';
@@ -87,7 +87,7 @@
                                         </p>
                                     </td>
                                     <td>
-                                        <button type="button" ><a class="dlt_btn" href="{{URL::to('/delete-in-cart/')}}"><i class="las la-times"></i></a></button>
+                                        <button type="button" class="deleteItem" ><i class="las la-times"></i></button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -105,16 +105,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="checkout-details smt-30">
+                <div class="col-lg-6 col-md-12"id="totalCall">
+                    <div class="checkout-details smt-30 totalLoad" >
                         <div class="content-box-title">
                             <h4 class="mb-20">Total Bill</h4>
                         </div>
                         <div class="bill-details">
-                            
                             <div class="total-wrap">
                                 <h5>Total Amount</h5>
-                                <span>{{number_format($total).' '.'vnd'}}</span>
+                                <span class="totalPrice">{{number_format($total).' '.'vnd'}}</span>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">

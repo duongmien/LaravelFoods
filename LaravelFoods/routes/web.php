@@ -74,7 +74,7 @@ Route::post('/save-cart','CartController@save_cart');
 Route::post('/add-cart-ajax','CartController@add_cart_ajax');
 Route::post('/update-cart','CartController@update_cart');
 Route::get('/show-cart','CartController@show_cart');
-Route::get('/delete-in-cart/{rowId}','CartController@delete_in_cart');
+Route::get('/delete-cart','CartController@delete_cart');
 
 //Register
 Route::get('/register','RegisterController@index');

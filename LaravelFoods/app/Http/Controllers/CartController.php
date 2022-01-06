@@ -72,24 +72,33 @@ class CartController extends Controller
         return view('page.cart_ajax');
 
     }
-    public function delete_in_cart($rowId){
-        
-        Cart::remove($rowId,1);
-        return Redirect::to('/show-cart');
-
-    }
-    public function update_cart(Request $request){
-        $data = $request->all();
+    public function delete_cart(Request $request){
+        $product_id = $request->input('product_id');
         $cart = Session::get('cart');
         if($cart==true){
-            foreach($data['quantity'] as $key => $qty){
-                foreach($cart as $session => $val){
-                    if($val['session_id']==$key){
-                        $cart[$session]['product_qty'] = $qty;
-                    }
+            foreach($cart as $session => $val){
+                if($val['product_id']==$product_id){
+                    unset($cart[$session]);
                 }
             }
             Session::put('cart',$cart);
+        }
+
+    }
+    public function update_cart(Request $request){
+        $product_id = $request->input('product_id');
+        $quantity = $request->input('quantity');
+        $subtotal = 0;
+        $cart = Session::get('cart');
+        if($cart==true){
+            foreach($cart as $session => $val){
+                if($val['product_id']==$product_id){
+                    $cart[$session]['product_qty'] = $quantity;
+                    $subtotal = $cart[$session]['product_qty'] * $cart[$session]['product_price'];
+                }
+            }
+            Session::put('cart',$cart);
+            return response()->json(['subtotal'=>number_format($subtotal).' '.'vnd']);
         }
     }
 }
