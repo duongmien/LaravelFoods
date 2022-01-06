@@ -85,6 +85,8 @@ Route::get('/login-checkout','CheckoutController@login_checkout');
 Route::get('/checkout','CheckoutController@index');
 Route::post('/save-checkout','CheckoutController@save_checkout');
 
+//Order
+Route::get('/all-order','OrderController@all_order');
 
 
  
