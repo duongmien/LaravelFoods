@@ -140,15 +140,15 @@
                     <h2 class="mb-0">Select Payment Method</h2>
                     <div class="select-method">
                         <div>
-                            <input type="radio" id="test1" value="1" checked name="payment_option">
+                            <input type="radio" id="test1" value="Cash On Delivery" checked name="payment_option">
                             <label for="test1">Cash On Delivery</label>
                         </div>
                         <div>
-                            <input type="radio" id="test2" value="2" name="payment_option">
+                            <input type="radio" id="test2" value="Card" name="payment_option">
                             <label for="test2">Card</label>
                         </div>
                         <div>
-                            <input type="radio" id="test3" value="3" name="payment_option">
+                            <input type="radio" id="test3" value="Momo" name="payment_option">
                             <label for="test3">Momo</label>
                         </div>
                     </div>

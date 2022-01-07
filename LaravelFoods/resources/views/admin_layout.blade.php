@@ -189,11 +189,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             function gd(year, day, month) {
                 return new Date(year, month - 1, day).getTime();
             }
+            $('.delete-order-2').click(function(e){
+
+                e.preventDefault();
+                var thisDelete = $(this);
+                var order_id = $('.order_id').val();
+                alert(order_id)
+                swal({
+                    title: "Bạn có chắc chắn muốn xóa hóa đơn này không?",
+                    text: "Bạn sẽ xóa hóa đơn này!!",
+                    icon: "error",
+                    buttons:["Hủy", "Xóa"] ,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url:'{{url("/delete-order")}}',
+                        type:'DELETE',
+                        method: 'get',
+                        data:{order_id:order_id, _token: '{{csrf_token()}}' },
+                        success:function(response){
+                            thisDelete.closest(".orderpage").remove();
+                            window.location.href = "{{url('/all-order')}}";
+
+                        },
+                    error: (error) => {
+                    console.log(JSON.stringify(error));
+                    }
+                    })
+                } 
+                }); 
+
+            });
             $('.delete-order').click(function(e){
 
                 e.preventDefault();
                 var thisDelete = $(this);
                 var order_id = $(this).closest(".orderpage").find(".order_id").val();
+                alert(order_id)
                 swal({
                     title: "Bạn có chắc chắn muốn xóa hóa đơn này không?",
                     text: "Bạn sẽ xóa hóa đơn này!!",

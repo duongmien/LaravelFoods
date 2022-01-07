@@ -1,9 +1,10 @@
 @extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info" >
-        <a href="" class="btn btn-default backbut">In hóa đơn</a>
         <a href="" class="btn btn-success  ">Duyệt hóa đơn</a>
-        <button type="button" class="btn btn-danger delete-order">Xóa</button>
+        <button type="button" class="btn btn-danger delete-order-2">Xóa</button>
+        <a href="" class="btn btn-default ">In hóa đơn</a>
+
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
             Thông tin đăng nhập
@@ -49,12 +50,15 @@
                         <th>Email</th>
                         <th>Ghi chú</th>
                         <th>Hình thức thanh toán</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày đặt</th>
                     </tr>
                 </thead>
                 <tbody >
                     @foreach($order as $key => $o)
-                    <tr class="cartpage">
+                    <tr class="cartpage orderpage">
                         <td>
+                            <input type="hidden" class="order_id" value="{{$o->order_id}}">
                             <p class="wh-tem-price subtotal">{{$o->shipping_name}}</p>
                         </td>
                         <td>
@@ -64,10 +68,19 @@
                             <p class="wh-tem-price subtotal">{{$o->shipping_phone}}</p>
                         </td>
                         <td>
+                            <p class="wh-tem-price subtotal">{{$o->shipping_email}}</p>
+                        </td>
+                        <td>
                             <p class="wh-tem-price subtotal">{{$o->shipping_note}}</p>
                         </td>
                         <td>
+                            <p class="wh-tem-price subtotal">{{$o->payment_method}}</p>
+                        </td>
+                        <td>
                             <p class="wh-tem-price subtotal">{{$o->payment_status}}</p>
+                        </td>
+                        <td>
+                            <p class="wh-tem-price subtotal">{{$o->date}}</p>
                         </td>
                     </tr>
                     @endforeach
