@@ -87,6 +87,7 @@ Route::post('/save-checkout','CheckoutController@save_checkout');
 
 //Order
 Route::get('/all-order','OrderController@all_order');
+Route::get('/delete-order','OrderController@delete_order');
 
 
  

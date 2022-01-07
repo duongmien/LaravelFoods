@@ -26,5 +26,16 @@ class OrderController extends Controller
         $manager_order = view('admin.all_order')->with('all_order',$all_order);
         return view('admin_layout')->with('admin.all_order', $manager_order);
     }
-
+    public function delete_order(Request $request){
+        $this->AuthLogin();
+        $order_id = $request->input('order_id');
+        $order = DB::table('tbl_order')->where('order_id',$order_id)->first();
+        $shipping_id = $order->shipping_id;
+        $payment_id = $order->payment_id;
+        DB::table('tbl_order')->where('order_id',$order_id)->delete();
+        DB::table('tbl_shipping')->where('shipping_id',$shipping_id)->delete();
+        DB::table('tbl_payment')->where('payment_id',$payment_id)->delete();
+        DB::table('tbl_order_details')->where('order_id',$order_id)->delete();
+        return redirect::to('all-order');
+    }
 }

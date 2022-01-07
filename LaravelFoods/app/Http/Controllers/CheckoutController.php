@@ -31,7 +31,7 @@ class CheckoutController extends Controller
         //Insert Payment details
         $payment_data = array();
         $payment_data['payment_method'] = $request->payment_option;
-        $payment_data['payment_status'] = 'Pending payment';
+        $payment_data['payment_status'] = 'Chưa giải quyết';
 
         $payment_id = DB::table('tbl_payment')->insertGetId($payment_data);
 

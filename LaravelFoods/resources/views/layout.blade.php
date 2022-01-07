@@ -331,10 +331,6 @@
                 })
 
             })
-        })
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
             $('.changeQty').click(function(e){
                 e.preventDefault();
                 var thisClick = $(this);
@@ -374,10 +370,6 @@
                 })
                 }
             })
-        })
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
             $('.deleteItem').click(function(e){
                 e.preventDefault();
                 var thisDelete = $(this);
@@ -398,8 +390,9 @@
                     }
                 })
             })
+            
         })
     </script>
-</body>
+    
 
 </html>

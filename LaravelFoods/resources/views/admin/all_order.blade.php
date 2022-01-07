@@ -9,8 +9,8 @@ echo '<script>alert("'.$message.'");</script> ';
     Session::put('message',null);
 }
 ?>
-<div class="table-agile-info">
-    <div class="panel panel-default">
+<div class="table-agile-info" id="orderCall">
+    <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
             Danh sách đơn hàng
         </div>
@@ -25,8 +25,8 @@ echo '<script>alert("'.$message.'");</script> ';
                 </div>
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table table-striped b-t b-light">
+        <div class="table-responsive ">
+            <table class="table table-striped b-t b-light" >
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -38,10 +38,10 @@ echo '<script>alert("'.$message.'");</script> ';
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <?php $i=1 ?>
                     @foreach($all_order as $key => $ord)
-                    <tr>
+                    <tr class="orderpage">
                         <td><?php echo $i++; ?></td>
                         <td>{{$ord->shipping_name}}</td>
                         <td>{{$ord->order_total}}</td>
@@ -50,12 +50,9 @@ echo '<script>alert("'.$message.'");</script> ';
 
                         <td>{{$ord->order_status}}</td>
                         <td>
-                            <a href="{{URL::to('/edit-order/'.$ord->order_id)}}" class="active styling-edit" ui-toggle-class="">
-                                <i class="fa fa-pencil-square-o text-success text-active"></i>
-                            </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{URL::to('/delete-order/'.$ord->order_id)}}" class="active styling-edit" ui-toggle-class="">    
-                                <i class="fa fa-times text-danger text"></i>
-                            </a>
+                            <input type="hidden" class="order_id" value="{{$ord->order_id}}">
+                            <a href="{{URL::to('/edit-order/'.$ord->order_id)}}" class="btn btn-success  ">Xem chi tiết</a>
+                            <button type="button" class="btn btn-danger delete-order">Xóa</button>
                         </td>
                     </tr>
                     @endforeach

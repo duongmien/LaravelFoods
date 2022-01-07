@@ -168,9 +168,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{asset('js/jquery.nicescroll.js')}}"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="{{asset('js/jquery.scrollTo.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- morris JavaScript -->
     <script>
         $(document).ready(function() {
+            
             //BOX BUTTON SHOW AND CLOSE
             jQuery('.small-graph-box').hover(function() {
                 jQuery(this).find('.box-button').fadeIn('fast');
@@ -186,7 +189,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             function gd(year, day, month) {
                 return new Date(year, month - 1, day).getTime();
             }
+            $('.delete-order').click(function(e){
 
+                e.preventDefault();
+                var thisDelete = $(this);
+                var order_id = $(this).closest(".orderpage").find(".order_id").val();
+                swal({
+                    title: "Bạn có chắc chắn muốn xóa hóa đơn này không?",
+                    text: "Bạn sẽ xóa hóa đơn này!!",
+                    icon: "error",
+                    buttons:["Hủy", "Xóa"] ,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url:'{{url("/delete-order")}}',
+                        type:'DELETE',
+                        method: 'get',
+                        data:{order_id:order_id, _token: '{{csrf_token()}}' },
+                        success:function(response){
+                            thisDelete.closest(".orderpage").remove();
+                        },
+                    error: (error) => {
+                     console.log(JSON.stringify(error));
+                    }
+                    })
+                } 
+                }); 
+
+            });
             graphArea2 = Morris.Area({
                 element: 'hero-area',
                 padding: 10,
@@ -256,13 +288,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 hideHover: 'auto',
                 resize: true
             });
-
-
+           
+            // delete-button
+            
         });
     </script>
     <!-- calendar -->
     <script type="text/javascript" src="{{asset('js/monthly.js')}}"></script>
     <script type="text/javascript">
+
         $(window).load(function() {
 
             $('#mycalendar').monthly({
@@ -291,6 +325,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         });
     </script>
+    
     <!-- //calendar -->
 </body>
 
