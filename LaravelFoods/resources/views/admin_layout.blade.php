@@ -210,6 +210,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         data:{order_id:order_id, _token: '{{csrf_token()}}' },
                         success:function(response){
                             thisDelete.closest(".orderpage").remove();
+                            window.location.href = "{{url('/all-order')}}";
+
                         },
                     error: (error) => {
                      console.log(JSON.stringify(error));

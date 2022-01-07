@@ -51,7 +51,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>{{$ord->order_status}}</td>
                         <td>
                             <input type="hidden" class="order_id" value="{{$ord->order_id}}">
-                            <a href="{{URL::to('/edit-order/'.$ord->order_id)}}" class="btn btn-success  ">Xem chi tiết</a>
+                            <a href="{{URL::to('/detail-order/'.$ord->order_id)}}" class="btn btn-success  ">Xem chi tiết</a>
                             <button type="button" class="btn btn-danger delete-order">Xóa</button>
                         </td>
                     </tr>
