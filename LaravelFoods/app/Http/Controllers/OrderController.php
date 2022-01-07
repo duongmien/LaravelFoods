@@ -40,16 +40,14 @@ class OrderController extends Controller
     }
     public function detail_order($order_id){
         $this->AuthLogin();
-        $order = DB::table('tbl_order')->where('order_id',$order_id)->join('tbl_shipping','tbl_shipping.shipping_id','=','tbl_order.shipping_id')->join('tbl_payment','tbl_payment.payment_id','=','tbl_order.payment_id')->orderBy('tbl_order.order_id','desc')->get();
-        $listfood = DB::table('tbl_order_details');
-        $detail_order = view('admin.detail_order')->with('order',$order);
+        $order = DB::table('tbl_order')->where('order_id',$order_id)->join('tbl_shipping','tbl_shipping.shipping_id','=','tbl_order.shipping_id')->join('tbl_payment','tbl_payment.payment_id','=','tbl_order.payment_id')->orderBy('tbl_order.order_id','desc')->first();
+        $listfood = DB::table('tbl_order_details')->where('order_id',$order_id)->join('tbl_product','tbl_product.product_id','=','tbl_order_details.product_id')->get();
+        $detail_order = view('admin.detail_order')->with('order',$order)->with('listfood',$listfood);
 
-        echo "<pre>";
-        print_r($order); 
-        echo "</pre>";
-        echo "<pre>";
-        print_r($listfood); 
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r($order); 
+        // print_r($listfood); 
+        // echo "</pre>";
         return view('admin_layout')->with('admin.detail_order', $detail_order);
     }
 }
