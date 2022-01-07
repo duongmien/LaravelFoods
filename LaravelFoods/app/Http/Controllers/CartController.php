@@ -46,6 +46,46 @@ class CartController extends Controller
         Session::put('cart',$cart);
         Session::save();
     }
+    public function add_cart_ajax_2(Request $request){
+        $data = $request->all();
+        $session_id = substr(md5(microtime()),rand(0,26),5);
+        $cart2 = Session::get('cart2');
+        foreach($cart2 as $session => $val){
+            unset($cart2[$session]);
+        }
+        if($cart2!=null){
+            $is_available = 0;
+            foreach($cart2 as $key => $val){
+                if($val['product_id']==$data['cart_product_id']){
+                    $is_available++;
+                }
+            }
+            if($is_available==0){
+                $cart2[] = array(
+                    'sesstion_id' => $session_id,
+                    'product_id' => $data['cart_product_id'],
+                    'product_name' => $data['cart_product_name'],
+                    'product_image' => $data['cart_product_image'],
+                    'product_qty' => $data['cart_product_qty'],
+                    'product_price' => $data['cart_product_price'],
+                );
+                Session::put('cart',$cart2);
+            }
+        }else{
+            $cart2[] = array(
+                'sesstion_id' => $session_id,
+                'product_id' => $data['cart_product_id'],
+                'product_name' => $data['cart_product_name'],
+                'product_image' => $data['cart_product_image'],
+                'product_qty' => $data['cart_product_qty'],
+                'product_price' => $data['cart_product_price'],
+            );
+        }
+        
+        
+        Session::put('cart2',$cart2);
+        Session::save();
+    }
     public function show_cart(Request $request){
         return view('page.cart_ajax');
     }

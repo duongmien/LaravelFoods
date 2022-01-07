@@ -37,6 +37,46 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if(Session::get('cart2'))
+                            @php
+                                $total = 0;
+                            @endphp
+                            @foreach(Session::get('cart2') as $key => $cart)
+                            @php
+                                $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                $total += $subtotal;
+                            @endphp
+                            <tr class="cartpage">
+                                <td>
+                                    <div class="wh_item">
+                                        <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
+                                        <div class="wh-item-info">
+                                            <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
+                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
+                                            <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wh_qty">
+                                        <div class="product-quantity style2">
+                                            <div class="qtySelector">
+                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="wh-tem-price subtotal">
+                                        <?php 
+                                            $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                            echo number_format($subtotal).' '.'vnd';
+                                        ?>
+                                    </p>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @else
                             @php
                                 $total = 0;
                             @endphp
@@ -75,6 +115,7 @@
                                 </td>
                             </tr>
                             @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

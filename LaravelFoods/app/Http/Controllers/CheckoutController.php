@@ -45,20 +45,38 @@ class CheckoutController extends Controller
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
 
         //Insert Order details
-        $cart = Session::get('cart');
-        foreach($cart as $session => $v_content){
-            $order_d_data = array();
-            $order_d_data['order_id'] = $order_id;
-            $order_d_data['product_id'] = $v_content['product_id'];
-            $order_d_data['product_name'] = $v_content['product_name'];
-            $order_d_data['product_price'] = $v_content['product_price'];
-            $order_d_data['product_sales_quantity'] = $v_content['product_qty'];
-            DB::table('tbl_order_details')->insert($order_d_data);   
+        if(Session::get('cart2'))
+        {
+            $cart2 = Session::get('cart2');
+            foreach($cart2 as $session => $v_content){
+                $order_d_data = array();
+                $order_d_data['order_id'] = $order_id;
+                $order_d_data['product_id'] = $v_content['product_id'];
+                $order_d_data['product_name'] = $v_content['product_name'];
+                $order_d_data['product_price'] = $v_content['product_price'];
+                $order_d_data['product_sales_quantity'] = $v_content['product_qty'];
+                DB::table('tbl_order_details')->insert($order_d_data);   
+            }
+            foreach($cart2 as $session => $val){
+                unset($cart2[$session]);
+            }
+            Session::put('cart2',$cart2);
+        }else{
+            $cart = Session::get('cart');
+            foreach($cart as $session => $v_content){
+                $order_d_data = array();
+                $order_d_data['order_id'] = $order_id;
+                $order_d_data['product_id'] = $v_content['product_id'];
+                $order_d_data['product_name'] = $v_content['product_name'];
+                $order_d_data['product_price'] = $v_content['product_price'];
+                $order_d_data['product_sales_quantity'] = $v_content['product_qty'];
+                DB::table('tbl_order_details')->insert($order_d_data);   
+            }
+            foreach($cart as $session => $val){
+                unset($cart[$session]);
+            }
+            Session::put('cart',$cart);
         }
-        foreach($cart as $session => $val){
-            unset($cart[$session]);
-        }
-        Session::put('cart',$cart);
         Session::put('message','Đặt hàng thành công!!\nĐơn hàng của bạn đang chờ người quản lý duyệt, vui lòng đợi trong giây lát.');
         return Redirect('/show-cart');
     }

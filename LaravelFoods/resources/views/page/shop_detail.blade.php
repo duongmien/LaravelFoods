@@ -106,7 +106,7 @@
                             <input type="hidden" class="cart_product_price_{{$pro->product_id}}" value="{{$pro->product_price}}">
                             <button type="button" class="btn style1 add-to-card" data-id_product="{{$pro->product_id}}"><span><i class="flaticon-bag"></i>Add To
                                     Cart</span></button>
-                            <button type="button" class="btn style2 "><span>Buy Now </span></button>
+                            <button type="button" class="btn style2 buy-now" data-id_product="{{$pro->product_id}}"><span>Buy Now </span></button>
                         </div>
                         </form>
                         <div class="product-more-option">

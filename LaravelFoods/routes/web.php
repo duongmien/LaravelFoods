@@ -71,6 +71,7 @@ Route::get('/product-detail/{product_id}','ProductController@product_detail');
 
 //Cart
 Route::post('/add-cart-ajax','CartController@add_cart_ajax');
+Route::post('/add-cart-ajax-2','CartController@add_cart_ajax_2');
 Route::post('/update-cart','CartController@update_cart');
 Route::get('/show-cart','CartController@show_cart');
 Route::get('/delete-cart','CartController@delete_cart');
