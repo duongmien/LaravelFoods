@@ -4,6 +4,14 @@
   padding-bottom: 0.65rem;
   left: 2rem;
 }
+.user-dropdown #user-dropdown-button{
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.6s;
+}
+.user-dropdown #user-dropdown-button:hover{
+  color: #ffa323;
+}
 .user-dropdown .dropdown-menu::before{
   position: absolute;
   top: -8px;

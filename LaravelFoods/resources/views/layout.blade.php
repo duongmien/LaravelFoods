@@ -109,8 +109,8 @@
                                         $user_id = Session::get('user_id');
                                         if($user_id != null){?>
                                             <div class="dropdownu user-dropdown">
-                                                <i id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; cursor: pointer" class="la-2x la la-user"></i>
-                                                <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton1">
+                                                <i id="user-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" class="la-2x la la-user-cog"></i>
+                                                <ul class="dropdown-menu mt-2" aria-labelledby="user-dropdown-button">
                                                     <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
                                                     <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
                                                     <li><hr class="dropdown-divider"></li>
