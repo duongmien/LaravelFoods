@@ -12,9 +12,9 @@
                     <div class="breadcrumb-title">
                         <h2>Shop Details</h2>
                         <ul class="breadcrumb-menu list-style">
-                            <li><a href="index.html" tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home
+                            <li><a href="{{URL::to('home')}}" tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home
                                 </a></li>
-                            <li><a href="shop-left-sidebar.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-left-sidebar.html">Shop
+                            <li><a href="{{URL::to('shop')}}" tppabs="https://templates.hibootstrap.com/caban/default/shop-left-sidebar.html">Shop
                                 </a></li>
                             <li>Shop Details</li>
                         </ul>
@@ -178,25 +178,42 @@
                 <div class="col-md-12">
                     <div class="feature-slider swiper-container">
                         <div class="swiper-wrapper">
-                            @foreach($all_product as $key => $pro)
+                            @foreach($recoment_product as $key => $pro)
                             <div class="swiper-slide">
-                                <div class="feature-card style1">
+                            <div class="feature-card style1">
+                                <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
+
                                     <div class="feature-img">
-                                        <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}" alt="Image">
+                                    <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"  alt="Image">
                                     </div>
+                                </a>
                                     <div class="feature-info">
-                                        <h3 class="feature-title"><a href="shop-details.html" >{{$pro->product_name}}</a>
-                                        </h3>
-                                        <div class="feature-meta">
-                                            <p class="feature-price">><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
-                                            <div class="ratings">
-                                                <i class="flaticon-star-1"></i>
-                                                <span>4.9</span>
-                                            </div>
-                                        </div>
-                                        <a class="btn style2" href="shop-details.html"><i
-                                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
+                                <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
+                                        
+                                    <h3 class="feature-title"><a href="{{URL::to('/product-detail/'.$pro->product_id)}}">{{$pro->product_name}}</a>
+                                    </h3>
+                                    <div class="feature-meta">
+                                        <p class="feature-price"><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
+                                        
                                     </div>
+                                </a>
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" class="cart_product_id_{{$pro->product_id}}" value="{{$pro->product_id}}">
+                                        <input type="hidden" class="cart_product_name_{{$pro->product_id}}" value="{{$pro->product_name}}">
+                                        <input type="hidden" class="cart_product_image_{{$pro->product_id}}" value="{{$pro->product_image}}">
+                                        <input type="hidden" class="cart_product_price_{{$pro->product_id}}" value="{{$pro->product_price}}">
+                                        <input type="hidden" class="cart_product_qty_{{$pro->product_id}}" value="1">
+                                        <button type="button" class="btn style2 add-to-card" data-id_product="{{$pro->product_id}}">
+                                            <span><i class="flaticon-bag"></i>Add To Cart</span>
+                                        </button>
+                                        </form>   
+                                    <!-- <a class="btn style2" href="show-cart"><i
+                                        class="flaticon-shopping-bag-1"></i>Add To Cart</a>
+                                    -->
+                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             @endforeach

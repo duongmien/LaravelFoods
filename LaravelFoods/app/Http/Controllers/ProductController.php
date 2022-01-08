@@ -134,8 +134,8 @@ class ProductController extends Controller
 
         }
         
-        $recoment_product = DB::table('tbl_product')->where('product_status','1')->where('category_id',$category_id)->orderBy('product_id','desc')->get();
+        $recoment_product = DB::table('tbl_product')->where('product_status','1')->where('category_id',$category_id)->orderBy('product_id','desc')->orderBy('product_sold','desc')->limit(9)->get();
 
-        return view('page.shop_detail')->with('all_product',$recoment_product)->with('product_detail',$detail_product);
+        return view('page.shop_detail')->with('recoment_product',$recoment_product)->with('product_detail',$detail_product);
     }
 }
