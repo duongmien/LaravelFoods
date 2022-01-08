@@ -15,7 +15,7 @@
 .user-dropdown .dropdown-menu::before{
   position: absolute;
   top: -8px;
-  left: 12px;
+  left: 170px;
   content: '';
   width: 0; 
   height: 0; 
