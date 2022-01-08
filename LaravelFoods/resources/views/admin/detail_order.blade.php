@@ -3,7 +3,7 @@
 <div class="table-agile-info" >
         <a href="{{URL::to('/approves-order/'.Session::get('order_id'))}}" class="btn btn-success  ">Duyệt hóa đơn</a>
         <button type="button" class="btn btn-danger delete-order-2">Xóa</button>
-        <a href="" class="btn btn-default ">In hóa đơn</a>
+        <a href="{{URL::to('/print-order/'.Session::get('order_id'))}}" target="_blank" class="btn btn-default ">In hóa đơn</a>
 
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">

@@ -91,6 +91,7 @@ Route::get('/all-order','OrderController@all_order');
 Route::get('/detail-order/{order_id}','OrderController@detail_order');
 Route::get('/delete-order','OrderController@delete_order');
 Route::get('/approves-order/{order_id}','OrderController@approves_order');
+Route::get('/print-order/{checkout_code}','OrderController@print_order');
 
 
  

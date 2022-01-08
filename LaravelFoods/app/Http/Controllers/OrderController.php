@@ -6,10 +6,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-
+use Barryvdh\DomPDF\PDF;
 class OrderController extends Controller
 {
 
+    public function print_order($checkout_code)
+    {
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadHTML($this->print_order_convert($checkout_code));
+        return $pdf->stream();
+    }
+    public function print_order_convert($checkout_code)
+    {
+        $order = DB::table('tbl_order')->where('order_id',$checkout_code)->join('tbl_shipping','tbl_shipping.shipping_id','=','tbl_order.shipping_id')->join('tbl_payment','tbl_payment.payment_id','=','tbl_order.payment_id')->orderBy('tbl_order.order_id','desc')->get();
+        $listfood = DB::table('tbl_order_details')->where('order_id',$checkout_code)->join('tbl_product','tbl_product.product_id','=','tbl_order_details.product_id')->get();
+        $user = DB::table('tbl_user')->where('user_id',$order[0]->user_id)->get();
+        return view('admin.invoice')->with('order',$order)->with('listfood',$listfood)->with('user',$user);
+        
+        
+    }
     public function AuthLogin()
     {
         $admin_id = Session::get('user_id');
