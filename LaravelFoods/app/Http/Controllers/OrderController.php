@@ -69,7 +69,17 @@ class OrderController extends Controller
     }
     public function approves_order($order_id){
         $this->AuthLogin();
-        DB::table('tbl_order')->where('order_id',$order_id)->update(['order_status'=>'Đã xét duyệt']);
+        $ord =  DB::table('tbl_order')->where('order_id',$order_id)->get();
+        if($ord[0]->order_status!='Đã xét duyệt'){
+            DB::table('tbl_order')->where('order_id',$order_id)->update(['order_status'=>'Đã xét duyệt']);
+            $listfood = DB::table('tbl_order_details')->where('order_id',$order_id)->join('tbl_product','tbl_product.product_id','=','tbl_order_details.product_id')->get();
+            foreach($listfood as $session => $pro){
+                $product_id = $pro->product_id;
+                $user = DB::table('tbl_product')->where('product_id',$product_id)->get();
+                $sold = $user[0]->product_sold + $pro->product_sales_quantity;
+                DB::table('tbl_product')->where('product_id',$product_id)->update(['product_sold'=>$sold]);   
+            }
+        }
         return redirect::to('all-order');
     }
 }
