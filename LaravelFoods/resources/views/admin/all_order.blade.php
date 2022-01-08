@@ -12,19 +12,19 @@ echo '<script>alert("'.$message.'");</script> ';
 <div class="table-agile-info" id="orderCall">
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
-            Danh sách đơn hàng
+            List Order
         </div>
         <div class="table-responsive ">
             <table class="table table-striped b-t b-light" >
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Tên khách hàng</th>
-                        <th>Tổng tiền</th>
-                        <th>Địa chỉ</th>
-                        <th>SĐT</th>
-                        <th>Ngày đặt</th>
-                        <th>Trạng thái</th>
+                        <th>Customer Name</th>
+                        <th>Amount</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Date Oder</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -42,8 +42,8 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>{{$ord->order_status}}</td>
                         <td>
                             <input type="hidden" class="order_id" value="{{$ord->order_id}}">
-                            <a href="{{URL::to('/detail-order/'.$ord->order_id)}}" class="btn btn-success  ">Xem chi tiết</a>
-                            <button type="button" class="btn btn-danger delete-order">Xóa</button>
+                            <a href="{{URL::to('/detail-order/'.$ord->order_id)}}" class="btn btn-success  ">Detail</a>
+                            <button type="button" class="btn btn-danger delete-order">Delete</button>
                         </td>
                     </tr>
                     @endforeach

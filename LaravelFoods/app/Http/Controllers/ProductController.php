@@ -55,26 +55,26 @@ class ProductController extends Controller
             $get_image->move('uploads/product',$new_image);
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->insert($data);
-            Session::put('message','Thêm sản phẩm thành công!!!');
+            Session::put('message','Add product successful');
             return Redirect::to('all-product');
         }
         $data['product_image'] = '';
         DB::table('tbl_product')->insert($data);
-        Session::put('message','Thêm sản phẩm thành công!!!');
+        Session::put('message','Add product successful');
         return Redirect::to('all-product');
     }
 
     public function active_product($product_id){
         $this->AuthLogin();
         DB::table('tbl_product')->where('product_id',$product_id)->update(['product_status'=>1]);
-        Session::put('message','Kích hoạt sản phẩm thành công!!!');
+        Session::put('message','Activated');
         return Redirect::to('all-product');
     }
 
     public function unactive_product($product_id){
         $this->AuthLogin();
         DB::table('tbl_product')->where('product_id',$product_id)->update(['product_status'=>0]);
-        Session::put('message','Không kích hoạt sản phẩm thành công!!!');
+        Session::put('message','Unactivated');
         return Redirect::to('all-product');
     }
 
@@ -104,18 +104,18 @@ class ProductController extends Controller
             $get_image->move('uploads/product',$new_image);
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-            Session::put('message','Cập nhật sản phẩm thành công!!!'.$get_name_image);
+            Session::put('message','Update successful');
             return Redirect::to('all-product');
         }
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-        Session::put('message','Cập nhật sản phẩm công không ảnh!!!');
+            Session::put('message','Update successful');
         return Redirect::to('all-product');
     }
 
     public function delete_product($product_id){
         $this->AuthLogin();
         DB::table('tbl_product')->where('product_id',$product_id)->delete();
-        Session::put('message','Xóa sản phẩm thành công!!!');
+        Session::put('message','Delete successful');
         return Redirect::to('all-product');
     }
     //end admin function page

@@ -13,7 +13,7 @@ echo '<script>alert("'.$message.'");</script> ';
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Thêm sản phẩm
+                    Add Product
                 </header>
                 <div class="panel-body">
                     <div class="position-center">
@@ -21,11 +21,11 @@ echo '<script>alert("'.$message.'");</script> ';
                         @csrf   
                         <input type="hidden" name="token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <label for="exampleInputEmail1">Product Name</label>
+                            <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Product Name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Danh mục sản phẩm</label>
+                            <label for="exampleInputFile">Product Category</label>
                             <select name="product_category" class="form-control input-sm m-bot15">
                                 @foreach($category_product as $key => $cate)
                                 <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
@@ -33,33 +33,33 @@ echo '<script>alert("'.$message.'");</script> ';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Giá sản phẩm</label>
-                            <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <label for="exampleInputEmail1">Product Price</label>
+                            <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Product Name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                            <textarea style="resize: none;" rows="3" type="text" name="product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm"></textarea>
+                            <label for="exampleInputPassword1">Product Description</label>
+                            <textarea style="resize: none;" rows="3" type="text" name="product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả Product"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Khẩu phần</label>
+                            <label for="exampleInputPassword1">Ration</label>
                             <textarea style="resize: none;" rows="3" type="text" name="product_meal" class="form-control" id="exampleInputPassword1" placeholder="Khẩu phần"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Nội dung sản phẩm</label>
-                            <textarea style="resize: none;" rows="5" type="text" name="product_content" class="form-control" id="exampleInputPassword1" placeholder="Nội dung sản phẩm"></textarea>
+                            <label for="exampleInputPassword1">Product Detail</label>
+                            <textarea style="resize: none;" rows="5" type="text" name="product_content" class="form-control" id="exampleInputPassword1" placeholder="Nội dung Product"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Ảnh sản phẩm</label>
+                            <label for="exampleInputEmail1">Product Image</label>
                             <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Hiển thị</label>
+                            <label for="exampleInputFile">Show/Hide</label>
                             <select name="product_status" class="form-control input-sm m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
                             </select>
                         </div>
-                        <button type="submit" name="add_product" class="btn btn-info">Thêm sản phẩm</button>
+                        <button type="submit" name="add_product" class="btn btn-info">Add Product</button>
                     </form>
                     </div>
 

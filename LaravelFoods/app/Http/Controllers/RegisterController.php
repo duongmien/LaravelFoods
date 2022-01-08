@@ -26,7 +26,7 @@ class RegisterController extends Controller
 
         Session::put('user_id',$user_id);
         Session::put('name',$request->name);
-        Session::put('message','Đăng ký thành công!!!\nMời bạn đăng nhập');
+        Session::put('message','Registration successful!!!\nPlease login');
         return Redirect('/login');
     }
 }

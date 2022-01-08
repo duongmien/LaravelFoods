@@ -39,21 +39,21 @@ class CategoryProduct extends Controller
         $data['category_status'] = $request->category_product_status;
 
         DB::table('tbl_category_product')->insert($data);
-        Session::put('message','Thêm danh mục sản phẩm thành công!!!');
+        Session::put('message','Add product successful');
         return Redirect::to('/add-category-product');
     }
 
     public function active_category_product($category_product_id){
         $this->AuthLogin();
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>1]);
-        Session::put('message','Kích hoạt danh mục sản phẩm thành công!!!');
+        Session::put('message','Activated');
         return Redirect::to('all-category-product');
     }
 
     public function unactive_category_product($category_product_id){
         $this->AuthLogin();
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>0]);
-        Session::put('message','Không kích hoạt danh mục sản phẩm thành công!!!');
+        Session::put('message','Unactivated');
         return Redirect::to('all-category-product');
     }
 
@@ -71,14 +71,14 @@ class CategoryProduct extends Controller
         $data['category_desc'] = $request->category_product_desc;
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);
-        Session::put('message','Cập nhật danh mục sản phẩm thành công!!!');
+        Session::put('message','Update successful');
         return Redirect::to('/all-category-product');
     }
 
     public function delete_category_product($category_product_id){
         $this->AuthLogin();
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->delete();
-        Session::put('message','Xóa danh mục sản phẩm thành công!!!');
+        Session::put('message','Delete successful');
         return Redirect::to('/all-category-product');
     }
     //end admin function page

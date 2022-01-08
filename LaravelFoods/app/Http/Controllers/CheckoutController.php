@@ -77,7 +77,7 @@ class CheckoutController extends Controller
             }
             Session::put('cart',$cart);
         }
-        Session::put('message','Đặt hàng thành công!!\nĐơn hàng của bạn đang chờ người quản lý duyệt, vui lòng đợi trong giây lát.');
+        Session::put('message','Your order is successful\nYour order is waiting for the administrator to approve, please wait a moment.');
         return Redirect('/show-cart');
     }
     

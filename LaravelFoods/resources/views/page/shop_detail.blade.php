@@ -140,7 +140,7 @@
                 <div class="col-lg-12">
                     <ul class="nav nav-tabs product-tablist" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_1" type="button" role="tab">Description</button>
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_1" type="button" role="tab">Detail</button>
                         </li>
                         
                     </ul>

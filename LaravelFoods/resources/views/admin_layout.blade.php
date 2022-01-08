@@ -104,39 +104,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="{{URL::to('/all-order')}}">
                                 <i class="fa fa-book"></i>
-                                <span>Quản lý Đơn hàng</span>
+                                <span>Order Management</span>
                             </a>
                         </li>
 
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Danh mục sản phẩm</span>
+                                <span>Category</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
-                                <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('/add-category-product')}}">Add Category</a></li>
+                                <li><a href="{{URL::to('/all-category-product')}}">List Category</a></li>
                             </ul>
                         </li>
 
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Sản phẩm</span>
+                                <span>Product</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
-                                <li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
+                                <li><a href="{{URL::to('/add-product')}}">Add Product</a></li>
+                                <li><a href="{{URL::to('/all-product')}}">List Product</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Quản lý người dùng</span>
+                                <span>Manage User</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('/add-user')}}">Thêm người dùng</a></li>
-                                <li><a href="{{URL::to('/all-user')}}">Liệt kê người dùng</a></li>
+                                <li><a href="{{URL::to('/add-user')}}">Add User</a></li>
+                                <li><a href="{{URL::to('/all-user')}}">List User</a></li>
                             </ul>
                         </li>
                         
@@ -194,12 +194,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 e.preventDefault();
                 var thisDelete = $(this);
                 var order_id = $('.order_id').val();
-                alert(order_id)
                 swal({
-                    title: "Bạn có chắc chắn muốn xóa hóa đơn này không?",
-                    text: "Bạn sẽ xóa hóa đơn này!!",
+                    title: "Do you want to delete this bill?",
+                    text: "You will delete this bill !!!",
                     icon: "error",
-                    buttons:["Hủy", "Xóa"] ,
+                    buttons:["Cancle", "Delete"] ,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
@@ -227,12 +226,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 e.preventDefault();
                 var thisDelete = $(this);
                 var order_id = $(this).closest(".orderpage").find(".order_id").val();
-                alert(order_id)
                 swal({
-                    title: "Bạn có chắc chắn muốn xóa hóa đơn này không?",
-                    text: "Bạn sẽ xóa hóa đơn này!!",
+                    title: "Do you want to delete this bill?",
+                    text: "You will delete this bill !!!",
                     icon: "error",
-                    buttons:["Hủy", "Xóa"] ,
+                    buttons:["Cancle", "Delete"] ,
                     dangerMode: true,
                 })
                 .then((willDelete) => {

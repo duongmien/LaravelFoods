@@ -1,20 +1,20 @@
 @extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info" >
-        <a href="{{URL::to('/approves-order/'.Session::get('order_id'))}}" class="btn btn-success  ">Duyệt hóa đơn</a>
-        <button type="button" class="btn btn-danger delete-order-2">Xóa</button>
-        <a href="{{URL::to('/print-order/'.Session::get('order_id'))}}" target="_blank" class="btn btn-default ">In hóa đơn</a>
+        <a href="{{URL::to('/approves-order/'.Session::get('order_id'))}}" class="btn btn-success  ">Approve Order</a>
+        <button type="button" class="btn btn-danger delete-order-2">Delete</button>
+        <a href="{{URL::to('/print-order/'.Session::get('order_id'))}}" target="_blank" class="btn btn-default ">Print Order</a>
 
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
-            Thông tin đăng nhập
+            Login information
         </div>
         <div class="table-responsive ">
         <table class="table table-striped b-t b-light" >
                 <thead>
                     <tr>
-                        <th>Tên tài khoản</th>
-                        <th>Số điện thoại</th>
+                        <th>User Name</th>
+                        <th>Phone Number</th>
                         <th>Email</th>
                     </tr>
                 </thead>
@@ -38,20 +38,20 @@
     </div>
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
-            Thông tin vận chuyển
+            Shipping Information
         </div>
         <div class="table-responsive ">
             <table class="table table-striped b-t b-light" >
                 <thead>
                     <tr>
-                        <th>Tên người đặt</th>
-                        <th>Địa chỉ</th>
-                        <th>Số điện thoại</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
                         <th>Email</th>
-                        <th>Ghi chú</th>
-                        <th>Hình thức thanh toán</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày đặt</th>
+                        <th>Note</th>
+                        <th>Payment Method</th>
+                        <th>Status</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -90,18 +90,17 @@
     </div>
     <div class="panel panel-default orderLoad" >
         <div class="panel-heading">
-            Liệt kê chi tiết đơn hàng
+            Order Detail
         </div>
         <div class="table-responsive ">
             <table class="table table-striped b-t b-light" >
                 <thead>
                     <tr>
-                        <th>Ảnh sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Đơn giá</th>
-                        <th>Số lượng</th>
-                        <th>Tổng tiền</th>
-                        <th></th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -155,7 +154,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><p class="wh-tem-price subtotal">Tổng tiền</p></td>
+                        <td><p class="wh-tem-price subtotal">Total</p></td>
                         <td>
                             <p class="wh-tem-price subtotal">{{number_format($total).' '.'vnd'}}</p>
                         </td>

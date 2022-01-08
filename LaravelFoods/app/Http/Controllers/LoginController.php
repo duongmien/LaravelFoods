@@ -30,11 +30,11 @@ class LoginController extends Controller
             }else if($result->role_id==2){
                     Session::put('name',$result->name);
                     Session::put('user_id',$result->user_id);
-                    Session::put('message','Đăng nhập thành công!!!');
+                    Session::put('message','Login successful');
                     return Redirect::to('/home');
             }
         }else{
-            Session::put('message','Incorrect account or password!!!');
+            Session::put('message','Incorrect account or password');
             return Redirect::to('/login');
         }
     }

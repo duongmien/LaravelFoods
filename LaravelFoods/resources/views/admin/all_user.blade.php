@@ -12,7 +12,7 @@ echo '<script>alert("'.$message.'");</script> ';
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-        List users
+        User List
         </div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
@@ -48,8 +48,6 @@ echo '<script>alert("'.$message.'");</script> ';
                         <th>Full Name</th>
                         <th>Username</th>
                         <th>Sex</th>
-                        <th>Phone number</th>
-                        <th>Address</th>
                         <th>Password</th>
                         <th>Email</th>
                         <th>Role</th>
@@ -66,8 +64,6 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>{{$pro->name}}</td>
                         <td>{{$pro->username}}</td>
                         <td>{{$pro->user_sex}}</td>
-                        <td>{{$pro->user_tel}}</td>
-                        <td>{{$pro->user_address}}</td>
                         <td>{{$pro->password}}</td>
                         <td>{{$pro->user_email}}</td>
                         <td>

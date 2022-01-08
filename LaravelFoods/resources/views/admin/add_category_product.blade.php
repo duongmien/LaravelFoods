@@ -13,7 +13,7 @@ echo '<script>alert("'.$message.'");</script> ';
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Thêm danh mục sản phẩm
+                    Add Category
                 </header>
                 <div class="panel-body">
                     <div class="position-center">
@@ -21,21 +21,21 @@ echo '<script>alert("'.$message.'");</script> ';
                         @csrf   
                         <input type="hidden" name="token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên danh mục</label>
-                            <input type="text" name="category_product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
+                            <label for="exampleInputEmail1">Category Name</label>
+                            <input type="text" name="category_product_name" class="form-control" id="exampleInputEmail1" placeholder="Category Name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả danh mục</label>
-                            <textarea style="resize: none;" rows="5" type="text" name="category_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
+                            <label for="exampleInputPassword1">Category Description</label>
+                            <textarea style="resize: none;" rows="5" type="text" name="category_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Category Description"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Hiển thị</label>
+                            <label for="exampleInputFile">Show/Hide</label>
                             <select name="category_product_status" class="form-control input-sm m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
                             </select>
                         </div>
-                        <button type="submit" name="add_category_product" class="btn btn-info">Thêm danh mục</button>
+                        <button type="submit" name="add_category_product" class="btn btn-info">Add Category</button>
                     </form>
                     </div>
 
