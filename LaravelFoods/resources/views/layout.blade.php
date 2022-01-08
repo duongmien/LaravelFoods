@@ -65,9 +65,9 @@
                                 </div>
                                 <div id="menu">
                                     <ul class="main-menu list-style">
-                                        <li><a href="{{URL::to('home')}}">Home</a></li>
-                                        <li><a href="{{URL::to('shop')}}">Shop</a></li>
-                                        <li><a href="{{URL::to('contact')}}">Contact</a></li>
+                                        <li><a href="{{URL::to('home')}}" class="{{ request()->is('home') ? 'active' : ''}}">Home</a></li>
+                                        <li><a href="{{URL::to('shop')}}" class="{{ request()->is('shop') ? 'active' : ''}}">Shop</a></li>
+                                        <li><a href="{{URL::to('contact')}}" class="{{ request()->is('contact') ? 'active' : ''}}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
