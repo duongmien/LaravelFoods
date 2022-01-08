@@ -91,7 +91,7 @@
                             <div class="header-bottom-right totalQtyLoad">
                                 
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
-                                    <i class="las la-shopping-cart"></i>
+                                    <i class="las la-shopping-cart cart-button {{ request()->is('show-cart') ? 'active' : ''}}"></i>
                                     @php
                                         $countCart = 0;
                                     @endphp
@@ -176,7 +176,7 @@
                                         Quick Links
                                     </h4>
                                     <ul class="footer-menu list-style">
-                                        <li><a href="about.html">AboutUs</a></li>
+                                        <!-- <li><a href="about.html">AboutUs</a></li>
                                         <li><a href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/menus.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/menus.html%27">Menus</a>
                                         </li>
                                         <li><a href="shop-left-sidebar.html"> Shop</a>
@@ -186,7 +186,10 @@
                                         <li><a href="contact.html">Contact
                                                 Us</a></li>
                                         <li><a href="contact.html">Career</a>
-                                        </li>
+                                        </li> -->
+                                        <li><a href="{{URL::to('home')}}">Home</a></li>
+                                        <li><a href="{{URL::to('shop')}}">Shop</a></li>
+                                        <li><a href="{{URL::to('contact')}}">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="footer-widget">

@@ -14,10 +14,9 @@
                 <div class="col-xl-12">
                     <div class="breadcrumb-title">
                         <h2>Contact Us</h2>
+                        <h3 style="color: #ffffff">A new Moments of Friendship</h3>
                         <ul class="breadcrumb-menu list-style">
-                            <li><a href="index.html"
-                                    tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home
-                                </a></li>
+                            <li><a href="{{URL::to('home')}}" >Home </a></li>
                             <li>Contact Us</li>
                         </ul>
                     </div>

@@ -12,7 +12,8 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="breadcrumb-title">
-              <h2>Pick tasty, pick best.</h2>
+              <h2>Shop</h2>
+              <h3 style="color: #ffffff">Pick tasty, pick best</h3>
               <ul class="breadcrumb-menu list-style">
                 <li><a href="{{URL::to('home')}}">Home </a>
                 </li>

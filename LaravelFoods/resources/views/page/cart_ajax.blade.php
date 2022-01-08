@@ -22,8 +22,9 @@
                 <div class="col-xl-12">
                     <div class="breadcrumb-title">
                         <h2>Cart</h2>
+                        <h3 style="color: #ffffff">Satisfy your cravings</h3>
                         <ul class="breadcrumb-menu list-style">
-                            <li><a href="index.html" >Home </a></li>
+                            <li><a href="{{URL::to('home')}}" >Home </a></li>
                             <li>Cart</li>
                         </ul>
                     </div>
