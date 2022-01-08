@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/sweetalert.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}">
     <title>Laravel Food</title>
     <link rel="icon" type="png" href="{{asset('frontend/assets/img/favicon.png')}}">
 
@@ -86,7 +87,9 @@
                             </div>
                         </div>
                         <div class="col-xl-3 lg-none" id="totalQty">
+                            
                             <div class="header-bottom-right totalQtyLoad">
+                                
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart"></i>
                                     @php
@@ -100,17 +103,26 @@
                                     @endforeach
                                     @endif
                                     <span class="countCart">{{$countCart}}</span>
+                                </a>
                                     <?php
                                         use Illuminate\Support\Facades\Session;
                                         $user_id = Session::get('user_id');
                                         if($user_id != null){?>
-                                            <a href="{{URL::to('logout')}}" class="btn style1">Log out</a>
+                                            <div class="dropdownu user-dropdown">
+                                                <i id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; cursor: pointer" class="la-2x la la-user"></i>
+                                                <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                                                    <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item" href="{{URL::to('logout')}}">Log out</a></li>
+                                                </ul>
+                                            </div>
                                         <?php }else{?>
                                             <a href="{{URL::to('login')}}" class="btn style1">Sign in</a><?php
                                         }
                                     ?>
 
-                                </a>
+                                
                             </div>
                         </div>
                     </div>

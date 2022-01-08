@@ -1,0 +1,28 @@
+.user-dropdown .dropdown-menu{
+  border-radius: 0.6rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  left: 2rem;
+}
+.user-dropdown .dropdown-menu::before{
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  content: '';
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  
+  border-bottom: 8px solid #ffffff;
+}
+.user-dropdown .dropdown-menu .dropdown-item{
+  padding: 0.3rem 1.25rem;
+}
+.user-dropdown .dropdown-menu .dropdown-item:hover{
+  background-color: #ffffff;
+  color: #ffa323;
+}
+.user-dropdown .dropdown-menu .dropdown-divider{
+  margin: 0.25rem 0;
+}
