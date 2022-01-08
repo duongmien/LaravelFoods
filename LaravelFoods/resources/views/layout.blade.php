@@ -111,10 +111,10 @@
                                             <div class="dropdownu user-dropdown">
                                                 <i id="user-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" class="la-2x la la-user-cog"></i>
                                                 <ul class="dropdown-menu mt-2" aria-labelledby="user-dropdown-button">
-                                                    <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
-                                                    <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="la la-user-tag me-2"></i>My account</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="la la-pencil-alt me-2"></i>Change password</a></li>
                                                     <li><hr class="dropdown-divider"></li>
-                                                    <li><a class="dropdown-item" href="{{URL::to('logout')}}">Log out</a></li>
+                                                    <li><a class="dropdown-item" href="{{URL::to('logout')}}"><i class="la la-sign-out me-2"></i>Sign out</a></li>
                                                 </ul>
                                             </div>
                                         <?php }else{?>

@@ -314,7 +314,7 @@
     </div>
     <div class="container pos-rel">
         <div class="row">
-            <div class="col-xl-10 offset-xl-1">
+            <div class="col-xl-12">
                 <div class="contact-box-wrap">
                     <div class="contact-box-icon">
                         <i class="flaticon-phone-call"></i>
