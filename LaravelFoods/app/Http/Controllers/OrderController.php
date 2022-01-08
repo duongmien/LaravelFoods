@@ -49,6 +49,12 @@ class OrderController extends Controller
         // // print_r($listfood); 
         // // print_r($user); 
         // echo "</pre>";
+        Session::put('order_id',$order_id);
         return view('admin_layout')->with('admin.detail_order', $detail_order);
+    }
+    public function approves_order($order_id){
+        $this->AuthLogin();
+        DB::table('tbl_order')->where('order_id',$order_id)->update(['order_status'=>'Đã xét duyệt']);
+        return redirect::to('all-order');
     }
 }

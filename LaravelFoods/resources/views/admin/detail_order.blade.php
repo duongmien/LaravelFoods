@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info" >
-        <a href="" class="btn btn-success  ">Duyệt hóa đơn</a>
+        <a href="{{URL::to('/approves-order/'.Session::get('order_id'))}}" class="btn btn-success  ">Duyệt hóa đơn</a>
         <button type="button" class="btn btn-danger delete-order-2">Xóa</button>
         <a href="" class="btn btn-default ">In hóa đơn</a>
 
