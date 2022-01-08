@@ -146,156 +146,45 @@
     </div>
     <div class="container pos-rel">
         <div class="row justify-content-center">
+            @foreach($product as $key => $pro)
             <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-1.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Chicken
-                                In Teriyaki</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">22.35$ <span>30.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.9</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 30%
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="feature-card style1">
+        <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
+
+            <div class="feature-img">
+            <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"  alt="Image">
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-2.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Hotdog
-                                With Sausage</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">30.35$ <span>40.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.2</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 20%
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        </a>
+            <div class="feature-info">
+        <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
+                
+            <h3 class="feature-title"><a href="{{URL::to('/product-detail/'.$pro->product_id)}}">{{$pro->product_name}}</a>
+            </h3>
+            <div class="feature-meta">
+                <p class="feature-price"><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
+                
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-3.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Breakfast
-                                With Sweet</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">52.35$ <span>60.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.5</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 25%
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        </a>
+            <form>
+                @csrf
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" class="cart_product_id_{{$pro->product_id}}" value="{{$pro->product_id}}">
+                <input type="hidden" class="cart_product_name_{{$pro->product_id}}" value="{{$pro->product_name}}">
+                <input type="hidden" class="cart_product_image_{{$pro->product_id}}" value="{{$pro->product_image}}">
+                <input type="hidden" class="cart_product_price_{{$pro->product_id}}" value="{{$pro->product_price}}">
+                <input type="hidden" class="cart_product_qty_{{$pro->product_id}}" value="1">
+                <button type="button" class="btn style2 add-to-card" data-id_product="{{$pro->product_id}}">
+                    <span><i class="flaticon-bag"></i>Add To Cart</span>
+                </button>
+                </form>   
+            <!-- <a class="btn style2" href="show-cart"><i
+                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
+            -->
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-4.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Grilled
-                                Chicken Stick</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">25.35$ <span>30.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 30%
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            </a>
+        </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-5.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Chicken
-                                Barista platter</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">32.35$ <span>45.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.9</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 40%
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="feature-card style1">
-                    <div class="feature-img">
-                        <img src="{{('frontend/assets/img/feature-item-6.jpg')}}" alt="Image">
-                    </div>
-                    <div class="feature-info">
-                        <h3 class="feature-title"><a href="shop-details.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">French
-                                Fries Pack</a></h3>
-                        <div class="feature-meta">
-                            <p class="feature-price">15.35$ <span>20.50$</span></p>
-                            <div class="ratings">
-                                <i class="flaticon-star-1"></i>
-                                <span>4.4</span>
-                            </div>
-                        </div>
-                        <a class="btn style2" href="cart.html" tppabs="https://templates.hibootstrap.com/caban/default/cart.html"><i
-                                class="flaticon-shopping-bag-1"></i>Add To Cart</a>
-                        <div class="discount-tag">
-                            <img src="{{('frontend/assets/img/circle-1.png')}}" alt="Image">
-                            <p> <span>Save</span> 15%
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

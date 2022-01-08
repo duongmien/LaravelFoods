@@ -25,11 +25,11 @@
 <table>
     <tr>
         <th>Thời gian đặt</th>
-        <td>1</td>
+        <td>{{$order[0]->date}}</td>
     </tr>
     <tr>
         <th>Người duyệt</th>
-        <td>2</td>
+        <td>admin</td>
     </tr>
 </table>
 
