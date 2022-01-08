@@ -12,11 +12,12 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="breadcrumb-title">
-              <h2>Shop Left Sidebar</h2>
+              <h2>Shop</h2>
+              <h3 style="color: #ffffff">Pick tasty, pick best</h3>
               <ul class="breadcrumb-menu list-style">
-                <li><a href="index.html" tppabs="https://templates.hibootstrap.com/caban/default/index.html">Home </a>
+                <li><a href="{{URL::to('home')}}">Home </a>
                 </li>
-                <li>Shop Left Sidebar</li>
+                <li>Shop</li>
               </ul>
             </div>
           </div>

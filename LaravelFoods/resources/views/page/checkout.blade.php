@@ -61,7 +61,7 @@
                                     <div class="wh_qty">
                                         <div class="product-quantity style2">
                                             <div class="qtySelector">
-                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" disabled/>
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                     <div class="wh_qty">
                                         <div class="product-quantity style2">
                                             <div class="qtySelector">
-                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" />
+                                                <input type="text" class="qtyValue qtyinput" name="cart_quantity" value="{{$cart['product_qty']}}" disabled/>
                                             </div>
                                         </div>
                                     </div>

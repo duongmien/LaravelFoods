@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/sweetalert.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}">
     <title>Laravel Food</title>
     <link rel="icon" type="png" href="{{asset('frontend/assets/img/favicon.png')}}">
 
@@ -64,9 +65,9 @@
                                 </div>
                                 <div id="menu">
                                     <ul class="main-menu list-style">
-                                        <li><a href="{{URL::to('home')}}">Home</a></li>
-                                        <li><a href="{{URL::to('shop')}}">Shop</a></li>
-                                        <li><a href="{{URL::to('contact')}}">Contact</a></li>
+                                        <li><a href="{{URL::to('home')}}" class="{{ request()->is('home') ? 'active' : ''}}">Home</a></li>
+                                        <li><a href="{{URL::to('shop')}}" class="{{ request()->is('shop') ? 'active' : ''}}">Shop</a></li>
+                                        <li><a href="{{URL::to('contact')}}" class="{{ request()->is('contact') ? 'active' : ''}}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -86,9 +87,11 @@
                             </div>
                         </div>
                         <div class="col-xl-3 lg-none" id="totalQty">
+                            
                             <div class="header-bottom-right totalQtyLoad">
+                                
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
-                                    <i class="las la-shopping-cart"></i>
+                                    <i class="las la-shopping-cart cart-button {{ request()->is('show-cart') ? 'active' : ''}}"></i>
                                     @php
                                         $countCart = 0;
                                     @endphp
@@ -100,17 +103,26 @@
                                     @endforeach
                                     @endif
                                     <span class="countCart">{{$countCart}}</span>
+                                </a>
                                     <?php
                                         use Illuminate\Support\Facades\Session;
                                         $user_id = Session::get('user_id');
                                         if($user_id != null){?>
-                                            <a href="{{URL::to('logout')}}" class="btn style1">Log out</a>
+                                            <div class="dropdownu user-dropdown">
+                                                <i id="user-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" class="la-2x la la-user-cog"></i>
+                                                <ul class="dropdown-menu mt-2" aria-labelledby="user-dropdown-button">
+                                                    <li><a class="dropdown-item" href="#"><i class="la la-user-tag me-2"></i>My account</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="la la-pencil-alt me-2"></i>Change password</a></li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item" href="{{URL::to('logout')}}"><i class="la la-sign-out me-2"></i>Sign out</a></li>
+                                                </ul>
+                                            </div>
                                         <?php }else{?>
                                             <a href="{{URL::to('login')}}" class="btn style1">Sign in</a><?php
                                         }
                                     ?>
 
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -164,7 +176,7 @@
                                         Quick Links
                                     </h4>
                                     <ul class="footer-menu list-style">
-                                        <li><a href="about.html">AboutUs</a></li>
+                                        <!-- <li><a href="about.html">AboutUs</a></li>
                                         <li><a href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/menus.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/menus.html%27">Menus</a>
                                         </li>
                                         <li><a href="shop-left-sidebar.html"> Shop</a>
@@ -174,7 +186,10 @@
                                         <li><a href="contact.html">Contact
                                                 Us</a></li>
                                         <li><a href="contact.html">Career</a>
-                                        </li>
+                                        </li> -->
+                                        <li><a href="{{URL::to('home')}}">Home</a></li>
+                                        <li><a href="{{URL::to('shop')}}">Shop</a></li>
+                                        <li><a href="{{URL::to('contact')}}">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="footer-widget">
