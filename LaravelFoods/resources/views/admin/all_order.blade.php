@@ -14,17 +14,6 @@ echo '<script>alert("'.$message.'");</script> ';
         <div class="panel-heading">
             Danh sách đơn hàng
         </div>
-        <div class="row w3-res-tb">
-            
-            <div class="col-sm-3">
-                <div class="input-group">
-                    <input type="text" class="input-sm form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-sm btn-default" type="button">Go!</button>
-                    </span>
-                </div>
-            </div>
-        </div>
         <div class="table-responsive ">
             <table class="table table-striped b-t b-light" >
                 <thead>
@@ -34,6 +23,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <th>Tổng tiền</th>
                         <th>Địa chỉ</th>
                         <th>SĐT</th>
+                        <th>Ngày đặt</th>
                         <th>Trạng thái</th>
                         <th></th>
                     </tr>
@@ -47,6 +37,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>{{$ord->order_total}}</td>
                         <td>{{$ord->shipping_address}}</td>
                         <td>{{$ord->shipping_phone}}</td>
+                        <td>{{$ord->date}}</td>
 
                         <td>{{$ord->order_status}}</td>
                         <td>

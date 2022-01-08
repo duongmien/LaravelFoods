@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class TblOrder extends Migration
@@ -20,6 +21,7 @@ class TblOrder extends Migration
             $table->integer('payment_id');
             $table->string('order_total');
             $table->string('order_status');
+            $table->string('date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });
     }

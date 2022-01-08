@@ -41,7 +41,7 @@ class CheckoutController extends Controller
         $order_data['shipping_id'] = $shipping_id;
         $order_data['payment_id'] = $payment_id;
         $order_data['order_total'] = $total;
-        $order_data['order_status'] = 'Pending order';
+        $order_data['order_status'] = 'Chưa xét duyệt';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
 
         //Insert Order details

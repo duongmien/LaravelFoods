@@ -2127,9 +2127,9 @@ p.hd-title {
 }
 
 .btn-default {
-    color: #58666e !important;
+    color: #ffffff !important;
     background-color: #fcfdfd;
-    background-color: #fff;
+    background-color: rgb(134, 156, 255);
     border-color: #dee5e7;
     border-bottom-color: #d8e1e3;
     -webkit-box-shadow: 0 1px 1px rgba(90, 90, 90, 0.1);
