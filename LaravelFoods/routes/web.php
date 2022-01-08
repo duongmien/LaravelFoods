@@ -18,6 +18,7 @@ Route::get('/','HomeController@index');
 Route::get('/shop','ShopController@index');
 Route::get('/home','HomeController@index');
 Route::get('/contact','ContactController@index');
+Route::post('/search','ShopController@search');
 
 //Backend
 Route::get('/login','LoginController@index');

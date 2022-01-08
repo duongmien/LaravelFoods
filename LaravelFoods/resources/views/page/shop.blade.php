@@ -32,10 +32,14 @@
             <div class="sidebar">
               <div class="sidebar-widget search-box">
                 <h4>Search </h4>
+                <form action="{{URL::to('/search')}}" method="POST">
+                @csrf
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                  <input type="search" placeholder="Search">
+                  <input type="search" name="keywords" placeholder="Search">
                   <button type="submit"> <i class="flaticon-search"></i></button>
                 </div>
+                </form>
               </div>
               <div class="sidebar-widget categories">
                 <h4>Category</h4>
