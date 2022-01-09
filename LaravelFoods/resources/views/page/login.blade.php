@@ -35,9 +35,9 @@
     
 
     <section class="login-wrap pt-100 pb-100">
-        <img src="{{('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"
+        <img src="{{URL::to('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"
             alt="Image" class="login-shape-1">
-        <img src="{{('frontend/assets/img/shape-2.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-2.png"
+        <img src="{{URL::to('frontend/assets/img/shape-2.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-2.png"
             alt="Image" class="login-shape-2">
         <div class="container">
             <div class="row">
