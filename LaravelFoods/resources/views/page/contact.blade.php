@@ -118,9 +118,9 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <div class="contact-btn">
-                        <a href="tel:880123654223" class="btn style1">Make A Call<i
+                        <a href="" class="btn style1">Make A Call<i
                                 class="flaticon-right-arrow-2"></i></a>
-                        <a href="contact.html"
+                        <a href=""
                             tppabs="https://templates.hibootstrap.com/caban/default/contact.html"
                             class="btn style3">Contact Us<i class="flaticon-right-arrow-2"></i></a>
                     </div>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="contact-info">
                             <h4>Our Location</h4>
-                            <p>121 King St, Jericho, NY 12</p>
+                            <p>48 Cao Thang, Thanh Binh, Hai Chau, Da Nang</p>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                             <a href="javascript:if(confirm(%27https://templates.hibootstrap.com/cdn-cgi/l/email-protection  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/cdn-cgi/l/email-protection#026a676e6e6d42616360636c2c616d6f%27"
                                 tppabs="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#026a676e6e6d42616360636c2c616d6f"><span
                                     class="__cf_email__"
-                                    data-cfemail="2149444d4d4e61424043404f0f424e4c">[email&#160;protected]</span></a>
+                                    data-cfemail="2149444d4d4e61424043404f0f424e4c">laravelfood@gmail.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="contact-info">
                             <h4>Contact Us</h4>
-                            <a href="tel:4434567890">+44 345 678 90</a>
+                            <a>0987456123</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-30 text-center">
-                    <a href="contact.html" tppabs="https://templates.hibootstrap.com/caban/default/contact.html"
+                    <a target="_blank" href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+S%C6%B0+Ph%E1%BA%A1m+K%E1%BB%B9+thu%E1%BA%ADt+-+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+%C4%90%C3%A0+N%E1%BA%B5ng/@16.0782199,108.2135526,17.75z/data=!4m5!3m4!1s0x3142184792140755:0xd4058cb259787dac!8m2!3d16.0773428!4d108.2134243?hl=vi-VN" tppabs="https://templates.hibootstrap.com/caban/default/contact.html"
                         class="btn style1">Explore Map <i class="flaticon-right-arrow-2"></i>
                     </a>
                 </div>
