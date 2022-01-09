@@ -56,6 +56,8 @@ Route::get('/add-user','UserController@add_user');
 Route::get('/all-user','UserController@all_user');
 Route::get('/edit-user/{user_id}','UserController@edit_user');
 Route::get('/delete-user/{user_id}','UserController@delete_user');
+Route::get('/change-password/{user_id}','UserController@change_password');
+Route::post('/check-change','UserController@check_change');
 
 Route::get('/active-user/{user_id}','UserController@active_user');
 Route::get('/unactive-user/{user_id}','UserController@unactive_user');

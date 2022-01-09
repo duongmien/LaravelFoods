@@ -81,9 +81,30 @@ class UserController extends Controller
 
     public function delete_user($user_id){
         $this->AuthLogin();
-
         DB::table('tbl_user')->where('user_id',$user_id)->delete();
         Session::put('message','Delete User Successfully!');
         return Redirect::to('/all-user');
+    }
+    public function change_password($user_id){
+        DB::table('tbl_user')->where('user_id',$user_id)->get();
+        return view('page.change_password')->with('user_id',$user_id);
+    }
+    public function check_change(Request $request){
+        $user_id=$request->user_id;
+        $old=$request->old_password;
+        $new=$request->new_password;
+        $cfm=$request->cfm_password;
+        $user = DB::table('tbl_user')->where('user_id',$user_id)->first();
+        if($old!=$user->password){
+            Session::put('message','Incorect Password!');
+            return view('page.change_password');
+        }else if($new != $cfm){
+            Session::put('message','Incorect Password Confirm!');
+            return view('page.change_password');
+        }else{
+            DB::table('tbl_user')->where('user_id',$user_id)->update(['password'=>$new]);
+            Session::put('message','Change Password Successfully!');
+            return Redirect::to('/home');
+        }
     }
 }
