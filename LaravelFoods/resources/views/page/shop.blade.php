@@ -1,6 +1,19 @@
 @extends('layout')
 @section('content')
 
+<?php
+use Illuminate\Support\Facades\Session;
+$message = Session::get('message');
+$m1 = Session::get('m1');
+$m2 = Session::get('m2');
+$m3 = Session::get('m3');
+$m4 = Session::get('m4');
+$m5 = Session::get('m5');
+if ($message) {
+    echo '<script>alert("' . $message . '");</script> ';
+    Session::put('message', null);
+}
+?>
   <div class="content-wrapper">
     <div class="breadcrumb-wrap bg-f br-1">
       <div class="overlay bg-black op-9"></div>
@@ -58,7 +71,7 @@
                   </ul>
                 </div>
               </div>
-              <!-- <div class="sidebar-widget new-product">
+              <div class="sidebar-widget new-product">
                 <h4>New Arrivals</h4>
                 <div class="new-product-wrap">
                   <div class="new-product-item">
@@ -112,68 +125,29 @@
               </div>
               <div class="sidebar-widget price-range-widget">
                 <h4>Price Filter</h4>
+                <form action="{{URL::to('/price-filter')}}" method="POST">
+                  @csrf  
+                  <input type="hidden" name="token" value="{{ csrf_token() }}">
                 <div class="checkbox-item-wrap">
                   <div class="checkbox-item d-flex justify-content-between align-items-center">
-                    <div class="checkbox style2">
-                      <input type="checkbox" id="check_1">
-                      <label for="check_1">$100-$120</label>
+                  <div class="checkbox style2">
+                        <input type="radio" id="m1" name="price" value="m1">
+                        <label for="m1">0đ - 100.000đ</label><span>({{$m1}})</span><br>
+                        <input type="radio" id="m2" name="price" value="m2">
+                        <label for="m2">100.000đ - 150.000đ</label><span>({{$m2}})</span><br>
+                        <input type="radio" id="m3" name="price" value="m3">
+                        <label for="m3">150.000đ - 200.000đ</label><span>({{$m3}})</span><br>
+                        <input type="radio" id="m4" name="price" value="m4">
+                        <label for="m4">200.000đ - 500.000đ</label><span>({{$m4}})</span><br>
+                        <input type="radio" id="m5" name="price" value="m5">
+                        <label for="m5">&gt; 500.000đ</label><span>({{$m5}})</span><br>
+
                     </div>
-                    <span>(11)</span>
-                  </div>
-                  <div class="checkbox-item d-flex justify-content-between align-items-center">
-                    <div class="checkbox style2">
-                      <input type="checkbox" id="check_2">
-                      <label for="check_2">$120-$140</label>
-                    </div>
-                    <span>(6)</span>
-                  </div>
-                  <div class="checkbox-item d-flex justify-content-between align-items-center">
-                    <div class="checkbox style2">
-                      <input type="checkbox" id="check_3">
-                      <label for="check_3">$140-$180</label>
-                    </div>
-                    <span>(15)</span>
-                  </div>
-                  <div class="checkbox-item d-flex justify-content-between align-items-center">
-                    <div class="checkbox style2">
-                      <input type="checkbox" id="check_4">
-                      <label for="check_4">$180-$240</label>
-                    </div>
-                    <span>(12)</span>
-                  </div>
-                  <div class="checkbox-item d-flex justify-content-between align-items-center">
-                    <div class="checkbox style2">
-                      <input type="checkbox" id="check_5">
-                      <label for="check_5">$240-$300</label>
-                    </div>
-                    <span>(9)</span>
                   </div>
                 </div>
+                <button type="submit" class="btn style1" style="float: right;">Apply</button>
+                </form>
               </div>
-              <div class="sidebar-widget tags">
-                <h4>Popular Tags </h4>
-                <div class="tag-list">
-                  <ul class="list-style">
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Food</a></li>
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Restaurant</a>
-                    </li>
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Health</a>
-                    </li>
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Review </a>
-                    </li>
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Fastfood</a>
-                    </li>
-                    <li><a href="blog-left-sidebar.html"
-                        tppabs="https://templates.hibootstrap.com/caban/default/blog-left-sidebar.html">Business</a>
-                    </li>
-                  </ul>
-                </div>
-              </div> -->
             </div>
           </div>
           <div class="col-xl-8 col-lg-12 order-xl-2 order-lg-1 order-md-1 order-1">
