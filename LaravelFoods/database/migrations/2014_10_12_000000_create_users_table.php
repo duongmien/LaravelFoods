@@ -44,7 +44,7 @@ class CreateUsersTable extends Migration
             'name' =>'user',
             'username' =>'user',
             'password' =>'user',
-            'role_id' =>'1',
+            'role_id' =>'2',
             'user_sex' =>'Nam',
             'user_tel' =>'0192929292',
             'user_address' =>'user',
