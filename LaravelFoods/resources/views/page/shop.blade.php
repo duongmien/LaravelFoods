@@ -74,53 +74,19 @@ if ($message) {
               <div class="sidebar-widget new-product">
                 <h4>New Arrivals</h4>
                 <div class="new-product-wrap">
+                @foreach($new_product as $key => $pro)
                   <div class="new-product-item">
-                    <a href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/car-details.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/car-details.html%27"
-                      tppabs="https://templates.hibootstrap.com/caban/default/car-details.html" class="new-product-img">
-                      <img src="{{('frontend/assets/img/post-thumb-1.jpg')}}"
-                        tppabs="https://templates.hibootstrap.com/caban/default/assets/img/blog/post-thumb-1.jpg"
-                        alt="Iamge">
+                    <a href="{{URL::to('/product-detail/'.$pro->product_id)}}" class="new-product-img">
+                      <img src="{{URL::to('uploads/product/'.$pro->product_image)}}" alt="Image">
                     </a>
                     <div class="new-product-info">
-                      <h6><a href="shop-details.html"
-                          tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Pasta Barista</a>
-                      </h6>
-                      <div class="price">
-                        <span>$22</span>
+                      <h6><a href="{{URL::to('/product-detail/'.$pro->product_id)}}">{{$pro->product_name}}</a></h6>
+                      <div class="price"><span><?php echo $pro->product_price/1000?>.000 vnd</span>
+                        <span class="discount"><?php echo $pro->product_price/1000+30?>.000 vnd</span>
                       </div>
                     </div>
                   </div>
-                  <div class="new-product-item">
-                    <a href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/car-details.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/car-details.html%27"
-                      tppabs="https://templates.hibootstrap.com/caban/default/car-details.html" class="new-product-img">
-                      <img src="{{('frontend/assets/img/post-thumb-3.jpg')}}"
-                        tppabs="https://templates.hibootstrap.com/caban/default/assets/img/blog/post-thumb-3.jpg"
-                        alt="Iamge">
-                    </a>
-                    <div class="new-product-info">
-                      <h6><a href="shop-details.html"
-                          tppabs="https://templates.hibootstrap.com/caban/default/shop-details.html">Chicken
-                          Sandwitch</a></h6>
-                      <div class="price"><span>$32</span>
-                        <span class="discount">$35</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="new-product-item">
-                    <a href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/car-details.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/car-details.html%27"
-                      tppabs="https://templates.hibootstrap.com/caban/default/car-details.html" class="new-product-img">
-                      <img src="{{('frontend/assets/img/post-thumb-2.jpg')}}"
-                        tppabs="https://templates.hibootstrap.com/caban/default/assets/img/blog/post-thumb-2.jpg"
-                        alt="Iamge">
-                    </a>
-                    <div class="new-product-info">
-                      <h6><a
-                          href="javascript:if(confirm(%27https://templates.hibootstrap.com/caban/default/car-details.html  \n\nThis file was not retrieved by Teleport Ultra, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27https://templates.hibootstrap.com/caban/default/car-details.html%27"
-                          tppabs="https://templates.hibootstrap.com/caban/default/car-details.html">Strawberry
-                          Salsa</a></h6>
-                      <div class="price"><span>$98</span></div>
-                    </div>
-                  </div>
+                  @endforeach
                 </div>
               </div>
               <div class="sidebar-widget price-range-widget">

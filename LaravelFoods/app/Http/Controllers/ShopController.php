@@ -15,6 +15,7 @@ class ShopController extends Controller
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
 
         $all_product = DB::table('tbl_product')->where('product_status','1')->orderBy('product_sold','desc')->get();
+        $new_product = DB::table('tbl_product')->where('product_status','1')->orderBy('date','desc')->limit(3)->get();
 
         $m1 = DB::table('tbl_product')->where('product_status','1')->where('product_price','<',100000)->count();
         $m2 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',100000)->where('product_price','<',150000)->count();
@@ -26,7 +27,7 @@ class ShopController extends Controller
         Session::put('m3',$m3);
         Session::put('m4',$m4);
         Session::put('m5',$m5);
-        return view('page.shop_content')->with('category',$category_product)->with('product',$all_product);
+        return view('page.shop_content')->with('category',$category_product)->with('product',$all_product)->with('new_product',$new_product);
     }
     public function search(Request $request)
     {
@@ -42,9 +43,10 @@ class ShopController extends Controller
         Session::put('m5',$m5);
         $key = $request->keywords;
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
+        $new_product = DB::table('tbl_product')->where('product_status','1')->orderBy('date','desc')->limit(3)->get();
         $search_product = DB::table('tbl_product')->where('product_status','1')->where('product_name','like','%'.$key.'%')->orWhere('product_content','like','%'.$key.'%')->orWhere('product_desc','like','%'.$key.'%')->orderBy('product_sold','desc')->get();
 
-        return view('page.search')->with('category',$category_product)->with('product',$search_product);
+        return view('page.search')->with('category',$category_product)->with('product',$search_product)->with('new_product',$new_product);
     }
     public function price_filter(Request $request)
     {
@@ -59,6 +61,7 @@ class ShopController extends Controller
         Session::put('m4',$m4);
         Session::put('m5',$m5);
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
+        $new_product = DB::table('tbl_product')->where('product_status','1')->orderBy('date','desc')->limit(3)->get();
         $re = DB::table('tbl_product')->where('product_status','1')->orderBy('product_sold','desc')->get();
         $m = $request->price;
         switch ($m) {
@@ -78,7 +81,7 @@ class ShopController extends Controller
                 $re = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',500000)->get();
                 break;
           }
-        return view('page.search')->with('category',$category_product)->with('product',$re);
+        return view('page.search')->with('category',$category_product)->with('product',$re)->with('new_product',$new_product);
     }
     public function index_2(){
         return view('page.shop_content');
