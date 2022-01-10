@@ -129,13 +129,13 @@ class ProductController extends Controller
     }
     public function product_detail($product_id){
         $detail_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->where('tbl_product.product_id',$product_id)->get();
+        $image_product = DB::table('tbl_image')->where('tbl_image.product_id',$product_id)->get();
         foreach($detail_product as $key => $value){
             $category_id = $value->category_id;
-
         }
         
         $recoment_product = DB::table('tbl_product')->where('product_status','1')->where('category_id',$category_id)->orderBy('product_id','desc')->orderBy('product_sold','desc')->limit(9)->get();
 
-        return view('page.shop_detail')->with('recoment_product',$recoment_product)->with('product_detail',$detail_product);
+        return view('page.shop_detail')->with('recoment_product',$recoment_product)->with('product_detail',$detail_product)->with('image_product',$image_product);
     }
 }
