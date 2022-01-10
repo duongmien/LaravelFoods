@@ -30,6 +30,16 @@ class ShopController extends Controller
     }
     public function search(Request $request)
     {
+        $m1 = DB::table('tbl_product')->where('product_status','1')->where('product_price','<',100000)->count();
+        $m2 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',100000)->where('product_price','<',150000)->count();
+        $m3 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',150000)->where('product_price','<',200000)->count();
+        $m4 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',200000)->where('product_price','<',500000)->count();
+        $m5 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',500000)->count();
+        Session::put('m1',$m1);
+        Session::put('m2',$m2);
+        Session::put('m3',$m3);
+        Session::put('m4',$m4);
+        Session::put('m5',$m5);
         $key = $request->keywords;
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
         $search_product = DB::table('tbl_product')->where('product_status','1')->where('product_name','like','%'.$key.'%')->orWhere('product_content','like','%'.$key.'%')->orWhere('product_desc','like','%'.$key.'%')->orderBy('product_sold','desc')->get();
@@ -38,6 +48,16 @@ class ShopController extends Controller
     }
     public function price_filter(Request $request)
     {
+        $m1 = DB::table('tbl_product')->where('product_status','1')->where('product_price','<',100000)->count();
+        $m2 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',100000)->where('product_price','<',150000)->count();
+        $m3 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',150000)->where('product_price','<',200000)->count();
+        $m4 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',200000)->where('product_price','<',500000)->count();
+        $m5 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',500000)->count();
+        Session::put('m1',$m1);
+        Session::put('m2',$m2);
+        Session::put('m3',$m3);
+        Session::put('m4',$m4);
+        Session::put('m5',$m5);
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
         $re = DB::table('tbl_product')->where('product_status','1')->orderBy('product_sold','desc')->get();
         $m = $request->price;
