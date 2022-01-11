@@ -5538,7 +5538,12 @@ article h6 {
     width: 100%;
     padding: 10px 15px
 }
-
+select{
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    color: red;
+  }
 .login-form .login-body .btn {
     border-radius: 4px;
     display: block;

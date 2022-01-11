@@ -97,5 +97,9 @@ Route::get('/delete-order','OrderController@delete_order');
 Route::get('/approves-order/{order_id}','OrderController@approves_order');
 Route::get('/print-order/{checkout_code}','OrderController@print_order');
 
+//edit info
+Route::get('/edit-info/{user_id}','UserController@edit_info');
+
+
 
  

@@ -107,4 +107,7 @@ class UserController extends Controller
             return Redirect::to('/home');
         }
     }
+    public function edit_info($user_id){
+        return view('page.edit_info');
+    }
 }
