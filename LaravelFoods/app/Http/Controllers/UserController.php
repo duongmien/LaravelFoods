@@ -120,4 +120,17 @@ class UserController extends Controller
         $user = DB::table('tbl_user')->where('user_id',$user_id)->first(); 
         return view('page.edit_info')->with('user',$user);
     }
+    public function update_info(Request $request ,$user_id){
+        $this->AuthLogin2();
+
+        $data = array();
+        $data['name']= $request->fullname;
+        $data['user_sex']=$request->sex;
+        $data['user_tel']=$request->telephone;
+        $data['user_address']=$request->address;
+        $data['user_email']=$request->email;
+        DB::table('tbl_user')->where('user_id',$user_id)->update($data);
+        Session::put('message','Update info Successfully!');
+        return Redirect::to('/home');
+    }
 }

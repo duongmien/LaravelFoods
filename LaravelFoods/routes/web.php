@@ -99,6 +99,7 @@ Route::get('/print-order/{checkout_code}','OrderController@print_order');
 
 //edit info
 Route::get('/edit-info/{user_id}','UserController@edit_info');
+Route::post('/update-info/{user_id}','UserController@update_info');
 
 
 

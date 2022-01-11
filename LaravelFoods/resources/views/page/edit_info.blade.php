@@ -1,5 +1,16 @@
 @extends('layout')
 @section('content')
+<?php
+
+use Illuminate\Support\Facades\Session;
+
+$message = Session::get('message');
+if ($message) {
+
+    echo '<script>alert("' . $message . '");</script> ';
+    Session::put('message', null);
+}
+?>
 <div class="content-wrapper">
 
     <div class="breadcrumb-wrap bg-f br-1">
@@ -31,11 +42,11 @@
                     <div class="login-form">
                         <div class="login-body">
                         
-                            <form class="form-wrap" action="{{URL::to('/check-login')}}"  method="post">
-                            @csrf   
-                            <input type="hidden" name="token" value="{{ csrf_token() }}">
-                                <div class="row">
-                                    <div class="col-lg-12">
+                            <form role="form" action="{{URL::to('/update-info/'.$user->user_id)}}" method="POST">
+                                @csrf
+                                <input type="hidden" name="token" value="{{ csrf_token() }}">
+                                    <div class="row">
+                                   <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="fullname">Fullname</label>
                                             <input id="fullname" name="fullname" type="text"
@@ -46,19 +57,54 @@
                                         <div class="form-group">
                                             <label for="email">Sex</label>
                                         <div class="select-method">
+                                            @if($user->user_sex=='Male')
                                             <div>
-                                                <input type="radio" id="sex1" value="male" checked name="sex">
+                                                <input type="radio" id="sex1" value="Male" checked name="sex">
                                                 <label for="sex1">Male</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="sex2" value="female" name="sex">
+                                                <input type="radio" id="sex2" value="Female" name="sex">
                                                 <label for="sex2">Female</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="sex3" value="other" name="sex">
+                                                <input type="radio" id="sex3" value="Other" name="sex">
                                                 <label for="sex3">Other</label>
                                             </div>
+                                            @elseif($user->user_sex=='Female')
+                                            <div>
+                                                <input type="radio" id="sex1" value="Male"  name="sex">
+                                                <label for="sex1">Male</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="sex2" value="Female" checked name="sex">
+                                                <label for="sex2">Female</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="sex3" value="Other" name="sex">
+                                                <label for="sex3">Other</label>
+                                            </div>
+                                            @else
+                                            <div>
+                                                <input type="radio" id="sex1" value="Male"  name="sex">
+                                                <label for="sex1">Male</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="sex2" value="Female" name="sex">
+                                                <label for="sex2">Female</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="sex3" value="Other" checked name="sex">
+                                                <label for="sex3">Other</label>
+                                            </div>
+                                            @endif
                                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="telephone">Telephone</label>
+                                            <input id="telephone" name="telephone" type="number"
+                                                placeholder="Telephone" value="{{$user->user_tel}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
