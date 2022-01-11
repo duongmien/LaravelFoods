@@ -37,16 +37,14 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="email">Name</label>
-                                            <input id="email" name="username" type="text"
-                                                placeholder="Username" required="">
+                                            <label for="fullname">Fullname</label>
+                                            <input id="fullname" name="fullname" type="text"
+                                                placeholder="Fullname" value="{{$user->name}}" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="email">Name</label>
-                                        
-
+                                            <label for="email">Sex</label>
                                         <div class="select-method">
                                             <div>
                                                 <input type="radio" id="sex1" value="male" checked name="sex">
@@ -65,16 +63,16 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="email">Address</label>
-                                            <input id="email" name="username" type="text"
-                                                placeholder="Username" required="">
+                                            <label for="address">Address</label>
+                                            <input id="address" name="address" type="text"
+                                                placeholder="Address" value="{{$user->user_address}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input id="email" name="username" type="text"
-                                                placeholder="Username" required="">
+                                            <input id="email" name="email" type="text"
+                                                placeholder="Email" value="{{$user->user_email}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

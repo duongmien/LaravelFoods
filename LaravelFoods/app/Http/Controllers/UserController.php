@@ -20,7 +20,15 @@ class UserController extends Controller
             return Redirect::to('login')->send();
         }
     }
-
+    public function AuthLogin2()
+    {
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('home');
+        }else{
+            return Redirect::to('login')->send();
+        }
+    }
     public function add_user(){
         $this->AuthLogin();
 
@@ -108,6 +116,8 @@ class UserController extends Controller
         }
     }
     public function edit_info($user_id){
-        return view('page.edit_info');
+        $this->AuthLogin2();
+        $user = DB::table('tbl_user')->where('user_id',$user_id)->first(); 
+        return view('page.edit_info')->with('user',$user);
     }
 }
