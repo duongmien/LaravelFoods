@@ -120,11 +120,23 @@ class ProductController extends Controller
     }
     //end admin function page
     public function show_product_category($category_id){
+        $m1 = DB::table('tbl_product')->where('product_status','1')->where('product_price','<',100000)->count();
+        $m2 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',100000)->where('product_price','<',150000)->count();
+        $m3 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',150000)->where('product_price','<',200000)->count();
+        $m4 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',200000)->where('product_price','<',500000)->count();
+        $m5 = DB::table('tbl_product')->where('product_status','1')->where('product_price','>',500000)->count();
+        Session::put('m1',$m1);
+        Session::put('m2',$m2);
+        Session::put('m3',$m3);
+        Session::put('m4',$m4);
+        Session::put('m5',$m5);
+        $new_product = DB::table('tbl_product')->where('product_status','1')->orderBy('date','desc')->limit(3)->get();
+          
         $category_product = DB::table('tbl_category_product')->where('category_status','1')->orderBy('category_id','desc')->get();
         
         $all_category_product = DB::table('tbl_product')->where('category_id',$category_id)->get();
 
-        return view('page.shop_content')->with('category',$category_product)->with('product',$all_category_product);
+        return view('page.shop_content')->with('new_product',$new_product)->with('category',$category_product)->with('product',$all_category_product);
 
     }
     public function product_detail($product_id){

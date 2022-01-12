@@ -32,6 +32,9 @@
                 <div class="col-lg-6">
                     <div class="swiper-container mySwiper2 single-product-slider">
                         <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"/>
+                            </div>
                             @foreach($image_product as $key => $img)
                             <div class="swiper-slide">
                                 <img src="{{URL::to('/uploads/product/'.$img->image_name)}}"/>
@@ -41,6 +44,9 @@
                     </div>
                     <div thumbsSlider="" class="swiper-container mySwiper single-product-thumbs">
                         <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"/>
+                            </div>
                             @foreach($image_product as $key => $img)
                             <div class="swiper-slide">
                                 <img src="{{URL::to('/uploads/product/'.$img->image_name)}}"/>
