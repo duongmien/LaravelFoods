@@ -2,9 +2,10 @@
 @section('admin_content')
 <div class="market-updates">
                     <div class="col-md-3 market-update-gd">
+                        <a href="###">
                         <div class="market-update-block clr-block-2">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-eye"> </i>
+                                <i class="fa fa-dropbox"> </i>
                             </div>
                             <div class="col-md-8 market-update-left">
                                 <h4>Product</h4>
@@ -13,11 +14,13 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-3 market-update-gd">
+                        <a href="###">
                         <div class="market-update-block clr-block-1">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-users"></i>
+                                <i class="fa fa-usd"></i>
                             </div>
                             <div class="col-md-8 market-update-left">
                                 <h4>Sold</h4>
@@ -26,11 +29,13 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-3 market-update-gd">
+                        <a href="###">
                         <div class="market-update-block clr-block-3">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-usd"></i>
+                                <i class="fa fa-users"></i>
                             </div>
                             <div class="col-md-8 market-update-left">
                                 <h4>User</h4>
@@ -39,8 +44,10 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-3 market-update-gd">
+                        <a href="###">
                         <div class="market-update-block clr-block-4">
                             <div class="col-md-4 market-update-right">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -52,6 +59,7 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
+                        </a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
