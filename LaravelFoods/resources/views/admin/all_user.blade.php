@@ -39,11 +39,7 @@ echo '<script>alert("'.$message.'");</script> ';
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
+                        
                         <th>No</th>
                         <th>Full Name</th>
                         <th>Username</th>
@@ -58,8 +54,7 @@ echo '<script>alert("'.$message.'");</script> ';
                     <?php $i=1; ?> 
                     @foreach($all_user as $key => $pro)
                     <tr>
-                        <td><label class="i-checks m-b-none"><input type="checkbox"
-                                    name="post[]"><i></i></label></td>
+                        
                         <td><?php echo $i++; ?></td>
                         <td>{{$pro->name}}</td>
                         <td>{{$pro->username}}</td>

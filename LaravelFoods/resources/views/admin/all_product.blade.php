@@ -29,11 +29,7 @@ echo '<script>alert("'.$message.'");</script> ';
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
+                        
                         <th>No</th>
                         <th>Product Name</th>
                         <th>Price</th>
@@ -48,8 +44,7 @@ echo '<script>alert("'.$message.'");</script> ';
                     <?php $i=1 ?>
                     @foreach($all_product as $key => $pro)
                     <tr>
-                        <td><label class="i-checks m-b-none"><input type="checkbox"
-                                    name="post[]"><i></i></label></td>
+                        
                         <td><?php echo $i++; ?></td>
                         <td>{{$pro->product_name}}</td>
                         <td>{{$pro->product_price}}</td>
