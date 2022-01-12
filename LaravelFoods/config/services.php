@@ -33,5 +33,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => '300640855213179', //client face của bạn
+        'client_secret' => '1764fb072f04caa204cc604c74bc91d7', //client app service face của bạn
+        'redirect' => 'http://localhost:8888/Web_Laravel/LaravelFoods/LaravelFoods/public/login/callback' //callback trả về
+    ],
 
 ];

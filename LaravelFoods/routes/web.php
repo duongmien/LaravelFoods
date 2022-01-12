@@ -27,6 +27,8 @@ Route::get('/dashboard','AdminController@show_dashboard');
 Route::get('/logout','LoginController@logout');
 Route::post('/check-login','LoginController@check_login');
 
+Route::get('/login-facebook','LoginController@login_facebook');
+Route::get('/login/callback','LoginController@callback_facebook');
 //Category Product
 Route::get('/add-category-product','CategoryProduct@add_category_product');
 Route::get('/all-category-product','CategoryProduct@all_category_product');
