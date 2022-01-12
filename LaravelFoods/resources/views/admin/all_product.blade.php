@@ -39,6 +39,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <th>Price</th>
                         <th>Product Image</th>
                         <th>Category</th>
+                        <th>Sold</th>
                         <th>Show/Hide</th>
                         <th style="width:30px;"></th>
                     </tr>
@@ -54,6 +55,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <td>{{$pro->product_price}}</td>
                         <td><img src="uploads/product/{{$pro->product_image}}" height="80" width="80"/></td>
                         <td>{{$pro->category_name}}</td>
+                        <td>{{$pro->product_sold}}</td>
 
                         <td><span class="text-ellipsis">
                             <?php
