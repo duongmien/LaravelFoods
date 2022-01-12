@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Socialite;
 session_start();
 
 class LoginController extends Controller
@@ -14,6 +15,8 @@ class LoginController extends Controller
     {
         return view('page.login');
     }
+
+
 
     public function check_login(Request $request)
     {

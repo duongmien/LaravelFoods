@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "jzonta/faker-restaurant": "^2.0",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {
