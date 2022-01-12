@@ -946,7 +946,64 @@ ul.top-menu>li>a:focus {
     color: #fff;
     text-align: left;
 }
+._table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
+._table :is(th, td) {
+    border: 1px solid #0002;
+    padding: 8px 10px;
+}
+
+._table th {
+    position: relative;
+    user-select: none;
+}
+
+._table th:hover {
+    background-color: #0001;
+    cursor: pointer;
+}
+
+._table th::after {
+    content: '\25b4';
+    position: absolute;
+    right: 10px;
+    font-size: inherit;
+    transform-origin: center;
+    transform: rotate(180deg);
+}
+
+._table th.asc {
+    background-color: #0001;
+}
+
+._table th.asc::after {
+    transform: rotate(0deg);
+}
+.table-sortable th {
+    cursor: pointer;
+  }
+  
+  .table-sortable .th-sort-asc::after {
+    content: "\25b4";
+  }
+  
+  .table-sortable .th-sort-desc::after {
+    content: "\25be";
+  }
+  
+  .table-sortable .th-sort-asc::after,
+  .table-sortable .th-sort-desc::after {
+    margin-left: 5px;
+  }
+  
+  .table-sortable .th-sort-asc,
+  .table-sortable .th-sort-desc {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
 .market-update-right i.fa.fa-usd {
     font-size: 3em;
     color: #fff;
