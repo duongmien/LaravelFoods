@@ -18,7 +18,7 @@
         <h3 class="feature-title"><a href="{{URL::to('/product-detail/'.$pro->product_id)}}">{{$pro->product_name}}</a>
         </h3>
         <div class="feature-meta">
-            <p class="feature-price"><?php echo $pro->product_price/1000?>.000 vnd<span><?php echo $pro->product_price/1000+30?>.000 vnd</span></p>
+            <p class="feature-price"><?php echo $pro->product_price/1000?>.000 VND<span><?php echo $pro->product_price/1000+30?>.000 VND</span></p>
             
         </div>
     </a>

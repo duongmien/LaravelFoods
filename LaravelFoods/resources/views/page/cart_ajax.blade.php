@@ -63,8 +63,8 @@
                                             <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
                                             <div class="wh-item-info">
                                                 <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
-                                                <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
-                                                <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                                <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 VND</p>
+                                                <span><?php echo $cart['product_price']/1000?>.000 VND</span>
                                             </div>
                                         </div>
                                     </td>
@@ -84,7 +84,7 @@
                                         <p class="wh-tem-price subtotal">
                                             <?php 
                                                 $subtotal = $cart['product_price'] * $cart['product_qty'];
-                                                echo number_format($subtotal).' '.'vnd';
+                                                echo number_format($subtotal).' '.'VND';
                                             ?>
                                         </p>
                                     </td>
@@ -116,7 +116,7 @@
                         <div class="bill-details">
                             <div class="total-wrap">
                                 <h5>Total Amount</h5>
-                                <span class="totalPrice">{{number_format($total).' '.'vnd'}}</span>
+                                <span class="totalPrice">{{number_format($total).' '.'VND'}}</span>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
