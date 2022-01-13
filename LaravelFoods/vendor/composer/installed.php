@@ -5,11 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-<<<<<<< HEAD
-        'reference' => '009535f848d8a79dfc66fcf101d127edd9f77b55',
-=======
-        'reference' => '6162ad642f6d7e8e97c50b6b0cbc38d170e4c0cb',
->>>>>>> c34785fe5809edb85538598c8cc09fdae7f69f7a
+        'reference' => '7c2af3774ab4493a47929fb4ef058c79e0c1a2fb',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -431,10 +427,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
-            'reference' => '009535f848d8a79dfc66fcf101d127edd9f77b55',
-=======
-            'reference' => '6162ad642f6d7e8e97c50b6b0cbc38d170e4c0cb',
+            'reference' => '7c2af3774ab4493a47929fb4ef058c79e0c1a2fb',
             'dev_requirement' => false,
         ),
         'laravel/socialite' => array(
@@ -444,7 +437,6 @@
             'install_path' => __DIR__ . '/../laravel/socialite',
             'aliases' => array(),
             'reference' => 'b5c67f187ddcf15529ff7217fa735b132620dfac',
->>>>>>> c34785fe5809edb85538598c8cc09fdae7f69f7a
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(

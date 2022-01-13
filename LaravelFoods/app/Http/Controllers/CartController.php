@@ -50,9 +50,9 @@ class CartController extends Controller
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
         $cart2 = Session::get('cart2');
-        foreach($cart2 as $session => $val){
-            unset($cart2[$session]);
-        }
+        // foreach($cart2 as $session => $val){
+        //     unset($cart2[$session]);
+        // }
         if($cart2!=null){
             $is_available = 0;
             foreach($cart2 as $key => $val){

@@ -81,8 +81,8 @@ if ($message) {
                     </a>
                     <div class="new-product-info">
                       <h6><a href="{{URL::to('/product-detail/'.$pro->product_id)}}">{{$pro->product_name}}</a></h6>
-                      <div class="price"><span><?php echo $pro->product_price/1000?>.000 vnd</span>
-                        <span class="discount"><?php echo $pro->product_price/1000+30?>.000 vnd</span>
+                      <div class="price"><span><?php echo $pro->product_price/1000?>.000 VND</span>
+                        <span class="discount"><?php echo $pro->product_price/1000+30?>.000 VND</span>
                       </div>
                     </div>
                   </div>
@@ -111,14 +111,14 @@ if ($message) {
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn style1" style="float: right;">Apply</button>
+                <button type="submit" class="btn style1" style="float: right;" >Apply</button>
                 </form>
               </div>
             </div>
           </div>
           <div class="col-xl-8 col-lg-12 order-xl-2 order-lg-1 order-md-1 order-1">
             <div class="row align-items-center mb-25">
-              <div class="col-xl-6 col-lg-5 col-md-4">
+              <!-- <div class="col-xl-6 col-lg-5 col-md-4">
                 <div class="profuct-result">
                   <p>Showing 10 of 120 Products</p>
                 </div>
@@ -131,8 +131,8 @@ if ($message) {
                     <option value="3">Sort By Low To High</option>
                   </select>
                 </div>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-md-4">
+              </div> -->
+              <!-- <div class="col-xl-2 col-lg-3 col-md-4">
                 <div class="filter-item-num">
                   <select>
                     <option value="1">Show 10</option>
@@ -140,7 +140,7 @@ if ($message) {
                     <option value="3">Show 30</option>
                   </select>
                 </div>
-              </div>
+              </div> -->
             </div>
             @yield('shop_content')
             <div class="page-navigation">

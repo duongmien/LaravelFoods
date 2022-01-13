@@ -52,8 +52,8 @@
                                         <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
                                         <div class="wh-item-info">
                                             <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
-                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
-                                            <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 VND</p>
+                                            <span><?php echo $cart['product_price']/1000?>.000 VND</span>
                                         </div>
                                     </div>
                                 </td>
@@ -70,7 +70,7 @@
                                     <p class="wh-tem-price subtotal">
                                         <?php 
                                             $subtotal = $cart['product_price'] * $cart['product_qty'];
-                                            echo number_format($subtotal).' '.'vnd';
+                                            echo number_format($subtotal).' '.'VND';
                                         ?>
                                     </p>
                                 </td>
@@ -91,8 +91,8 @@
                                         <img src="{{URL::to('uploads/product/'.$cart['product_image'])}}"  height="100px" width="100px"  alt="Image">
                                         <div class="wh-item-info">
                                             <a href="{{URL::to('/product-detail/'.$cart['product_id'])}}">{{$cart['product_name']}}</a>
-                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 vnd</p>
-                                            <span><?php echo $cart['product_price']/1000?>.000 vnd</span>
+                                            <p class="discount"><?php echo $cart['product_price']/1000+30?>.000 VND</p>
+                                            <span><?php echo $cart['product_price']/1000?>.000 VND</span>
                                         </div>
                                     </div>
                                 </td>
@@ -109,7 +109,7 @@
                                     <p class="wh-tem-price subtotal">
                                         <?php 
                                             $subtotal = $cart['product_price'] * $cart['product_qty'];
-                                            echo number_format($subtotal).' '.'vnd';
+                                            echo number_format($subtotal).' '.'VND';
                                         ?>
                                     </p>
                                 </td>
@@ -188,7 +188,7 @@
                                         class="flaticon-right-arrow-2"></i></a>
                             </div>
                             <div class="col-md-6 d-flex align-items-center justify-content-lg-end">
-                                <h4 class="total-amt sm-none">Total: <span>{{number_format($total).' '.'vnd'}}</span></h4>
+                                <h4 class="total-amt sm-none">Total: <span>{{number_format($total).' '.'VND'}}</span></h4>
                                 <input type="hidden" name="total" value="{{$total}}"></input>
                                 <input type="submit" name="send_order" class="inph inhe" value="Place Order"></input>
                             </div>
