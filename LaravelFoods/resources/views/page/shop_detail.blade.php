@@ -33,16 +33,25 @@
                     <div class="swiper-container mySwiper2 single-product-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}" />
+                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"/>
                             </div>
+                            @foreach($image_product as $key => $img)
+                            <div class="swiper-slide">
+                                <img src="{{URL::to('/uploads/product/'.$img->image_name)}}"/>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div thumbsSlider="" class="swiper-container mySwiper single-product-thumbs">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"  />
+                                <img src="{{URL::to('/uploads/product/'.$pro->product_image)}}"/>
                             </div>
-                           
+                            @foreach($image_product as $key => $img)
+                            <div class="swiper-slide">
+                                <img src="{{URL::to('/uploads/product/'.$img->image_name)}}"/>
+                            </div>
+                            @endforeach
                         </div>
                         <div class="product-slider-next slider-btn style2"><i class="flaticon-right-arrow-angle"></i></div>
                         <div class="product-slider-prev slider-btn style2"><i class="flaticon-left-arrow-1"></i>
@@ -70,7 +79,6 @@
                             </p>
                             <ul class="content-feature-list list-style mb-20">
                                 <li><i class="las la-check-circle"></i>{{$pro->product_meal}}</li>
-                                
                             </ul>
                         </div>
                         <form>
@@ -78,6 +86,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="product-more-option">
+                            
                             <div class="product-more-option-item">
                                 <h6>Category :</h6>
                                 <a href="shop-left-sidebar.html" >{{$pro->category_name}}</a>
@@ -97,6 +106,10 @@
                                 <h6>Availability :</h6>
                                 <a href="shop-left-sidebar.html" tppabs="https://templates.hibootstrap.com/caban/default/shop-left-sidebar.html">In
                                     Stock</a>
+                            </div>
+                            <div class="product-more-option-item">
+                                <h6>Sold :</h6>
+                                <a href="shop-left-sidebar.html" >{{$pro->product_sold}}</a>
                             </div>
                         </div>
                         <div class="single-product-option">

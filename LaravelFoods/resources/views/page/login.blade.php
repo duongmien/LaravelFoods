@@ -35,9 +35,9 @@
     
 
     <section class="login-wrap pt-100 pb-100">
-        <img src="{{('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"
+        <img src="{{URL::to('frontend/assets/img/shape-1.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-1.png"
             alt="Image" class="login-shape-1">
-        <img src="{{('frontend/assets/img/shape-2.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-2.png"
+        <img src="{{URL::to('frontend/assets/img/shape-2.png')}}" tppabs="https://templates.hibootstrap.com/caban/default/assets/img/shape-2.png"
             alt="Image" class="login-shape-2">
         <div class="container">
             <div class="row">
@@ -89,18 +89,9 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <ul class="social-profile style3 text-center mt-0 list-style">
-                                                <li><a target="_blank"
-                                                        href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                                        tppabs="https://instagram.com/"><i
-                                                            class="lab la-instagram"></i></a></li>
-                                                <li><a target="_blank"
-                                                        href="javascript:if(confirm(%27https://twitter.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://twitter.com/%27"
-                                                        tppabs="https://twitter.com/"><i
-                                                            class="lab la-twitter"></i></a></li>
-                                                <li><a target="_blank"
-                                                        href="javascript:if(confirm(%27https://facebook.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://facebook.com/%27"
-                                                        tppabs="https://facebook.com/"><i
-                                                            class="lab la-facebook-f"></i></a></li>
+                                                <li><a href="" ><i class="lab la-google-plus"></i></a></li>
+                                                <li><a target="_blank" href="" ><i class="lab la-instagram"></i></a></li>
+                                                <li><a target="_blank" href="7" ><i class="lab la-facebook-f"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

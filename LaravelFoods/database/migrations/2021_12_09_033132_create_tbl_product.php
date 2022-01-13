@@ -26,6 +26,7 @@ class CreateTblProduct extends Migration
             $table->string('product_rate');
             $table->string('product_sold');
             $table->integer('product_status');
+            $table->string('date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });
         $faker = Faker\Factory::create();

@@ -20,7 +20,15 @@ class UserController extends Controller
             return Redirect::to('login')->send();
         }
     }
-
+    public function AuthLogin2()
+    {
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('home');
+        }else{
+            return Redirect::to('login')->send();
+        }
+    }
     public function add_user(){
         $this->AuthLogin();
 
@@ -81,9 +89,48 @@ class UserController extends Controller
 
     public function delete_user($user_id){
         $this->AuthLogin();
-
         DB::table('tbl_user')->where('user_id',$user_id)->delete();
         Session::put('message','Delete User Successfully!');
         return Redirect::to('/all-user');
+    }
+    public function change_password($user_id){
+        DB::table('tbl_user')->where('user_id',$user_id)->get();
+        return view('page.change_password')->with('user_id',$user_id);
+    }
+    public function check_change(Request $request){
+        $user_id=$request->user_id;
+        $old=$request->old_password;
+        $new=$request->new_password;
+        $cfm=$request->cfm_password;
+        $user = DB::table('tbl_user')->where('user_id',$user_id)->first();
+        if($old!=$user->password){
+            Session::put('message','Incorect Password!');
+            return view('page.change_password');
+        }else if($new != $cfm){
+            Session::put('message','Incorect Password Confirm!');
+            return view('page.change_password');
+        }else{
+            DB::table('tbl_user')->where('user_id',$user_id)->update(['password'=>$new]);
+            Session::put('message','Change Password Successfully!');
+            return Redirect::to('/home');
+        }
+    }
+    public function edit_info($user_id){
+        $this->AuthLogin2();
+        $user = DB::table('tbl_user')->where('user_id',$user_id)->first(); 
+        return view('page.edit_info')->with('user',$user);
+    }
+    public function update_info(Request $request ,$user_id){
+        $this->AuthLogin2();
+
+        $data = array();
+        $data['name']= $request->fullname;
+        $data['user_sex']=$request->sex;
+        $data['user_tel']=$request->telephone;
+        $data['user_address']=$request->address;
+        $data['user_email']=$request->email;
+        DB::table('tbl_user')->where('user_id',$user_id)->update($data);
+        Session::put('message','Update info Successfully!');
+        return Redirect::to('/home');
     }
 }

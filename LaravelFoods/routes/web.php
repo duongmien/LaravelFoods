@@ -27,6 +27,8 @@ Route::get('/dashboard','AdminController@show_dashboard');
 Route::get('/logout','LoginController@logout');
 Route::post('/check-login','LoginController@check_login');
 
+Route::get('/login-facebook','LoginController@login_facebook');
+Route::get('/login/callback','LoginController@callback_facebook');
 //Category Product
 Route::get('/add-category-product','CategoryProduct@add_category_product');
 Route::get('/all-category-product','CategoryProduct@all_category_product');
@@ -56,6 +58,8 @@ Route::get('/add-user','UserController@add_user');
 Route::get('/all-user','UserController@all_user');
 Route::get('/edit-user/{user_id}','UserController@edit_user');
 Route::get('/delete-user/{user_id}','UserController@delete_user');
+Route::get('/change-password/{user_id}','UserController@change_password');
+Route::post('/check-change','UserController@check_change');
 
 Route::get('/active-user/{user_id}','UserController@active_user');
 Route::get('/unactive-user/{user_id}','UserController@unactive_user');
@@ -66,6 +70,7 @@ Route::post('/update-user/{user_id}','UserController@update_user');
 //Product in shop
 Route::get('/category-shop/{category_id}','ProductController@show_product_category');
 Route::get('/shop-cate','ShopController@index_2');
+Route::post('/price-filter','ShopController@price_filter');
 
 //Shop detail
 Route::get('/product-detail/{product_id}','ProductController@product_detail');
@@ -93,6 +98,11 @@ Route::get('/detail-order/{order_id}','OrderController@detail_order');
 Route::get('/delete-order','OrderController@delete_order');
 Route::get('/approves-order/{order_id}','OrderController@approves_order');
 Route::get('/print-order/{checkout_code}','OrderController@print_order');
+
+//edit info
+Route::get('/edit-info/{user_id}','UserController@edit_info');
+Route::post('/update-info/{user_id}','UserController@update_info');
+
 
 
  

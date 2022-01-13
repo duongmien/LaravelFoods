@@ -14,8 +14,18 @@ echo '<script>alert("'.$message.'");</script> ';
         <div class="panel-heading">
             List Order
         </div>
+        <div class="row w3-res-tb">
+            
+            <div class="col-sm-3">
+                <h4>Search</h4>
+                <div class="input-group">
+                <input type="search" oninput="filter_table(this, 'table_filter')" class="form_control"
+         placeholder="Filter This Table...">
+                </div>
+            </div>
+        </div>
         <div class="table-responsive ">
-            <table class="table table-striped b-t b-light" >
+            <table class="table  _table table_sort  table-striped b-t b-light" >
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -28,7 +38,7 @@ echo '<script>alert("'.$message.'");</script> ';
                         <th></th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody id="table_filter">
                     <?php $i=1 ?>
                     @foreach($all_order as $key => $ord)
                     <tr class="orderpage">
@@ -50,24 +60,7 @@ echo '<script>alert("'.$message.'");</script> ';
                 </tbody>
             </table>
         </div>
-        <footer class="panel-footer">
-            <div class="row">
-
-                <div class="col-sm-5 text-center">
-                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-                </div>
-                <div class="col-sm-7 text-right text-center-xs">
-                    <ul class="pagination pagination-sm m-t-none m-b-none">
-                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+        
     </div>
 </div>
 @endsection

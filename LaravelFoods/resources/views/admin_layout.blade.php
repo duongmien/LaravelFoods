@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="{{URL::to('/dash_board')}}">
+                            <a class="active" href="{{URL::to('/dashboard')}}">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -104,14 +104,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="{{URL::to('/all-order')}}">
                                 <i class="fa fa-book"></i>
-                                <span>Order Management</span>
+                                <span>Manage Order</span>
                             </a>
                         </li>
 
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Category</span>
+                                <span>Manage Category</span>
                             </a>
                             <ul class="sub">
                                 <li><a href="{{URL::to('/add-category-product')}}">Add Category</a></li>
@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Product</span>
+                                <span>Manage Product</span>
                             </a>
                             <ul class="sub">
                                 <li><a href="{{URL::to('/add-product')}}">Add Product</a></li>
@@ -329,6 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!-- calendar -->
     <script type="text/javascript" src="{{asset('js/monthly.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/tablesort.js')}}"></script>
     <script type="text/javascript">
 
         $(window).load(function() {

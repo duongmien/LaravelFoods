@@ -17,43 +17,39 @@ echo '<script>alert("'.$message.'");</script> ';
         <div class="row w3-res-tb">
             
             <div class="col-sm-3">
+                <h4>Search</h4>
                 <div class="input-group">
-                    <input type="text" class="input-sm form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-sm btn-default" type="button">Go!</button>
-                    </span>
+                <input type="search" oninput="filter_table(this, 'table_filter')" class="form_control"
+         placeholder="Filter This Table...">
                 </div>
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table table-striped b-t b-light">
+            <table   class="table  table-striped _table table_sort b-t b-light">
                 <thead>
-                    <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
+                    <tr >
+                        
                         <th>No</th>
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Product Image</th>
                         <th>Category</th>
+                        <th>Sold</th>
                         <th>Show/Hide</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table_filter">
                     <?php $i=1 ?>
                     @foreach($all_product as $key => $pro)
                     <tr>
-                        <td><label class="i-checks m-b-none"><input type="checkbox"
-                                    name="post[]"><i></i></label></td>
+                        
                         <td><?php echo $i++; ?></td>
                         <td>{{$pro->product_name}}</td>
                         <td>{{$pro->product_price}}</td>
                         <td><img src="uploads/product/{{$pro->product_image}}" height="80" width="80"/></td>
                         <td>{{$pro->category_name}}</td>
+                        <td>{{$pro->product_sold}}</td>
 
                         <td><span class="text-ellipsis">
                             <?php
@@ -81,24 +77,7 @@ echo '<script>alert("'.$message.'");</script> ';
                 </tbody>
             </table>
         </div>
-        <footer class="panel-footer">
-            <div class="row">
-
-                <div class="col-sm-5 text-center">
-                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-                </div>
-                <div class="col-sm-7 text-right text-center-xs">
-                    <ul class="pagination pagination-sm m-t-none m-b-none">
-                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+        
     </div>
 </div>
 @endsection

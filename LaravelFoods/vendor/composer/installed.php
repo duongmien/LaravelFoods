@@ -5,7 +5,11 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
+<<<<<<< HEAD
         'reference' => '009535f848d8a79dfc66fcf101d127edd9f77b55',
+=======
+        'reference' => '6162ad642f6d7e8e97c50b6b0cbc38d170e4c0cb',
+>>>>>>> c34785fe5809edb85538598c8cc09fdae7f69f7a
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -427,7 +431,20 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+<<<<<<< HEAD
             'reference' => '009535f848d8a79dfc66fcf101d127edd9f77b55',
+=======
+            'reference' => '6162ad642f6d7e8e97c50b6b0cbc38d170e4c0cb',
+            'dev_requirement' => false,
+        ),
+        'laravel/socialite' => array(
+            'pretty_version' => 'v5.2.6',
+            'version' => '5.2.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/socialite',
+            'aliases' => array(),
+            'reference' => 'b5c67f187ddcf15529ff7217fa735b132620dfac',
+>>>>>>> c34785fe5809edb85538598c8cc09fdae7f69f7a
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -464,6 +481,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'aa70e813a6ad3d1558fc927863d47309b4c23e69',
+            'dev_requirement' => false,
+        ),
+        'league/oauth1-client' => array(
+            'pretty_version' => 'v1.10.0',
+            'version' => '1.10.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth1-client',
+            'aliases' => array(),
+            'reference' => '88dd16b0cff68eb9167bfc849707d2c40ad91ddc',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
