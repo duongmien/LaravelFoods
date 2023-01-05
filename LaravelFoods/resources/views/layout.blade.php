@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +73,7 @@
                             <div class="mobile-bar-wrap">
                                 <a href="" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart  xl-none">
                                     <i class="las la-shopping-cart"></i>
-                                    <span >1</span>
+                                    <span>1</span>
                                 </a>
                                 <div class="mobile-top-bar xl-none">
                                     <span></span>
@@ -87,42 +86,45 @@
                             </div>
                         </div>
                         <div class="col-xl-3 lg-none" id="totalQty">
-                            
+
                             <div class="header-bottom-right totalQtyLoad">
-                                
+
                                 <a href="{{URL::to('show-cart')}}" tppabs="https://templates.hibootstrap.com/caban/default/cart.html" class="shopcart">
                                     <i class="las la-shopping-cart cart-button {{ request()->is('show-cart') ? 'active' : ''}}"></i>
                                     @php
-                                        $countCart = 0;
+                                    $countCart = 0;
                                     @endphp
                                     @if (is_array(Session::get('cart')) || is_object(Session::get('cart')))
                                     @foreach(Session::get('cart') as $key => $cart)
                                     @php
-                                        $countCart += $cart['product_qty'];
+                                    $countCart += $cart['product_qty'];
                                     @endphp
                                     @endforeach
                                     @endif
                                     <span class="countCart">{{$countCart}}</span>
                                 </a>
-                                    <?php
-                                        use Illuminate\Support\Facades\Session;
-                                        $user_id = Session::get('user_id');
-                                        if($user_id != null){?>
-                                            <div class="dropdownu user-dropdown">
-                                                <i id="user-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" class="la-2x la la-user-cog"></i>
-                                                <ul class="dropdown-menu mt-2" aria-labelledby="user-dropdown-button">
-                                                    <li><a class="dropdown-item" href="{{URL::to('edit-info/'.$user_id)}}"><i class="la la-user-tag me-2"></i>My account</a></li>
-                                                    <li><a class="dropdown-item" href="{{URL::to('change-password/'.$user_id)}}"><i class="la la-pencil-alt me-2"></i>Change password</a></li>
-                                                    <li><hr class="dropdown-divider"></li>
-                                                    <li><a class="dropdown-item" href="{{URL::to('logout')}}"><i class="la la-sign-out me-2"></i>Sign out</a></li>
-                                                </ul>
-                                            </div>
-                                        <?php }else{?>
-                                            <a href="{{URL::to('login')}}" class="btn style1">Sign in</a><?php
-                                        }
-                                    ?>
+                                <?php
 
-                                
+                                use Illuminate\Support\Facades\Session;
+
+                                $user_id = Session::get('user_id');
+                                if ($user_id != null) { ?>
+                                    <div class="dropdownu user-dropdown">
+                                        <i id="user-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" class="la-2x la la-user-cog"></i>
+                                        <ul class="dropdown-menu mt-2" aria-labelledby="user-dropdown-button">
+                                            <li><a class="dropdown-item" href="{{URL::to('edit-info/'.$user_id)}}"><i class="la la-user-tag me-2"></i>My account</a></li>
+                                            <li><a class="dropdown-item" href="{{URL::to('change-password/'.$user_id)}}"><i class="la la-pencil-alt me-2"></i>Change password</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="{{URL::to('logout')}}"><i class="la la-sign-out me-2"></i>Sign out</a></li>
+                                        </ul>
+                                    </div>
+                                <?php } else { ?>
+                                    <a href="{{URL::to('login')}}" class="btn style1">Sign in</a><?php
+                                                                                                }
+                                                                                                    ?>
+
                             </div>
                         </div>
                     </div>
@@ -145,8 +147,7 @@
                                     <div class="contact-item-wrap">
                                         <div class="contact-item">
                                             <i class="flaticon-mail-1"></i>
-                                            <a href="mailto:"><span class="__cf_email__"
-                                                    data-cfemail="1e767b7272715e7d7f7c7f70307d7173">[email&#160;protected]</span></a>
+                                            <a href="mailto:"><span class="__cf_email__" data-cfemail="1e767b7272715e7d7f7c7f70307d7173">[email&#160;protected]</span></a>
                                         </div>
                                         <div class="contact-item">
                                             <i class="flaticon-phone-call"></i>
@@ -154,20 +155,16 @@
                                         </div>
                                     </div>
                                     <ul class="social-profile style1 list-style">
-                                        <li><a target="_blank" href="javascript:if(confirm(%27https://facebook.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://facebook.com/%27"
-                                                tppabs="https://facebook.com/"><i class="flaticon-facebook"></i> </a>
+                                        <li><a target="_blank" href="javascript:if(confirm(%27https://facebook.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://facebook.com/%27" tppabs="https://facebook.com/"><i class="flaticon-facebook"></i> </a>
                                         </li>
                                         <li>
-                                            <a target="_blank" href="javascript:if(confirm(%27https://twitter.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://twitter.com/%27"
-                                                tppabs="https://twitter.com/"> <i class="flaticon-twitter-1"></i> </a>
+                                            <a target="_blank" href="javascript:if(confirm(%27https://twitter.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://twitter.com/%27" tppabs="https://twitter.com/"> <i class="flaticon-twitter-1"></i> </a>
                                         </li>
                                         <li>
-                                            <a target="_blank" href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                                tppabs="https://instagram.com/"> <i class="flaticon-instagram"></i> </a>
+                                            <a target="_blank" href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/"> <i class="flaticon-instagram"></i> </a>
                                         </li>
                                         <li>
-                                            <a target="_blank" href="javascript:if(confirm(%27https://youtube.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://youtube.com/%27"
-                                                tppabs="https://youtube.com/"> <i class="flaticon-youtube"></i> </a>
+                                            <a target="_blank" href="javascript:if(confirm(%27https://youtube.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://youtube.com/%27" tppabs="https://youtube.com/"> <i class="flaticon-youtube"></i> </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -228,40 +225,31 @@
                                         Instagram Photo
                                     </h4>
                                     <div class="instagram-img-wrap">
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-1.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-2.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-3.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-4.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-5.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-6.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-7.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-8.jpg')}}" alt="Image">
                                         </a>
-                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27"
-                                            tppabs="https://instagram.com/" target="_blank" class="insta-box">
+                                        <a href="javascript:if(confirm(%27https://instagram.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://instagram.com/%27" tppabs="https://instagram.com/" target="_blank" class="insta-box">
                                             <img src="{{asset('frontend/assets/img/instagram-9.jpg')}}" alt="Image">
                                         </a>
                                     </div>
@@ -275,8 +263,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12 col-12 order-lg-1 order-md-2 order-2">
-                            <p class="copyright"><span class="las la-copyright"></span>2021 Caban. All Rights Reserved By <a href="javascript:if(confirm(%27https://hibootstrap.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://hibootstrap.com/%27"
-                                    tppabs="https://hibootstrap.com/">HiBootstrap</a></p>
+                            <p class="copyright"><span class="las la-copyright"></span>2022 LaravelFood. All Rights Reserved By <a href="javascript:if(confirm(%27https://hibootstrap.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://hibootstrap.com/%27" tppabs="https://hibootstrap.com/">MyTeam</a></p>
                         </div>
                         <div class="col-lg-6 col-md-12 col-12 order-lg-2 order-md-1 order-1">
                             <ul class="footer-bottom-menu list-style">
@@ -312,9 +299,9 @@
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('.add-to-card').click(function(){
-                var id=$(this).data('id_product');
+        $(document).ready(function() {
+            $('.add-to-card').click(function() {
+                var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
                 var cart_product_name = $('.cart_product_name_' + id).val();
                 var cart_product_image = $('.cart_product_image_' + id).val();
@@ -322,32 +309,39 @@
                 var cart_product_qty = $('.cart_product_qty_' + id).val();
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:'{{url("/add-cart-ajax")}}',
+                    url: '{{url("/add-cart-ajax")}}',
                     method: 'POST',
-                    data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
-                    success:function(data){
+                    data: {
+                        cart_product_id: cart_product_id,
+                        _token: _token,
+                        cart_product_name: cart_product_name,
+                        cart_product_image: cart_product_image,
+                        cart_product_price: cart_product_price,
+                        cart_product_qty: cart_product_qty
+                    },
+                    success: function(data) {
                         swal({
-                            title: "The product has been added to cart",
-                            text: "You can continue shopping or go to the shopping cart",
-                            icon: "success",
-                            buttons:["Continue", "Go to Cart"] ,
-                            dangerMode: false,
-                        })
-                        .then((willDelete) => {
-                        if (willDelete) {
-                            window.location.href = "{{url('/show-cart')}}";
-                        } 
-                        }); 
-                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
+                                title: "The product has been added to cart",
+                                text: "You can continue shopping or go to the shopping cart",
+                                icon: "success",
+                                buttons: ["Continue", "Go to Cart"],
+                                dangerMode: false,
+                            })
+                            .then((willDelete) => {
+                                if (willDelete) {
+                                    window.location.href = "{{url('/show-cart')}}";
+                                }
+                            });
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');
                     },
                     error: (error) => {
-                     console.log(JSON.stringify(error));
+                        console.log(JSON.stringify(error));
                     }
                 })
 
             })
-            $('.buy-now').click(function(){
-                var id=$(this).data('id_product');
+            $('.buy-now').click(function() {
+                var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
                 var cart_product_name = $('.cart_product_name_' + id).val();
                 var cart_product_image = $('.cart_product_image_' + id).val();
@@ -355,79 +349,97 @@
                 var cart_product_qty = $('.cart_product_qty_' + id).val();
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:'{{url("/add-cart-ajax-2")}}',
+                    url: '{{url("/add-cart-ajax-2")}}',
                     method: 'POST',
-                    data:{cart_product_id:cart_product_id, _token:_token,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty},
-                    success:function(data){
-                        window.location.href = "{{url('/checkout')}}";    
+                    data: {
+                        cart_product_id: cart_product_id,
+                        _token: _token,
+                        cart_product_name: cart_product_name,
+                        cart_product_image: cart_product_image,
+                        cart_product_price: cart_product_price,
+                        cart_product_qty: cart_product_qty
+                    },
+                    success: function(data) {
+                        window.location.href = "{{url('/checkout')}}";
                     },
                     error: (error) => {
-                     console.log(JSON.stringify(error));
+                        console.log(JSON.stringify(error));
                     }
                 })
 
             })
-            $('.changeQty').click(function(e){
+            $('.changeQty').click(function(e) {
                 e.preventDefault();
                 var thisClick = $(this);
                 var quantity = $(this).closest(".cartpage").find(".qtyinput").val();
                 var product_id = $(this).closest(".cartpage").find(".product_id").val();
-                if(quantity==0){
+                if (quantity == 0) {
                     $.ajax({
-                    url:'{{url("/delete-cart")}}',
-                    type:'DELETE',
-                    method: 'get',
-                    data:{product_id:product_id, _token: '{{csrf_token()}}' },
-                    success:function(response){
-                        thisClick.closest(".cartpage").remove();
-                        $('#totalCall').load(location.href + ' .totalLoad');
-                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
-                        // console.log("done");
-                    },
-                    error: (error) => {
-                     console.log(JSON.stringify(error));
-                    }
-                })
-                }else{
-                $.ajax({
-                    url:'{{url("/update-cart")}}',
-                    method: 'post',
-                    data:{product_id:product_id,quantity:quantity, _token: '{{csrf_token()}}' },
-                    success:function(response){
-                        // window.location.reload();   
-                        thisClick.closest(".cartpage").find('.subtotal').text(response.subtotal);
-                        $('#totalCall').load(location.href + ' .totalLoad');
-                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
-                        // console.log("done");
-                    },
-                    error: (error) => {
-                     console.log(JSON.stringify(error));
-                    }
-                })
+                        url: '{{url("/delete-cart")}}',
+                        type: 'DELETE',
+                        method: 'get',
+                        data: {
+                            product_id: product_id,
+                            _token: '{{csrf_token()}}'
+                        },
+                        success: function(response) {
+                            thisClick.closest(".cartpage").remove();
+                            $('#totalCall').load(location.href + ' .totalLoad');
+                            $('#totalQty').load(location.href + ' .totalQtyLoad');
+                            // console.log("done");
+                        },
+                        error: (error) => {
+                            console.log(JSON.stringify(error));
+                        }
+                    })
+                } else {
+                    $.ajax({
+                        url: '{{url("/update-cart")}}',
+                        method: 'post',
+                        data: {
+                            product_id: product_id,
+                            quantity: quantity,
+                            _token: '{{csrf_token()}}'
+                        },
+                        success: function(response) {
+                            // window.location.reload();   
+                            thisClick.closest(".cartpage").find('.subtotal').text(response.subtotal);
+                            $('#totalCall').load(location.href + ' .totalLoad');
+                            $('#totalQty').load(location.href + ' .totalQtyLoad');
+                            // console.log("done");
+                        },
+                        error: (error) => {
+                            console.log(JSON.stringify(error));
+                        }
+                    })
                 }
             })
-            $('.deleteItem').click(function(e){
+            $('.deleteItem').click(function(e) {
                 e.preventDefault();
                 var thisDelete = $(this);
                 var product_id = $(this).closest(".cartpage").find(".product_id").val();
                 $.ajax({
-                    url:'{{url("/delete-cart")}}',
-                    type:'DELETE',
+                    url: '{{url("/delete-cart")}}',
+                    type: 'DELETE',
                     method: 'get',
-                    data:{product_id:product_id, _token: '{{csrf_token()}}' },
-                    success:function(response){
+                    data: {
+                        product_id: product_id,
+                        _token: '{{csrf_token()}}'
+                    },
+                    success: function(response) {
                         thisDelete.closest(".cartpage").remove();
                         $('#totalCall').load(location.href + ' .totalLoad');
-                        $('#totalQty').load(location.href + ' .totalQtyLoad');    
+                        $('#totalQty').load(location.href + ' .totalQtyLoad');
                         // console.log("done");
                     },
                     error: (error) => {
-                     console.log(JSON.stringify(error));
+                        console.log(JSON.stringify(error));
                     }
                 })
             })
-            
-            
+
+
         })
     </script>
+
 </html>

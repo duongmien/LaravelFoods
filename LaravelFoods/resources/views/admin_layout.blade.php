@@ -45,8 +45,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--logo start-->
             <div class="brand">
                 <a href="{{URL::to('/dashboard')}}" class="logo">
-					ADMIN
-				</a>
+                    ADMIN
+                </a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
                 </div>
@@ -64,13 +64,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{URL::to('img/2.png')}}">
                             <span class="username">
-                            <?php
-                            use Illuminate\Support\Facades\Session;
-                            $name = Session::get('name');
-                            if($name){
-                                echo $name;
-                            }
-                            ?>
+                                <?php
+
+                                use Illuminate\Support\Facades\Session;
+
+                                $name = Session::get('name');
+                                if ($name) {
+                                    echo $name;
+                                }
+                                ?>
                             </span>
                             <b class="caret"></b>
                         </a>
@@ -95,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
                             <a class="active" href="{{URL::to('/dashboard')}}">
-                                <i class="fa fa-dashboard"></i>
+                                <i class="fa fa-address-book" aria-hidden="true"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
@@ -139,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('/all-user')}}">List User</a></li>
                             </ul>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <!-- sidebar menu end-->
@@ -173,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- morris JavaScript -->
     <script>
         $(document).ready(function() {
-            
+
             //BOX BUTTON SHOW AND CLOSE
             jQuery('.small-graph-box').hover(function() {
                 jQuery(this).find('.box-button').fadeIn('fast');
@@ -189,68 +191,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             function gd(year, day, month) {
                 return new Date(year, month - 1, day).getTime();
             }
-            $('.delete-order-2').click(function(e){
+            $('.delete-order-2').click(function(e) {
 
                 e.preventDefault();
                 var thisDelete = $(this);
                 var order_id = $('.order_id').val();
                 swal({
-                    title: "Do you want to delete this bill?",
-                    text: "You will delete this bill !!!",
-                    icon: "error",
-                    buttons:["Cancle", "Delete"] ,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                if (willDelete) {
-                    $.ajax({
-                        url:'{{url("/delete-order")}}',
-                        type:'DELETE',
-                        method: 'get',
-                        data:{order_id:order_id, _token: '{{csrf_token()}}' },
-                        success:function(response){
-                            thisDelete.closest(".orderpage").remove();
-                            window.location.href = "{{url('/all-order')}}";
-
-                        },
-                    error: (error) => {
-                    console.log(JSON.stringify(error));
-                    }
+                        title: "Do you want to delete this bill?",
+                        text: "You will delete this bill !!!",
+                        icon: "error",
+                        buttons: ["Cancle", "Delete"],
+                        dangerMode: true,
                     })
-                } 
-                }); 
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '{{url("/delete-order")}}',
+                                type: 'DELETE',
+                                method: 'get',
+                                data: {
+                                    order_id: order_id,
+                                    _token: '{{csrf_token()}}'
+                                },
+                                success: function(response) {
+                                    thisDelete.closest(".orderpage").remove();
+                                    window.location.href = "{{url('/all-order')}}";
+
+                                },
+                                error: (error) => {
+                                    console.log(JSON.stringify(error));
+                                }
+                            })
+                        }
+                    });
 
             });
-            $('.delete-order').click(function(e){
+            $('.delete-order').click(function(e) {
 
                 e.preventDefault();
                 var thisDelete = $(this);
                 var order_id = $(this).closest(".orderpage").find(".order_id").val();
                 swal({
-                    title: "Do you want to delete this bill?",
-                    text: "You will delete this bill !!!",
-                    icon: "error",
-                    buttons:["Cancle", "Delete"] ,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                if (willDelete) {
-                    $.ajax({
-                        url:'{{url("/delete-order")}}',
-                        type:'DELETE',
-                        method: 'get',
-                        data:{order_id:order_id, _token: '{{csrf_token()}}' },
-                        success:function(response){
-                            thisDelete.closest(".orderpage").remove();
-                            window.location.href = "{{url('/all-order')}}";
-
-                        },
-                    error: (error) => {
-                     console.log(JSON.stringify(error));
-                    }
+                        title: "Do you want to delete this bill?",
+                        text: "You will delete this bill !!!",
+                        icon: "error",
+                        buttons: ["Cancle", "Delete"],
+                        dangerMode: true,
                     })
-                } 
-                }); 
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '{{url("/delete-order")}}',
+                                type: 'DELETE',
+                                method: 'get',
+                                data: {
+                                    order_id: order_id,
+                                    _token: '{{csrf_token()}}'
+                                },
+                                success: function(response) {
+                                    thisDelete.closest(".orderpage").remove();
+                                    window.location.href = "{{url('/all-order')}}";
+
+                                },
+                                error: (error) => {
+                                    console.log(JSON.stringify(error));
+                                }
+                            })
+                        }
+                    });
 
             });
             graphArea2 = Morris.Area({
@@ -322,16 +330,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 hideHover: 'auto',
                 resize: true
             });
-           
+
             // delete-button
-            
+
         });
     </script>
     <!-- calendar -->
     <script type="text/javascript" src="{{asset('js/monthly.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/tablesort.js')}}"></script>
     <script type="text/javascript">
-
         $(window).load(function() {
 
             $('#mycalendar').monthly({
@@ -360,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         });
     </script>
-    
+
     <!-- //calendar -->
 </body>
 

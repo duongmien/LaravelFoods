@@ -32,7 +32,6 @@ class AdminController extends Controller
         $c_s = DB::table('tbl_product')->sum('product_sold');
         $c_u = DB::table('tbl_user')->count();
         $c_o = DB::table('tbl_order')->count();
-
         return view('admin.dashboard')->with('c_p',$c_p)->with('c_s',$c_s)->with('c_u',$c_u)->with('c_o',$c_o);
     }
 }
